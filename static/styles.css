@@ -1,0 +1,69 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    text-align: center;
+}
+
+
+#board {
+    width: 450px;
+    height: 450px;
+    margin: 30px auto 10px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.tile{
+    width: 50px;
+    height: 50px;
+    border: 1px solid lightgrey;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#digits {
+    width: 450px;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.number{
+    width: 44px;
+    height: 44px;
+    border: 1px solid black;
+    margin: 3px;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.number-slected {
+    background-color: grey;
+}
+
+#buttons {
+    width: 300px;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.button {
+    width: 50px;
+    height: 50px;
+}

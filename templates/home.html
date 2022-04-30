@@ -1,6 +1,22 @@
 {% extends "layout.html" %}
 {% block title %}
-
+    Home
 {% endblock %}
+
 {% block content %}
+    <h1>Sudoku</h1>
+    <hr>
+    
+    
+    <div id="board"></div>
+    <br>
+    <div id="digits"></div>
+    <div id="buttons">
+        <button clas="button" id="undo"><i class="fa-solid fa-rotate-left"></i>Undo</button>
+        <button clas="button" id="erase"><i class="fa-solid fa-eraser"></i>Erase</button>
+        <button clas="button" id="notes"><i class="fa-solid fa-pencil"></i>Notes</button>
+        <button clas="button" id="hint"><i class="fa-solid fa-lightbulb"></i>Hint</button>
+    </div>
+    <br>
+
 {% endblock %}
