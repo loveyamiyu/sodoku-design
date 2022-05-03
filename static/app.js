@@ -44,3 +44,53 @@ function selectTile() {
         this.innerText = numSelected.id;
     }
 }
+
+// 4 functional buttons in Home page
+
+// Undo button
+function undo(){
+
+}
+
+// Erase button
+
+// Notes button
+
+// Hint button
+
+// Timer
+
+let int =null;
+
+// the start button
+document.getElementById("start").addEventListener('click',function(){
+    if(int == null){
+        int = setInterval(startNum,1000);
+    }
+})
+
+document.getElementById("pause").addEventListener('click', function () {
+    clearInterval(int);
+    int = null;
+});
+
+// reset button
+ let num = 0;
+ function start(){
+    document.getElementById("display").innerHTML = 1;
+ }
+
+ if(int == null){
+    int = setInterval(startNum,1000);
+}
+ document.getElementById("reset").addEventListener('click', function () {
+     if (int == null) {
+         num = 0;
+         document.getElementById("showNum").innerHTML = num;
+     }
+ });
+
+ function startNum() {
+     num++;
+     document.getElementById("showNum").innerHTML = num;
+ }
