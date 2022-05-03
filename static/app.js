@@ -61,36 +61,37 @@ function undo(){
 // Timer
 
 let int =null;
+let num = 0;
+
+// A function that would continuously growing per second
+
+function timer() {
+    num += 1;
+    var min = parseInt(num/60); // minutes
+    var sec = num % 60; // seconds
+    document.getElementById("showNum").innerHTML = min + ':' + sec ;
+}
 
 // the start button
-document.getElementById("start").addEventListener('click',function(){
+function start(){
     if(int == null){
-        int = setInterval(startNum,1000);
+        int = setInterval(timer,1000); 
     }
-})
+}
 
-document.getElementById("pause").addEventListener('click', function () {
+// the pause button
+function pause(){
     clearInterval(int);
     int = null;
-});
+}
+
 
 // reset button
- let num = 0;
- function start(){
-    document.getElementById("display").innerHTML = 1;
- }
-
- if(int == null){
-    int = setInterval(startNum,1000);
+function reset(){
+    if (int == null) {
+        num = 0;
+        document.getElementById("showNum").innerHTML = num;
+    }
 }
- document.getElementById("reset").addEventListener('click', function () {
-     if (int == null) {
-         num = 0;
-         document.getElementById("showNum").innerHTML = num;
-     }
- });
 
- function startNum() {
-     num++;
-     document.getElementById("showNum").innerHTML = num;
- }
+

@@ -16,7 +16,8 @@
         <!--app css-->
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css')}}" />
         <!--Javascript-->
-        <script type="text/javascript" src="/static/app.js"></script>
+        <!--I dont know why I cannot get the js-->
+        <script type="text/javascript" src="../static/app.js"></script>
 
     </head>
 
@@ -37,13 +38,54 @@
     <br>
     <div id="digits"></div>
     <div class="timer">
-        <div id="display">
+        <div id="showNum">
+            0
         </div>
-
 
         <button id="start" onclick="start()"> start </button>
         <button id="pause" onclick="pause()"> pause </button>
         <button id="reset" onclick="reset()"> reset </button>
+
+    <!-- Just to show the code is working this block can be deleted when we
+    can correclty import the javascript -->
+
+    <script>
+        // Timer
+
+        let int =null;
+        let num = 0;
+
+        // A function that would continuously growing per second
+
+        function timer() {
+            num += 1;
+            var min = parseInt(num/60); // minutes
+            var sec = num % 60; // seconds
+            document.getElementById("showNum").innerHTML = min + ':' + sec ;
+        }
+
+        // the start button
+        function start(){
+            if(int == null){
+                int = setInterval(timer,1000); 
+            }
+        }
+
+        // the pause button
+        function pause(){
+            clearInterval(int);
+            int = null;
+        }
+
+
+        // reset button
+        function reset(){
+            if (int == null) {
+                num = 0;
+                document.getElementById("showNum").innerHTML = num;
+            }
+        }
+    </script>
 
     </div>
     <div id="buttons">
