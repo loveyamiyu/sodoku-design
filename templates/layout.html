@@ -31,13 +31,13 @@
                 <div class="collapse navbar-collapse" id="navbarToggler">
                     <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{{ url_for('home')}}">Home</a>
+                        <a class="nav-link" aria-current="page" href="home.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('rules')}}">Rules</a>
+                        <a class="nav-link" style="color:white" href="rules.html">Rules</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('stats')}}">Stats</a>
+                        <a class="nav-link" href="stats.html">Stats</a>
                     </li>
                     </ul>
                 </div>
@@ -45,8 +45,6 @@
             </nav>
         </div>
         <div class="body-content">
-            {% block content %}
-            {% endblock %}
             
             <footer>
                 <p>Sudoku © 2022</p>

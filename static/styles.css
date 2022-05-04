@@ -30,15 +30,6 @@ body {
     text-transform: uppercase; 
 }
 
-.nav-item-selected {
-    margin-right: 30px;
-    padding: 5px;
-    color:aliceblue;
-    font-size: 20px;
-    font-weight: 1rem;
-    text-transform: uppercase; 
-}
-
 footer {
     text-align: center;
     padding-top: 25px;

@@ -36,6 +36,8 @@ function selectNumber() {
     numSelected.classList.add("number-selected");
 }
 
+
+
 function selectTile() {
     if (numSelected) {
         if (this.innerText != "") {
@@ -47,13 +49,26 @@ function selectTile() {
 
 // 4 functional buttons in Home page
 
+
+
+
+
 // Undo button
 function undo(){
 
 }
 
-// Erase button
+function redo(){
+ 
+}
 
+// Erase button
+function erase(){
+    for (let i = 1; i <= 9; i++) {
+        let clear = null;
+        document.getElementById("digits").appendChild(null);
+    }
+}
 // Notes button
 
 // Hint button

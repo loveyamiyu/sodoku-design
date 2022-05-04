@@ -14,20 +14,12 @@
         <!--Awesome fonts-->
         <script src="https://kit.fontawesome.com/4a7727080e.js" crossorigin="anonymous"></script>
         <!--app css-->
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css')}}" />
+        <link rel="stylesheet" type="text/css" href="../static/styles.css" />
         <!--Javascript-->
         <!--I dont know why I cannot get the js-->
         <script type="text/javascript" src="../static/app.js"></script>
 
     </head>
-
-
-{% extends "layout.html" %}
-{% block title %}
-    Home
-{% endblock %}
-
-{% block content %}
 
     <body>
         <div id="navigation"> 
@@ -43,13 +35,13 @@
                 <div class="collapse navbar-collapse" id="navbarToggler">
                     <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{{ url_for('home')}}">Home</a>
+                        <a class="nav-link" style="color:white" aria-current="page" href="home.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('rules')}}">Rules</a>
+                        <a class="nav-link" href="rules.html">Rules</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('stats')}}">Stats</a>
+                        <a class="nav-link" href="stats.html">Stats</a>
                     </li>
                     </ul>
                 </div>
@@ -78,15 +70,19 @@
     
     </div>
     <div id="buttons">
-        <button clas="button" id="undo"><i class="fa-solid fa-rotate-left"></i>Undo</button>
-        <button clas="button" id="erase"><i class="fa-solid fa-eraser"></i>Erase</button>
-        <button clas="button" id="notes"><i class="fa-solid fa-pencil"></i>Notes</button>
-        <button clas="button" id="hint"><i class="fa-solid fa-lightbulb"></i>Hint</button>
+        <button class="button" onclick="undo()" id="undo"><i class="fa-solid fa-rotate-left"></i>Undo</button>
+        <button class="button" onclick="undo()" id="undo"><i class="fa-solid fa-rotate-right"></i>Redo</button>
+        <button class="button" onclick="erase()" id="erase"><i class="fa-solid fa-eraser"></i>Erase</button>
+        <button class="button"  id="notes"><i class="fa-solid fa-pencil"></i>Notes</button>
+        <button class="button" id="hint"><i class="fa-solid fa-lightbulb"></i>Hint</button>
     </div>
     <br>
+
+    <footer>
+        <p>Sudoku © 2022</p>
+    </footer>
 
     </body>
     
 
 </html>
-{% endblock %}
