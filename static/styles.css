@@ -123,9 +123,10 @@ img {
     margin-bottom: 40px;
 }
 
-#howtoplay {
-    width: 100%;
+.howtoplay {
+    width: 60%;
     text-align: justify;
-    padding: 0 60px 60px 60px;
+    margin-top: 400px;
+    padding: 60px 60px 60px 60px;
 }
 
