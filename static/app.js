@@ -90,7 +90,7 @@ function pause(){
 function reset(){
     if (int == null) {
         num = 0;
-        document.getElementById("showNum").innerHTML = num;
+        document.getElementById("showNum").innerHTML = num +':'+num;
     }
 }
 

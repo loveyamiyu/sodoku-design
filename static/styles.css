@@ -17,12 +17,23 @@ body {
     text-decoration: none;   
     font-family: 'Montserrat', sans-serif;  
 }
+
 .navbar-brand {
     margin-left: 30px;    
 }
+
 .nav-item {
     margin-right: 30px;
     padding: 5px;
+    font-size: 20px;
+    font-weight: 1rem;
+    text-transform: uppercase; 
+}
+
+.nav-item-selected {
+    margin-right: 30px;
+    padding: 5px;
+    color:aliceblue;
     font-size: 20px;
     font-weight: 1rem;
     text-transform: uppercase; 
@@ -79,7 +90,7 @@ footer {
     align-items: center;
 }
 
-.number-slected {
+.number-selected {
     background-color: grey;
 }
 
