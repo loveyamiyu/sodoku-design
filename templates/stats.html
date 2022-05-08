@@ -1,6 +1,28 @@
 {% extends "layout.html" %}
 {% block title %}
-
+    Stats
 {% endblock %}
+
 {% block content %}
+<div id="ShowStats">
+    <div id="username">
+        <!-- update the username, score history and rank using js-->
+    </div>
+    <div>
+        <!-- need to use js to update-->
+        <h5><i class="fa-solid fa-signal"></i>  Difficulty</h5>
+        <h5><i class="fa-solid fa-hourglass-end"></i>   Time</h5>
+    </div>
+    <div id="share">
+        <a href="https://www.facebook.com/"><i class="social-media fa-brands fa-facebook fa-2x"></i></a>
+        <a href="https://www.instagram.com/"><i class="social-media fa-brands fa-instagram fa-2x"></i></a>
+        <a href="https://www.twitter.com/"><i class="social-media fa-brands fa-twitter-square fa-2x"></i></a>
+    </div>
+    <div>
+        <a href="{{ url_for('home')}}" id="newGame">Start a new challenge</a>
+    </div>
+</div>
+
+
+
 {% endblock %}
