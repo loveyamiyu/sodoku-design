@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block title %}
+    Registration
+{% endblock %}
+
+{% block content %}
+<div class="registration">
+    <form action="" method="post">
+        <table >
+            <tr>
+                <td>User Name：</td>
+                <td><input type="text" name="username" placeholder="Username" > </td>
+            </tr>
+            <tr>
+                <td>Password：</td>
+                <td><input type="password" name="password" placeholder="Password"></td>
+            </tr>
+            <tr>
+                <td>Password Confirm：</td>
+                <td><input type="password" name="password" placeholder="PasswordAgain"></td>
+            </tr>
+        </table>
+ 
+        <tr>
+            <td><input type="submit" value="Regist"></td>
+        </tr>
+ 
+    </form>
+</div>
+{% endblock %}

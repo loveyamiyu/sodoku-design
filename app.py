@@ -16,3 +16,4 @@ def stats():
 @app.route("/regist/")
 def regist():
     return render_template("registration.html")
+
