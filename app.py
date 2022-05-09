@@ -12,3 +12,7 @@ def rules():
 @app.route("/stats/")
 def stats():
     return render_template("stats.html")
+
+@app.route("/regist/")
+def regist():
+    return render_template("registration.html")
