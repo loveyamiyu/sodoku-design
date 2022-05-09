@@ -5,7 +5,9 @@
  {% endblock %}
  
  {% block content %}
-
+    <div class="rules-banner">
+        <img src="{{ url_for('static', filename='sudoku.webp')}}" class="banner">
+    </div>
         <div class="howtoplay">
             <h4>
                 Rule 1 - Each row must contain the numbers from 1 to 9, without repetitions 
