@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block title %}
+    Login
+{% endblock %}
+
+{% block content %}
+<div class="login">
+    <h4>Login</h4>
+    <p>Don't have an account? <a href="{{ url_for('signup')}}">Sign up</a> here.</p>
+    <div class="container" id="login-form">
+        <form action="" method="post">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter email" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter password" required>
+            <button type="submit" id="submit">Login</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
