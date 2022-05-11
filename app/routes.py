@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request, flash, redirect, url_for
-from app import app
 from flask_login import current_user, login_user, logout_user, login_required
+from app import app
 from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash
-from app import db
+from . import db
+ 
 
 @app.route('/')
 def home():
@@ -70,5 +71,7 @@ def signup():
             flash('Account created!', category='success')
             return redirect(url_for('home'))
 
-    return render_template("sign_up.html", user=current_user)
+    return render_template("signup.html", user=current_user)
 
+if __name__ == '__main__':
+   app.run(debug = True)
