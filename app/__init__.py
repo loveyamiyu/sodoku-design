@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'this1sKey'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
+app.config['JSON_AS_ASCII'] = False
 
 login = LoginManager(app)
 db = SQLAlchemy(app)

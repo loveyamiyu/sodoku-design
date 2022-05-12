@@ -262,6 +262,10 @@ function erase(){
         document.getElementById("digits").appendChild(null);
     }
 }
+<<<<<<< HEAD
+=======
+utton
+>>>>>>> f21c46abca58111d506f56b824d892cedbf86a17
 
 // Timer
 
