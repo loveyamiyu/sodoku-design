@@ -7,14 +7,8 @@
 {% block content %}
 <div class="game">
     <div class="pre">
-        <div class="dropdown">
-            <button onclick="selectDifficulty()" class="dropbtn">Difficulty</button>
-            <div id="Difficulty" class="dropdown-content">
-                <!-- needs revision for updating board -->
-                <a href="#">Easy</a>
-                <a href="#">Medium</a>
-                <a href="#">Difficulty</a>
-            </div>
+        <div class="game">
+            <button onclick="setGame()" class="newGame">New Game</button>
         </div>
         
         <div class="timer">
@@ -27,8 +21,59 @@
         </div>
     </div>
     
-    <div id="board"></div>
-    <br>
+    <div class="board">
+        <table class="container" id="grid">
+            <tr>
+                <td id='t0x0'></td><td id='t0x1'></td><td id='t0x2'></td>
+                <td id='t0x3'></td><td id='t0x4'></td><td id='t0x5'></td>
+                <td id='t0x6'></td><td id='t0x7'></td><td id='t0x8'></td>
+            </tr>
+            <tr>
+                <td id='t1x0'></td><td id='t1x1'></td><td id='t1x2'></td>
+                <td id='t1x3'></td><td id='t1x4'></td><td id='t1x5'></td>
+                <td id='t1x6'></td><td id='t1x7'></td><td id='t1x8'></td>
+            </tr>
+            <tr>
+                <td id='t2x0'></td><td id='t2x1'></td><td id='t2x2'></td>
+                <td id='t2x3'></td><td id='t2x4'></td><td id='t2x5'></td>
+                <td id='t2x6'></td><td id='t2x7'></td><td id='t2x8'></td>
+            </tr>
+
+
+            <tr>
+                <td id='t3x0'></td><td id='t3x1'></td><td id='t3x2'></td>
+                <td id='t3x3'></td><td id='t3x4'></td><td id='t3x5'></td>
+                <td id='t3x6'></td><td id='t3x7'></td><td id='t3x8'></td>
+            </tr>
+            <tr>
+                <td id='t4x0'></td><td id='t4x1'></td><td id='t4x2'></td>
+                <td id='t4x3'></td><td id='t4x4'></td><td id='t4x5'></td>
+                <td id='t4x6'></td><td id='t4x7'></td><td id='t4x8'></td>
+            </tr>
+            <tr>
+                <td id='t5x0'></td><td id='t5x1'></td><td id='t5x2'></td>
+                <td id='t5x3'></td><td id='t5x4'></td><td id='t5x5'></td>
+                <td id='t5x6'></td><td id='t5x7'></td><td id='t5x8'></td>
+            </tr>
+
+
+            <tr>
+                <td id='t6x0'></td><td id='t6x1'></td><td id='t6x2'></td>
+                <td id='t6x3'></td><td id='t6x4'></td><td id='t6x5'></td>
+                <td id='t6x6'></td><td id='t6x7'></td><td id='t6x8'></td>
+            </tr>
+            <tr>
+                <td id='t7x0'></td><td id='t7x1'></td><td id='t7x2'></td>
+                <td id='t7x3'></td><td id='t7x4'></td><td id='t7x5'></td>
+                <td id='t7x6'></td><td id='t7x7'></td><td id='t7x8'></td>
+            </tr>
+            <tr>
+                <td id='t8x0'></td><td id='t8x1'></td><td id='t8x2'></td>
+                <td id='t8x3'></td><td id='t8x4'></td><td id='t8x5'></td>
+                <td id='t8x6'></td><td id='t8x7'></td><td id='t8x8'></td>
+            </tr>
+        </table>
+    </div>
     <div id="input">
     <div id="digits"></div>
 
