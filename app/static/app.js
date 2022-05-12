@@ -71,6 +71,8 @@ function selectTile() {
 
 
 // Undo button
+
+
 function undo(){
 
 }
@@ -86,9 +88,7 @@ function erase(){
         document.getElementById("digits").appendChild(null);
     }
 }
-// Notes button
-
-// Hint button
+utton
 
 // Timer
 
