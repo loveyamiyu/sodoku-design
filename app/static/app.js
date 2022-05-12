@@ -50,19 +50,21 @@ function setDigits() {
 
 // Revision
 function generateSudoku() {
-
+    
+    // a random complete sudoko example 
 	var grid = [
-		[1, 2, 3, 4, 5, 6, 7, 8, 9], 
-		[4, 5, 6, 7, 8, 9, 1, 2, 3], 
-		[7, 8, 9, 1, 2, 3, 4, 5, 6], 
-		[2, 3, 4, 5, 6, 7, 8, 9, 1], 
-		[5, 6, 7, 8, 9, 1, 2, 3, 4], 
-		[8, 9, 1, 2, 3, 4, 5, 6, 7], 
-		[3, 4, 5, 6, 7, 8, 9, 1, 2], 
-		[6, 7, 8, 9, 1, 2, 3, 4, 5], 
-		[9, 1, 2, 3, 4, 5, 6, 7, 8]
-		];
+        [5, 8, 1, 6, 7, 2, 4, 3, 9],
+        [7, 9, 2, 8, 4, 3, 6, 5, 1],
+        [3, 6, 4, 5, 9, 1, 7, 8, 2],
+        [4, 3, 8, 9, 5, 7, 2, 1, 6],
+        [2, 5, 6, 1, 8, 4, 9, 7, 3],
+        [1, 7, 9, 3, 2, 6, 8, 4, 5],
+        [8, 4, 5, 2, 1, 9, 3, 6, 7],
+        [9, 1, 3, 7, 6, 8, 5, 2, 4],
+        [6, 2, 7, 4, 3, 5, 1, 9, 8]
+    ];
 
+    // the tile matrix
 	var hGrid = [
 		[0, 0, 0, 0, 0, 0, 0, 0, 0], 
 		[0, 0, 0, 0, 0, 0, 0, 0, 0], 
@@ -75,7 +77,7 @@ function generateSudoku() {
 		[0, 0, 0, 0, 0, 0, 0, 0, 0]
 		];
 
-	shuffle(grid);
+	shuffle(grid); //randommly shuffle the lists in grid
 	hideTiles(grid, hGrid);
 
 	this.getTileNumber = function(row, col) {
@@ -228,7 +230,7 @@ function selectNumber() {
 }
 
 
-
+// we do not need selecttile function?
 function selectTile() {
     if (numSelected) {
         if (this.innerText != "") {
