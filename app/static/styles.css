@@ -80,6 +80,14 @@ footer {
     font-size:20px;
 }
 
+#start {
+    display: none;
+}
+
+#pause {
+    display: none;
+}
+
 .board {
     width: 100%;
 }

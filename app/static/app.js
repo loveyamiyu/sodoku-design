@@ -5,6 +5,7 @@ var tileSelected = null;
 window.onload = function(){
     setGame();
     setDigits();
+	startTimer();
 }
 
 function setGame() {
@@ -264,10 +265,6 @@ function erase(){
         document.getElementById("digits").appendChild(null);
     }
 }
-<<<<<<< HEAD
-=======
-utton
->>>>>>> f21c46abca58111d506f56b824d892cedbf86a17
 
 // Timer
 
@@ -278,22 +275,32 @@ let num = 0;
 
 function timer() {
     num += 1;
+	var hour = min/60; // hours needs revision
     var min = parseInt(num/60); // minutes
     var sec = num % 60; // seconds
-    document.getElementById("showNum").innerHTML = min + ':' + sec ;
+    document.getElementById("showNum").innerHTML = hour + ':' + min + ':' + sec;
 }
 
 // the start button
-function start(){
+function startTimer(){
     if(int == null){
         int = setInterval(timer,1000); 
     }
+	if (document.getElementById('pause').style.display = "none"){
+		document.getElementById('pause').style.display = "block";
+	} 
+	if (document.getElementById('start').style.display = "block"){
+		document.getElementById('start').style.display = "none";
+	}
+	
 }
 
 // the pause button
 function pause(){
     clearInterval(int);
     int = null;
+	document.getElementById('start').style.display = "block";
+	document.getElementById('pause').style.display = "none";
 }
 
 
