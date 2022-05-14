@@ -10,21 +10,23 @@ window.onload = function(){
 
 function setGame() {
     puzzle = new generateSudoku();
-		for(var i = 0; i < 9; i++) {
-			for(var j = 0; j < 9; j++) {
-				var tile = document.getElementById("t" + i + "x" + j);
-				if(puzzle.getTileNumber(i, j) === 0) {
-					tile.className = "emptyCell";
-					tile.innerHTML = "";
-					tile.onclick = selectTile;
-				}
-				else {
-						tile.style.backgroundColor = "#ecf4f3";
-						tile.className = "cell";
-						tile.innerHTML = puzzle.getTileNumber(i, j);
-				}
+	for(var i = 0; i < 9; i++) {
+		for(var j = 0; j < 9; j++) {
+			var tile = document.getElementById("t" + i + "x" + j);
+			if(puzzle.getTileNumber(i, j) === 0) {
+				tile.className = "emptyCell";
+				tile.innerHTML = "";
+				tile.onclick = selectTile;
+			}
+			else {
+					tile.style.backgroundColor = "#ecf4f3";
+					tile.className = "cell";
+					tile.innerHTML = puzzle.getTileNumber(i, j);
 			}
 		}
+	}
+	
+	reset();
     // set board
     /*for (let row = 0; row < 9; row++) {
         for (let col = 0; col < 9; col++) {
@@ -78,7 +80,7 @@ function generateSudoku() {
 		[0, 0, 0, 0, 0, 0, 0, 0, 0]
 		];
 
-	shuffle(grid); //randommly shuffle the lists in grid
+	shuffle(grid); //randomly shuffle the lists in grid
 	hideTiles(grid, hGrid);
 
 	this.getTileNumber = function(row, col) {
@@ -267,24 +269,44 @@ function erase(){
 }
 
 // Timer
-
-let int =null;
-let num = 0;
+var timeSpent = 0;
+let myTimer = null;
 
 // A function that would continuously growing per second
 
 function timer() {
-    num += 1;
-	var hour = min/60; // hours needs revision
-    var min = parseInt(num/60); // minutes
-    var sec = num % 60; // seconds
-    document.getElementById("showNum").innerHTML = hour + ':' + min + ':' + sec;
+    timeSpent += 1;
+	var hour = 0;
+    var min = parseInt(timeSpent/60); // minutes
+    var sec = timeSpent % 60; // seconds 
+	if (sec < 10) {
+		var s = '0' + sec;
+	} else { var s = sec;}
+	if (min < 10) {
+		var m = '0' + min; 
+		var h = '00';
+	} else if(min >=60) {
+		hour++;
+		min = 0;
+	} else {
+		var m = min;
+	}
+	if (hour == 0) {
+		document.getElementById('showNum').innerHTML = m + ':' + s;
+	} else if (hour < 10) {
+		var h = '0' + hour;
+		document.getElementById("showNum").innerHTML = h + ':' + m + ':' + s;
+	} else {
+		var h = hour.toString();
+		document.getElementById("showNum").innerHTML = h + ':' + m + ':' + s;
+	} 
+    
 }
 
 // the start button
 function startTimer(){
-    if(int == null){
-        int = setInterval(timer,1000); 
+    if(myTimer == null){
+        myTimer = setInterval(timer,1000); 
     }
 	if (document.getElementById('pause').style.display = "none"){
 		document.getElementById('pause').style.display = "block";
@@ -297,18 +319,16 @@ function startTimer(){
 
 // the pause button
 function pause(){
-    clearInterval(int);
-    int = null;
+    clearInterval(myTimer);
+    myTimer = null;
 	document.getElementById('start').style.display = "block";
 	document.getElementById('pause').style.display = "none";
 }
 
 
-// reset button
-function reset(){
-    if (int == null) {
-        num = 0;
-        document.getElementById("showNum").innerHTML = num +':'+num;
-    }
+// reset time button
+function reset(){ 
+	document.getElementById("showNum").innerHTML = '00' +':'+ '00';
+    timeSpent = 0;
 }
 

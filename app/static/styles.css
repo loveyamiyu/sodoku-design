@@ -53,17 +53,20 @@ footer {
     margin: 0 auto;
     align-items: center;
 }
-.newGame {
-    background-color: black;
+#newGame {
+    background-color:#8155BA;
+    height: 30px;
+    width: 100px;
     color: white;
     padding: 6px;
     font-size: 15px;
     border: none;
+    border-radius: 10px;
     cursor: pointer;
 }
   
-.newGame:hover, .newGame:focus {
-    background-color: black;
+#newGame:hover, #newGame:focus {
+    background-color: #D3B5E5;
 }
   
 .game {
@@ -73,20 +76,23 @@ footer {
   
 
 .timer {
-    margin-left: 300px;
+    margin-left: 270px;
+    display: flex;
 }
 
 #showNum {
     font-size:20px;
 }
 
-#start {
+#start, #pause {
     display: none;
+    margin-left: 10px;
+    border: none;
+    background-color: transparent;
+    color: #8155BA;
+    font-size: 20px;
 }
 
-#pause {
-    display: none;
-}
 
 .board {
     width: 100%;
@@ -99,8 +105,8 @@ footer {
 	border-collapse: collapse;
     border-spacing: 0;
     font-weight: bold;
-    margin-top: 2rem;	
-    margin-bottom: 2rem;
+    margin-top: 1rem;	
+    margin-bottom: 1rem;
     padding-bottom: 0;
     color: black;
 }
@@ -171,28 +177,34 @@ td.selected {
 }
 
 .number-selected {
-    background-color: #340744;
+    background-color: #D3B5E5;
     color: white;
 }
 
 #buttons {
     width: 450px;
     height: 50px;
-    margin: 0 auto;
+    margin: 0 auto 2rem auto;
     display: flex;
     flex-wrap: wrap;
 }
 
-.input-button {
-    width: 85px; /* does not work, needs revision */
-    height: 44px;
-    border: 1px solid black;
-    margin: 3px;
-    font-size: 20px;
-    font-weight: bold;
+#undo, #erase, #complete {
+    width: 130px; /* does not work, needs revision */
+    height: 40px;
+    background-color: #8155BA;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    margin: 10px;
+    font-size: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#undo:hover, #erase:hover, #complete:hover {
+    background-color: #D3B5E5;
 }
 
 
@@ -225,14 +237,7 @@ h3{
     height: 100vh;
     background-color: white;
     padding-top: 50px;
-}
-#newGame {
-    margin-top: 40px;
-    background-color: black;
-    color: white;
-    padding: 10px;
-    border-radius: 12px;
-    margin-bottom: 50px;
+    display: none;
 }
 
 /* Login Page & Signup Page */
@@ -247,6 +252,7 @@ h3{
     display: flex;
     justify-content: center;
     align-items: center;
+    
     color: #000;
     margin-bottom: 50px;
 }
@@ -254,7 +260,7 @@ h3{
 input {
     width: 100%;
     padding: 10px;
-    border: 1px solid #000;
+    border: 3px solid #8155BA;
     box-sizing: border-box;
     color: #000;
     background: transparent;
@@ -267,24 +273,20 @@ input {
     color: #1b1464;
 }
 
-#submit{
+#submit, #signup-btn {
     padding: 10px 0;
-    color: #000;
+    color: white;
     outline: none;
-    background: transparent;
-    border: 1px solid #000;
+    background: #8155BA;
+    border: 3px solid #8155BA;
     width: 100%;
     cursor: pointer;
 }
 
-#signup-btn{
-    padding: 10px 0;
-    color: #000;
-    outline: none;
-    background: transparent;
-    border: 1px solid #000;
-    width: 100%;
-    cursor: pointer;
+#submit:hover, #signup-btn:hover {
+    background: #D3B5E5;
+    border: 3px solid #D3B5E5;
 }
+
 
 

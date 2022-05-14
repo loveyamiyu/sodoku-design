@@ -8,7 +8,7 @@
 <div class="game">
     <div class="pre">
         <div class="game">
-            <button onclick="setGame()" class="newGame">New Game</button>
+            <button onclick="setGame()" id="newGame">New Game</button>
         </div>
         
         <div class="timer">
@@ -75,18 +75,18 @@
         </table>
     </div>
     <div id="input">
-    <div id="digits"></div>
+        <div id="digits"></div>
 
     
 
-    <div id="buttons">
-        <button clas="input-button" id="undo"><i class="fa-solid fa-rotate-left"></i>Undo</button>
-        <button clas="input-button" id="erase"><i class="fa-solid fa-eraser"></i>Erase</button> 
-        <button clas="input-button" id="notes"><i class="fa-solid fa-pencil"></i>Notes</button>
-        <button clas="input-button" id="hint"><i class="fa-solid fa-lightbulb"></i>Hint</button>
-        <!-- reset game board -->
-        <button clas="input-button" id="reset" onclick="reset()"><i class="fa-solid fa-arrow-rotate-left"></i> reset</button>
+        <div id="buttons">
+            <button clas="input-button" id="undo"><i class="fa-solid fa-rotate-left"></i>Undo</button>
+            <button clas="input-button" id="erase"><i class="fa-solid fa-eraser"></i>Erase</button> 
+            <form action="" method="post">
+                <button id="complete">Submit</button>
+            </form>
+        </div>
+
     </div>
-</div>
 </div>
 {% endblock %}
