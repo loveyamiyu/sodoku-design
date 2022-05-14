@@ -273,28 +273,6 @@ function solve() {
 	}
 }
 
-function clearGame() {
-	for(var i = 0; i < 9; i++) {
-		for(var j = 0; j < 9; j++) {
-			var tile = document.getElementById("t" + i + "x" + j);
-			tile.innerHTML = getTileNumber(i,j);
-		}
-	}
-}
-
-
-
-
-
-function undo(){
-
-}
-
-function redo(){
- 
-}
-
-// Erase button
 
 
 // Timer
@@ -334,6 +312,9 @@ function timer() {
 
 // the start button
 function startTimer(){
+	// The puzzle will be shown when timer starts
+	document.getElementById('grid').style.visibility = "visible";
+
     if(myTimer == null){
         myTimer = setInterval(timer,1000); 
     }
@@ -352,6 +333,8 @@ function pause(){
     myTimer = null;
 	document.getElementById('start').style.display = "block";
 	document.getElementById('pause').style.display = "none";
+	// The puzzle will be hidden when timer pauses
+	document.getElementById('grid').style.visibility = "hidden";
 }
 
 
