@@ -45,8 +45,9 @@ function setDigits() {
         number.id = i;
         number.innerHTML = i;
         number.addEventListener("click", selectNumber)
+		// When click on the number, the number is selected.
         number.classList.add("number");
-        document.getElementById("digits").appendChild(number);
+        document.getElementById("digits").appendChild(number); // display the digit box
     }
 }
 
@@ -233,15 +234,19 @@ function selectNumber() {
 }
 
 
-// we do not need selecttile function?
 function selectTile() {
     if (numSelected) {
-        if (this.innerText != "") {
-            return;
-        }
         this.innerText = numSelected.id;
+    } // New selected number can replace the existed one
+	if (numSelected == null) {
+        this.innerText = "";
     }
 }
+
+function erase(){
+	numSelected = null;
+}
+
 
 // 4 functional buttons in Home page
 
@@ -261,12 +266,7 @@ function redo(){
 }
 
 // Erase button
-function erase(){
-    for (let i = 1; i <= 9; i++) {
-        let clear = null;
-        document.getElementById("digits").appendChild(null);
-    }
-}
+
 
 // Timer
 var timeSpent = 0;
