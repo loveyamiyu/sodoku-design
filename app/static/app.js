@@ -92,6 +92,8 @@ function generateSudoku() {
 		return grid[row][col];
 	};
 
+
+
 	this.isValid = function(fGrid, row, col, val) {
 		var rowCnt = this.countInstances(fGrid[row], val);
 		var colCnt = this.countInstances(this.columnToArray(fGrid, col), val);
@@ -247,14 +249,41 @@ function erase(){
 	numSelected = null;
 }
 
+function check() {
+	for(var i = 0; i < 9; i++) {
+		for(var j = 0; j < 9; j++) {
+			var tile = document.getElementById("t" + i + "x" + j);
+			// Needs to be revised
+			if ( document.getElementById("t" + i + "x" + j) == puzzle.getSolution(i, j)) {
+				document.getElementById('result').innerHTML = "You did amazing";
+			} else {
+				document.getElementById('result').innerHTML = "Something needs to be revised :(";
+			}
 
-// 4 functional buttons in Home page
+		}
+	}
+}
+
+function solve() {
+	for(var i = 0; i < 9; i++) {
+		for(var j = 0; j < 9; j++) {
+			var tile = document.getElementById("t" + i + "x" + j);
+			tile.innerHTML = puzzle.getSolution(i, j);
+		}
+	}
+}
+
+function clearGame() {
+	for(var i = 0; i < 9; i++) {
+		for(var j = 0; j < 9; j++) {
+			var tile = document.getElementById("t" + i + "x" + j);
+			tile.innerHTML = getTileNumber(i,j);
+		}
+	}
+}
 
 
 
-
-
-// Undo button
 
 
 function undo(){
