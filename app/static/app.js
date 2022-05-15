@@ -92,8 +92,6 @@ function generateSudoku() {
 		return grid[row][col];
 	};
 
-
-
 	this.isValid = function(fGrid, row, col, val) {
 		var rowCnt = this.countInstances(fGrid[row], val);
 		var colCnt = this.countInstances(this.columnToArray(fGrid, col), val);
