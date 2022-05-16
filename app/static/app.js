@@ -69,7 +69,7 @@ function generateSudoku() {
     ];
 
     // the tile matrix
-	var hGrid = [
+	var hiddenGrid = [
 		[0, 0, 0, 0, 0, 0, 0, 0, 0], 
 		[0, 0, 0, 0, 0, 0, 0, 0, 0], 
 		[0, 0, 0, 0, 0, 0, 0, 0, 0], 
@@ -82,52 +82,52 @@ function generateSudoku() {
 		];
 
 	shuffle(grid); //randomly shuffle the lists in grid
-	hideTiles(grid, hGrid);
+	hideTiles(grid, hiddenGrid);
 
 	this.getTileNumber = function(row, col) {
-		return hGrid[row][col];
+		return hiddenGrid[row][col];
 	};
 
 	this.getSolution = function(row, col) {
 		return grid[row][col];
 	};
 
-	this.isValid = function(fGrid, row, col, val) {
-		var rowCnt = this.countInstances(fGrid[row], val);
-		var colCnt = this.countInstances(this.columnToArray(fGrid, col), val);
-		var subCnt = this.countInstances(this.subsquareToArray(fGrid, row, col), val);
-		if(rowCnt == 1 && colCnt == 1 && subCnt == 1) {
+	this.isValid = function(finishedGrid, row, col, val) {
+		var rowCount = this.countInstances(finishedGrid[row], val);
+		var colCount = this.countInstances(this.columnToArray(finishedGrid, col), val);
+		var subCount = this.countInstances(this.subsquareToArray(finishedGrid, row, col), val);
+		if(rowCount == 1 && colCount == 1 && subCount == 1) {
 			return true;
 		}
 		return false;
 	};
 
-	this.columnToArray = function(fGrid, col) {
+	this.columnToArray = function(finishedGrid, col) {
 		var colArray = [];
 		for(var i = 0; i < 9; i++) {
-			colArray.push(fGrid[i][col]);
+			colArray.push(finishedGrid[i][col]);
 		}
 		return colArray;
 	};
 
-	this.subsquareToArray = function(fGrid, row, col) {
+	this.subsquareToArray = function(finishedGrid, row, col) {
 		var subArray = [];
 		var subrow = row - (row % 3);
 		var subcol = col - (col % 3);
 		for(var i = 0; i < 3; i++) {
 			for(var j = 0; j < 3; j++) {
-				subArray.push(fGrid[i+subrow][j+subcol]);
+				subArray.push(finishedGrid[i+subrow][j+subcol]);
 			}
 		}
 		return subArray;
 	};
 
 	this.countInstances = function(arr, val) {
-		var cnt = 0;
+		var count = 0;
 		for(var i = 0; i < arr.length; i++) {
-			if(arr[i] == val) cnt++;
+			if(arr[i] == val) count++;
 		}
-		return cnt;
+		return count;
 	};
 }
 
@@ -243,6 +243,7 @@ function selectTile() {
     }
 }
 
+// consider deleting it as the selected number can be replaced
 function erase(){
 	numSelected = null;
 }
@@ -262,6 +263,18 @@ function check() {
 	}
 }
 
+
+function finishGrid() {
+	var finishedGrid = new Array(9);
+	for(var i = 0; i < 9; i++) {
+		finishedGrid[i] = new Array(9);
+		for(var j = 0; j < 9; j++) {
+			finishedGrid[i][j] = document.getElementById("t" + i + "x" + j).innerHTML;
+		}
+	}
+	return finishedGrid;
+}
+
 function solve() {
 	for(var i = 0; i < 9; i++) {
 		for(var j = 0; j < 9; j++) {
@@ -269,8 +282,17 @@ function solve() {
 			tile.innerHTML = puzzle.getSolution(i, j);
 		}
 	}
-}
+} 
 
+function checkForEmptyCells() {
+	for(var i = 0; i < 9; i++) {
+		for(var j = 0; j < 9; j++) {
+			var tile = document.getElementById("t" + i + "x" + j);
+			if(tile.innerHTML == "") return false;
+		}
+	}
+	return true;
+}
 
 
 // Timer
@@ -336,7 +358,7 @@ function pause(){
 }
 
 
-// reset time button
+// reset time 
 function reset(){ 
 	document.getElementById("showNum").innerHTML = '00' +':'+ '00';
     timeSpent = 0;
