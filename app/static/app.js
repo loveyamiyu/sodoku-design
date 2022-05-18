@@ -212,24 +212,44 @@ function erase(){
 	numSelected = null;
 }
 
+var tile = null;
+
+for(var i = 0; i < 9; i++) {
+	for(var j = 0; j < 9; j++) {
+		var tile = document.getElementById("t" + i + "x" + j);
+	}
+}
+
+
 function check() {
 	if (checkForEmptyCells() === true){ 
 		var finishedGrid = finishGrid();
-		for(var i = 0; i < 9; i++) {
-			for(var j = 0; j < 9; j++) {
-				var tile = document.getElementById("t" + i + "x" + j);
-				if (puzzle.isValid(finishedGrid, i, j, tile.innerHTML)) {
-					document.getElementById('result').innerHTML = "You did amazing";
+		var solution = solutionGrid();
+		if (finishedGrid == solution) {
+				pause();
+				document.getElementById('result').innerHTML = "You did amazing!!" + " The time you spent is " + timeSpent + " seconds";
+
 				} else {
 					document.getElementById('result').innerHTML = "Something needs to be revised :(";
 				}
-			}
-		}
+		//for(var i = 0; i < 9; i++) {
+		//	for(var j = 0; j < 9; j++) {
+		//		var tile = document.getElementById("t" + i + "x" + j);
+		//		if (tile.innerHTML === puzzle.solve()) {
+		//			pause();
+		//			document.getElementById('result').innerHTML = "You did amazing!!" + " The time you spent is " + timeSpent + " seconds";
+//
+//				} else {
+//					document.getElementById('result').innerHTML = "Something needs to be revised :(";
+//				}
+//			}
+//		}
 	} else {
 		// user cannot submit an incomplete sudoku
 		document.getElementById('result').innerHTML = "Please finish the sudoku";
 	}
 }
+
 
 
 function finishGrid() {
@@ -243,6 +263,17 @@ function finishGrid() {
 	return finishedGrid;
 }
 
+function solveGrid() {
+	var solutionGrid = new Array(9);
+	for(var i = 0; i < 9; i++) {
+		solutionGrid[i] = new Array(9)
+		for(var j = 0; j < 9; j++) {
+			solutionGrid[i][j] = puzzle.getSolution(i, j);	
+		}
+	}
+	return solutionGrid;
+} 
+
 function solve() {
 	for(var i = 0; i < 9; i++) {
 		for(var j = 0; j < 9; j++) {
@@ -251,6 +282,7 @@ function solve() {
 		}
 	}
 } 
+
 
 function checkForEmptyCells() {
 	for(var i = 0; i < 9; i++) {
@@ -272,13 +304,14 @@ function newGame() {
 var timeSpent = 0;
 let myTimer = null;
 
+
 // A function that would continuously growing per second
 
 function timer() {
     timeSpent += 1;
 	var hour = 0;
-    var min = parseInt(timeSpent/60); // minutes
-    var sec = timeSpent % 60; // seconds 
+	var min = parseInt(timeSpent/60); // minutes
+	var sec = timeSpent % 60; // seconds 
 	if (sec < 10) {
 		var s = '0' + sec;
 	} else { var s = sec;}
@@ -327,7 +360,7 @@ function pause(){
 	document.getElementById('start').style.display = "block";
 	document.getElementById('pause').style.display = "none";
 	// The puzzle will be hidden when timer pauses
-	document.getElementById('grid').style.visibility = "hidden";
+	//document.getElementById('grid').style.visibility = "hidden";
 }
 
 
