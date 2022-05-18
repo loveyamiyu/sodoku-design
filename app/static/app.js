@@ -27,17 +27,8 @@ function setGame() {
 	}
 	
 	reset();
-    // set board
-    /*for (let row = 0; row < 9; row++) {
-        for (let col = 0; col < 9; col++) {
-            let tile = document.createElement("div");
-            tile.id = row.toString() + "." + col.toString();
-            tile.addEventListener("click", selectTile)
-            tile.classList.add("tile");
-            document.getElementById("board").append(tile);
-        }
-    } */
 }
+
 function setDigits() {
     // set digits
     for (let i = 1; i <= 9; i++) {
@@ -52,7 +43,6 @@ function setDigits() {
 }
 
 
-// Revision
 function generateSudoku() {
     
     // a random complete sudoko example 
@@ -195,7 +185,6 @@ function hideTiles(aGrid, hiddenGrid) {
 	}
 }
 
-// Revision end
 
 
 
@@ -217,7 +206,7 @@ function selectTile() {
     }
 }
 
-// consider deleting it as the selected number can be replaced
+// remove any number from the selected tile
 function erase(){
 	numSelected = null;
 }
@@ -266,6 +255,11 @@ function checkForEmptyCells() {
 		}
 	}
 	return true;
+}
+
+// generate a new grid with random sudoku
+function newGame() {
+	location.reload();
 }
 
 
