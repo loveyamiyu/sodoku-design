@@ -1,5 +1,6 @@
 var numSelected = null;
 var tileSelected = null;
+var puzzle;
 
 
 window.onload = function(){
@@ -212,17 +213,21 @@ function erase(){
 }
 
 function check() {
-	for(var i = 0; i < 9; i++) {
-		for(var j = 0; j < 9; j++) {
-			var tile = document.getElementById("t" + i + "x" + j);
-			// Needs to be revised
-			if ( document.getElementById("t" + i + "x" + j) == puzzle.getSolution(i, j)) {
-				document.getElementById('result').innerHTML = "You did amazing";
-			} else {
-				document.getElementById('result').innerHTML = "Something needs to be revised :(";
+	if (checkForEmptyCells() === true){ 
+		var finishedGrid = finishGrid();
+		for(var i = 0; i < 9; i++) {
+			for(var j = 0; j < 9; j++) {
+				var tile = document.getElementById("t" + i + "x" + j);
+				if (puzzle.isValid(finishedGrid, i, j, tile.innerHTML)) {
+					document.getElementById('result').innerHTML = "You did amazing";
+				} else {
+					document.getElementById('result').innerHTML = "Something needs to be revised :(";
+				}
 			}
-
 		}
+	} else {
+		// user cannot submit an incomplete sudoku
+		document.getElementById('result').innerHTML = "Please finish the sudoku";
 	}
 }
 
