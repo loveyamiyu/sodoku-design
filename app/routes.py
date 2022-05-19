@@ -7,6 +7,7 @@ from . import db
  
 
 @app.route('/')
+@login_required
 def home():
     return render_template("home.html")
 
@@ -15,6 +16,7 @@ def rules():
     return render_template("rules.html")
 
 @app.route("/stats/")
+@login_required
 def stats():
     return render_template("stats.html")
 
@@ -54,16 +56,14 @@ def signup():
         user = User.query.filter_by(email=email).first()
         if user:
             flash('Email already exists.', category='error')
-        elif len(email) < 4:
-            flash('Email must be greater than 3 characters.', category='error')
-        elif len(username) < 2:
-            flash('First name must be greater than 1 character.', category='error')
+        elif username:
+            flash('Username already exists.', category='error')
         elif password != password2:
             flash('Passwords don\'t match.', category='error')
-        elif len(password) < 7:
-            flash('Password must be at least 7 characters.', category='error')
+        elif len(password) < 8:
+            flash('Password must be at least 8 characters.', category='error')
         else:
-            new_user = User(email=email, first_name=username, password=generate_password_hash(
+            new_user = User(email=email, username=username, password=generate_password_hash(
                 password, method='sha256'))
             db.session.add(new_user)
             db.session.commit()

@@ -7,13 +7,19 @@ app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'this1sKey'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
-app.config['JSON_AS_ASCII'] = False
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-login = LoginManager(app)
+
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
+login = LoginManager(app)
+login.login_view = 'login'
+
 from app import routes, models
+
+if __name__ == "__main__":
+    app.run(debug=True)
 
 
 
