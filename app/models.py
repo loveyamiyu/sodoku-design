@@ -5,8 +5,8 @@ from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 
 @login.user_loader
-def load_user(email):
-    return User.query.get(email)
+def load_user(id):
+    return User.query.get(id)
 
 class User(UserMixin, db.Model):
 

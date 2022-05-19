@@ -1,11 +1,12 @@
-import email
-from flask import Flask, render_template, request, flash, redirect, url_for
+
+from flask import render_template, request, flash, redirect, url_for
 from flask_login import current_user, login_user, logout_user, login_required
 from app import app
 from .models import User
 from . import db
 from app.forms import RegistrationForm, LoginForm
 from werkzeug.security import generate_password_hash, check_password_hash
+from urllib.parse import urlparse
  
 
 @app.route('/')
@@ -29,12 +30,16 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
+        next_url = request.form.get("next")
         if user is None or not user.check_password(form.password.data):
             flash('Invalid username or password')
-            return redirect(url_for('login'))
-        login_user(user)
-        return redirect(url_for('home'))
-    return render_template('login.html', title='Sign In', form=form)
+        else:
+            login_user(user, remember=True)
+            if next_url:
+                return redirect(next_url) 
+            return redirect(url_for('home'))
+    else: 
+        return render_template('login.html', title='Log in', form=form)
 
 @app.route('/logout')
 @login_required
@@ -52,7 +57,6 @@ def signup():
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
-        flash('Congratulations, you are now a registered user!')
         return redirect(url_for('login'))
     return render_template('signup.html', title='Sign up', form=form)
 
