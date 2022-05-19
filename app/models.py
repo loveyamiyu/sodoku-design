@@ -5,8 +5,8 @@ from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 
 @login.user_loader
-def load_user(id):
-    return User.query.get(int(id))
+def load_user(email):
+    return User.query.get(email)
 
 class User(UserMixin, db.Model):
 
@@ -15,20 +15,9 @@ class User(UserMixin, db.Model):
     email = db.Column(db.String(120), index=True, unique=True)
     password_hash = db.Column(db.String(128))
 
-    def __repr__(self):
-        return '<User %r>' % self.username
-
-#needs revision 
-class Stats(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    difficulty = db.Column(db.String(140))
-    time = db.Column(db.Integer) 
-    startTime = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    finishTime = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-
-    def __init__(self, email, password):
+    def __init__(self, email, username, password):
         self.email = email
+        self.username = username
         self.set_password(password)
 
     def __repr__(self):
@@ -52,6 +41,15 @@ class Stats(db.Model):
     def get_id(self):
         return str(self.email)
 
+
+#needs revision 
+class Stats(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    time = db.Column(db.Integer) 
+    startTime = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    finishTime = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+   
 
 def init_db():
     db.create_all()

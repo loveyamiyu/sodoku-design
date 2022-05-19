@@ -8,15 +8,36 @@
     <h4>Sign Up</h4>
     <div class="container" id="signup-form">
         <form action="" method="post">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" placeholder="Enter User Name" required>
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="Enter email" required>
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Enter password" required>
-            <label for="password2">Confirm Password</label>
-            <input type="password" id="password2" name="password2" placeholder="Confirm password" required>
-            <button type="submit" id="signup-btn">Sign Up</button>
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.username.label }}<br>
+                {{ form.username(size=64) }}<br>
+                {% for error in form.username.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.email.label }}<br>
+                {{ form.email(size=64) }}<br>
+                {% for error in form.email.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.password.label }}<br>
+                {{ form.password(size=64) }}<br>
+                {% for error in form.password.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.password2.label }}<br>
+                {{ form.password2(size=64) }}<br>
+                {% for error in form.password2.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>{{ form.submit() }}</p>
         </form>
     </div>
 </div>

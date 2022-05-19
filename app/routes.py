@@ -1,9 +1,11 @@
+import email
 from flask import Flask, render_template, request, flash, redirect, url_for
 from flask_login import current_user, login_user, logout_user, login_required
 from app import app
 from .models import User
-from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
+from app.forms import RegistrationForm, LoginForm
+from werkzeug.security import generate_password_hash, check_password_hash
  
 
 @app.route('/')
@@ -22,22 +24,17 @@ def stats():
 
 @app.route("/login/", methods=['GET', 'POST'])
 def login():
-    if request.method == 'POST':
-        email = request.form.get('email')
-        password = request.form.get('password')
-
-        user = User.query.filter_by(email=email).first()
-        if user:
-            if check_password_hash(user.password, password):
-                flash('Logged in successfully!', category='success')
-                login_user(user, remember=True)
-                return redirect(url_for('home'))
-            else:
-                flash('Incorrect password, try again.', category='error')
-        else:
-            flash('Email does not exist.', category='error')
-
-    return render_template("login.html", user=current_user)
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
+    form = LoginForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=form.email.data).first()
+        if user is None or not user.check_password(form.password.data):
+            flash('Invalid username or password')
+            return redirect(url_for('login'))
+        login_user(user)
+        return redirect(url_for('home'))
+    return render_template('login.html', title='Sign In', form=form)
 
 @app.route('/logout')
 @login_required
@@ -47,31 +44,18 @@ def logout():
 
 @app.route("/signup/", methods=['GET', 'POST'])
 def signup():
-    if request.method == 'POST':
-        username = request.form.get('username')
-        email = request.form.get('email')
-        password = request.form.get('password')
-        password2 = request.form.get('password2')
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        user = User(username=form.username.data, email=form.email.data, password=form.password.data)
+        user.set_password(form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        flash('Congratulations, you are now a registered user!')
+        return redirect(url_for('login'))
+    return render_template('signup.html', title='Sign up', form=form)
 
-        user = User.query.filter_by(email=email).first()
-        if user:
-            flash('Email already exists.', category='error')
-        elif username:
-            flash('Username already exists.', category='error')
-        elif password != password2:
-            flash('Passwords don\'t match.', category='error')
-        elif len(password) < 8:
-            flash('Password must be at least 8 characters.', category='error')
-        else:
-            new_user = User(email=email, username=username, password=generate_password_hash(
-                password, method='sha256'))
-            db.session.add(new_user)
-            db.session.commit()
-            login_user(new_user, remember=True)
-            flash('Account created!', category='success')
-            return redirect(url_for('home'))
-
-    return render_template("signup.html", user=current_user)
 
 if __name__ == '__main__':
    app.run(debug = True)
