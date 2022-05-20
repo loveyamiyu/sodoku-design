@@ -5,8 +5,8 @@ from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 
 @login.user_loader
-def load_user(id):
-    return User.query.get(id)
+def load_user(email):
+    return User.query.get(email)
 
 class User(UserMixin, db.Model):
 
@@ -49,13 +49,14 @@ class Stats(db.Model):
     startTime = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     finishTime = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-   
+
+"""""
 
 def init_db():
     db.create_all()
 
     # Create a test user
-    new_user = User('a@a.com', 'aaaaaaaa')
+    new_user = User()
     new_user.display_name = 'Nathan'
     db.session.add(new_user)
     db.session.commit()
@@ -66,3 +67,5 @@ def init_db():
 
 if __name__ == '__main__':
     init_db()
+
+    """
