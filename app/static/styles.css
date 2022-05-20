@@ -177,7 +177,7 @@ td.selected {
 }
 
 .number-selected {
-    background-color: #f2e5ee;
+    background-color: #fff;
     color: #000;
 }
 
@@ -189,7 +189,7 @@ td.selected {
     flex-wrap: wrap;
 }
 
-#undo, #erase, #complete {
+#solve, #erase, #complete {
     width: 130px; /* does not work, needs revision */
     height: 40px;
     background-color: #8155BA;

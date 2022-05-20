@@ -1,14 +1,16 @@
+#from msilib.schema import CheckBox
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField
+from wtforms import StringField, BooleanField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Email, EqualTo
 from app.models import User
 
 class LoginForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
+    remember_me = BooleanField('Remember Me')
     submit = SubmitField('Login')
-
-    def validate(self):
+"""
+    def validate_lg(self):
         initial_validation = super(LoginForm, self).validate()
         if not initial_validation:
             return False
@@ -20,6 +22,7 @@ class LoginForm(FlaskForm):
             self.password.errors.append('Invalid password')
             return False
         return True
+"""
 
 class RegistrationForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
@@ -29,7 +32,7 @@ class RegistrationForm(FlaskForm):
         'Repeat Password', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Sign up')
 
-    def validate(self):
+    def validate_rg(self):
         initial_validation = super(RegistrationForm, self).validate()
         if not initial_validation:
             return False
