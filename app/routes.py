@@ -8,13 +8,13 @@ from .models import User
 from . import db
 from app.forms import RegistrationForm, LoginForm
 from werkzeug.security import generate_password_hash, check_password_hash
-from urllib.parse import urlparse
+from werkzeug.urls import url_parse
  
 
-@app.route('/', methods=['GET', 'POST'])
-@login_required
+@app.route('/')
+#@login_required
 def home():
-    return redirect("home.html", username=current_user.username)
+    return render_template("home.html")
 
 @app.route("/rules/")
 def rules():
@@ -26,13 +26,21 @@ def stats():
 
 @app.route("/login/", methods=['GET', 'POST'])
 def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
     form = LoginForm()
     if form.validate_on_submit():
-        flash('login requested for user {}, remeember_me={}'.format(form.email.data,
-        form.remember_me.data))
-        
-        return redirect(url_for('home'))
-    return render_template('login.html', title='Sign In', form=form)
+        user = User.query.filter_by(email=form.email.data).first()
+        if user is None or not user.check_password(form.password.data):
+            flash('Invalid username or password')
+            return redirect(url_for('login'))
+        else: 
+            login_user(user, remember=form.remember_me.data)
+            next_page = request.args.get('next')
+            if not next_page or url_parse(next_page).netloc != '':
+                next_page = url_for('home')
+                return redirect(next_page)
+    return render_template('login.html', title='Log in', form=form)
 
     """
     form = LoginForm()
