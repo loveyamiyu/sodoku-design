@@ -23,6 +23,7 @@ def rules():
 @app.route("/stats/")
 def stats():
     return render_template("stats.html")
+    # order_by should be used
 
 @app.route("/login/", methods=['GET', 'POST'])
 def login():
@@ -105,7 +106,7 @@ def signup():
     if form.validate_on_submit():
         user = User(username=form.username.data, email=form.email.data, password=form.password.data)
         user.set_password(form.password.data)
-        db.session.add(user)
+        db.session.add(user) # Add latest registered user into the database model
         db.session.commit()
         return redirect(url_for('login'))
     return render_template('signup.html', title='Sign up', form=form)
