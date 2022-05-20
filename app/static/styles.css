@@ -232,13 +232,65 @@ h3{
 }
 
 /* Stats Page */
-#ShowStats {
+.ShowStats {
     width: 100%;
     height: 100vh;
     background-color: white;
     padding-top: 50px;
-    display: none;
+} 
+
+.stats-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap:nowrap;
+    margin: 20px 0;
+    grid-gap: 20px;
+    align-content: normal;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
+
+.stats {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.share-button {
+    margin-bottom: 30px;
+}
+.share-button a {
+    background: #8155BA;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 10px;
+    border-radius: 12px;
+    text-decoration: none;
+    outline: none;
+}
+
+.newChallenge a {
+    background: #8155BA;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 10px;
+    border-radius: 12px;
+    text-decoration: none;
+    outline: none;
+}
+
+.social-media {
+    margin-bottom: 20px;
+}
+.social-media a {
+    text-decoration: none;
+    margin: 20px 0;
+    font-size: 30px;
+}
+
 
 /* Login Page & Signup Page */
 .login, .signup {

@@ -4,22 +4,30 @@
 {% endblock %}
 
 {% block content %}
-<div id="ShowStats">
-    <div id="username">
-        <!-- update the username, score history and rank using js-->
+<div class="ShowStats">
+    <div class="stats-header">
+        <h1>YOUR STATS</h1>
     </div>
-    <div>
-        <!-- need to use js to update-->
-        <h5><i class="fa-solid fa-signal"></i>  Difficulty</h5>
-        <h5><i class="fa-solid fa-hourglass-end"></i>   Time</h5>
+    <div class="stats-content">
+        <div class="stats"> 
+            <h1>0</h1>
+            <h4>PLAYED</h4>
+        </div>
+        <div class="stats">
+            <h1>0s</h1>
+            <h4>FASTEST SOLVE</h4>
+        </div>
     </div>
-    <div id="share">
+    <div class="share-button">
+        <a href="#">Share</a>
+    </div>
+    <div class="social-media">
         <a href="https://www.facebook.com/"><i class="social-media fa-brands fa-facebook fa-2x"></i></a>
         <a href="https://www.instagram.com/"><i class="social-media fa-brands fa-instagram fa-2x"></i></a>
         <a href="https://www.twitter.com/"><i class="social-media fa-brands fa-twitter-square fa-2x"></i></a>
     </div>
-    <div>
-        <a href="{{ url_for('home')}}" id="newGame">Start a new challenge</a>
+    <div class="newChallenge">
+        <a href="{{ url_for('home')}}">Start a new challenge</a>
     </div>
 </div>
 
