@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing_extensions import Self
 from app import db
 from app import login
 from flask_login import UserMixin
@@ -8,11 +9,11 @@ from werkzeug.security import generate_password_hash, check_password_hash
 def load_user(user_id):
     return User.query.get(user_id)
 
-class User(UserMixin, db.Model):
+class User(UserMixin, db.Model): #subclass user
 
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True) # Each user has only one unique id;
     username = db.Column(db.String(64), index=True, unique=True)
-    email = db.Column(db.String(120), index=True, unique=True)
+    email = db.Column(db.String(120), index=True, unique=True) 
     password_hash = db.Column(db.String(128))
 
     def __init__(self, email, username, password):
@@ -44,14 +45,19 @@ class User(UserMixin, db.Model):
 
 
 #needs revision 
-class Stats(db.Model):
+class Stats(db.Model): # subclass stats used to store the results of users
     id = db.Column(db.Integer, primary_key=True)
     time = db.Column(db.Integer) 
     loginTime = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'),nullable=False) # Reference to user id in user table
 
     def __repr__(self):
-        return "<{}:{}>".format(id,self.time)
+        return "[Username:{},Time spend:{}]".format(self.user_id,self.time)
+    
+    # Read users from database
+    def get_user():
+        return  User.query.filter_by().all()
+
 
 """""
 

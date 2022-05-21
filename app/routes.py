@@ -11,11 +11,17 @@ from app.forms import RegistrationForm, LoginForm
 from werkzeug.urls import url_parse
  
 
+<<<<<<< HEAD
 @app.route('/')
 @app.route('/home')
+=======
+@app.route('/home/')
+>>>>>>> 36ee05cefb0e6666d24583d04cb8659cda449522
 @login_required
 def home():
-    return render_template("home.html")
+    if not current_user.is_authenticated:
+        return redirect(url_for('login')) # if the user is not authenticated: return to login page.
+    return render_template("home.html", user=current_user)
 
 @app.route("/rules")
 def rules():
@@ -23,14 +29,18 @@ def rules():
 
 @app.route("/stats")
 def stats():
+    # 添加一个读取所有user_id和时间的variable，
+    # 再把这个varaible添加到 stats.html里面去
     return render_template("stats.html")
     # order_by should be used
 
+<<<<<<< HEAD
 @app.route("/login", methods=['GET', 'POST'])
+=======
+@app.route("/", methods=['GET', 'POST'])
+>>>>>>> 36ee05cefb0e6666d24583d04cb8659cda449522
 def login():
-    if current_user.is_authenticated:
-        return redirect(url_for('home'))
-    form = LoginForm()
+    form = LoginForm() #现在这个login form里面是没有值的 因为我们的loginForm没有向database取值
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
         if user is None or not user.check_password(form.password.data):
