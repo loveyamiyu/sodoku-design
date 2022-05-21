@@ -24,9 +24,9 @@
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
             </p>
-            <div class="checkbox">
-                <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
-            </div>
+            <p id="checkbox">{{ form.remember_me() }}
+                {{ form.remember_me.label }}
+            </p>
             <p>{{ form.submit() }}</p>
         </form>
     </div>
