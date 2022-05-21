@@ -8,9 +8,9 @@ from werkzeug.security import generate_password_hash, check_password_hash
 def load_user(email):
     return User.query.get(email)
 
-class User(UserMixin, db.Model):
+class User(UserMixin, db.Model): #subclass user
 
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True) # Each user has only one unique id;
     username = db.Column(db.String(64), index=True, unique=True)
     email = db.Column(db.String(120), index=True, unique=True)
     password_hash = db.Column(db.String(128))
@@ -43,12 +43,12 @@ class User(UserMixin, db.Model):
 
 
 #needs revision 
-class Stats(db.Model):
+class Stats(db.Model): # subclass stats used to store the results of users
     id = db.Column(db.Integer, primary_key=True)
     time = db.Column(db.Integer) 
     startTime = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     finishTime = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'),nullable=False) # Reference to user id in user table
 
 """""
 
