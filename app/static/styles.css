@@ -325,6 +325,10 @@ input {
     color: #1b1464;
 }
 
+.checkbox{
+    display: flex;
+}
+
 #submit, #signup-btn {
     padding: 10px 0;
     color: white;
