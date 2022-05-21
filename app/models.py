@@ -46,8 +46,7 @@ class User(UserMixin, db.Model):
 class Stats(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     time = db.Column(db.Integer) 
-    startTime = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    finishTime = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    loginTime = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 """""
