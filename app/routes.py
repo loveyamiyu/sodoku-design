@@ -11,12 +11,8 @@ from app.forms import RegistrationForm, LoginForm
 from werkzeug.urls import url_parse
  
 
-<<<<<<< HEAD
 @app.route('/')
 @app.route('/home')
-=======
-@app.route('/home/')
->>>>>>> 36ee05cefb0e6666d24583d04cb8659cda449522
 @login_required
 def home():
     if not current_user.is_authenticated:
@@ -34,11 +30,7 @@ def stats():
     return render_template("stats.html")
     # order_by should be used
 
-<<<<<<< HEAD
 @app.route("/login", methods=['GET', 'POST'])
-=======
-@app.route("/", methods=['GET', 'POST'])
->>>>>>> 36ee05cefb0e6666d24583d04cb8659cda449522
 def login():
     form = LoginForm() #现在这个login form里面是没有值的 因为我们的loginForm没有向database取值
     if form.validate_on_submit():
