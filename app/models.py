@@ -5,8 +5,11 @@ from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 
 @login.user_loader
-def load_user(email):
-    return User.query.get(email)
+def load_user(user_id):
+    user = User.query.filter_by(id=user_id).first()
+    if user:
+        return user
+    return None
 
 class User(UserMixin, db.Model): #subclass user
 
@@ -46,9 +49,11 @@ class User(UserMixin, db.Model): #subclass user
 class Stats(db.Model): # subclass stats used to store the results of users
     id = db.Column(db.Integer, primary_key=True)
     time = db.Column(db.Integer) 
-    startTime = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    finishTime = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'),nullable=False) # Reference to user id in user table
+    loginTime = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'),nullable=False) # Reference to user id in user table)
+
+    def __repr__(self):
+        return "<{}:{}>".format(id,self.time)
 
 """""
 
