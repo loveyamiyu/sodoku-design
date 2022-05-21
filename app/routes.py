@@ -32,7 +32,7 @@ def stats():
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
-    form = LoginForm() #现在这个login form里面是没有值的 因为我们的loginForm没有向database取值
+    form = LoginForm() 
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
         if user is None or not user.check_password(form.password.data):
