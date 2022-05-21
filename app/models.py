@@ -5,8 +5,11 @@ from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 
 @login.user_loader
-def load_user(email):
-    return User.query.get(email)
+def load_user(user_id):
+    user = User.query.filter_by(id=user_id).first()
+    if user:
+        return user
+    return None
 
 class User(UserMixin, db.Model):
 
@@ -48,6 +51,9 @@ class Stats(db.Model):
     time = db.Column(db.Integer) 
     loginTime = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+
+    def __repr__(self):
+        return "<{}:{}>".format(id,self.time)
 
 """""
 
