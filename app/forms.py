@@ -1,28 +1,15 @@
 #from msilib.schema import CheckBox
 from flask_wtf import FlaskForm
 from wtforms import StringField, BooleanField, PasswordField, SubmitField
-from wtforms.validators import DataRequired, Email, EqualTo
+from wtforms.validators import DataRequired, Email, EqualTo, ValidationError
 from app.models import User
 
 class LoginForm(FlaskForm):
-    email = StringField('Email', validators=[DataRequired(), Email()])
+    username = StringField('Username', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Login')
-"""
-    def validate_lg(self):
-        initial_validation = super(LoginForm, self).validate()
-        if not initial_validation:
-            return False
-        user = User.query.filter_by(email=self.email.data).first()
-        if not user:
-            self.email.errors.append('Invalid email')
-            return False
-        if not user.check_password(self.password.data):
-            self.password.errors.append('Invalid password')
-            return False
-        return True
-"""
+
 
 class RegistrationForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
@@ -32,7 +19,24 @@ class RegistrationForm(FlaskForm):
         'Repeat Password', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Sign up')
 
-    def validate_rg(self):
+    def validate_username(self, username):
+
+        user = User.query.filter_by(username = username.data).first() 
+
+        if user is not None:
+
+            raise ValidationError("Username taken, please pick a different one")
+
+    def validate_email(self, email):
+
+        user = User.query.filter_by(email = email.data).first() 
+
+        if user is not None:
+
+            raise ValidationError("Email already in use, please try a different one or reset password")
+
+    """
+    def validate(self):
         initial_validation = super(RegistrationForm, self).validate()
         if not initial_validation:
             return False
@@ -44,4 +48,4 @@ class RegistrationForm(FlaskForm):
         if user:
             self.email.errors.append("Email already registered")
             return False
-        return True
+        return True   """

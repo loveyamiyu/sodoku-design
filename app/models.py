@@ -6,10 +6,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 @login.user_loader
 def load_user(user_id):
-    user = User.query.filter_by(id=user_id).first()
-    if user:
-        return user
-    return None
+    return User.query.get(user_id)
 
 class User(UserMixin, db.Model):
 
@@ -41,8 +38,9 @@ class User(UserMixin, db.Model):
     def is_anonymous(self):
         return False
 
+    """
     def get_id(self):
-        return str(self.email)
+        return str(self.email) """
 
 
 #needs revision 
