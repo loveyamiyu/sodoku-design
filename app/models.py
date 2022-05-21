@@ -50,7 +50,7 @@ class Stats(db.Model): # subclass stats used to store the results of users
     id = db.Column(db.Integer, primary_key=True)
     time = db.Column(db.Integer) 
     loginTime = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'),nullable=False) # Reference to user id in user table)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'),nullable=False) # Reference to user id in user table
 
     def __repr__(self):
         return "<{}:{}>".format(id,self.time)
