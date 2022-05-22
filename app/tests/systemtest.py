@@ -37,4 +37,5 @@ class SystemTest(unittest.TestCase):
     def test_register(self):
         user1 = User.query.filter_by(username='hello')
         self.assertEqual(user1.email,'123@gmail.com',msg="this user is registered")
-        
+        email_add = self.driver.find_element_by_id('username')
+        email_add.send_keys('123@gmail.com')
