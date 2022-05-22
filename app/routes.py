@@ -24,6 +24,13 @@ def home():
 def rules():
     return render_template("rules.html")
 
+@app.route("/result", methods=['POST','GET'])
+def result():
+    if request.method == 'POST':
+        result = request.form
+    
+    return render_template("result.html",result = result)
+    
 @app.route("/stats", methods=['GET','POST'])
 def stats():
     # 添加一个读取所有user_id和时间的variable，
