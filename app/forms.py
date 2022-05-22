@@ -2,12 +2,12 @@
 from flask_wtf import FlaskForm
 from sqlalchemy import false
 from wtforms import StringField, BooleanField, PasswordField, SubmitField
-from wtforms.validators import DataRequired, Email, EqualTo
+from wtforms.validators import DataRequired, Email, EqualTo, Length
 from app.models import User
 
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
-    password = PasswordField('Password', validators=[DataRequired()])
+    password = PasswordField('Password', validators=[DataRequired(), Length(min=6, max=40)])
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Login')
 
