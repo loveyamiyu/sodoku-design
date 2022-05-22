@@ -1,3 +1,4 @@
+
 import pytest
 import unittest,os
 from app import app, db
@@ -49,16 +50,12 @@ class UserModelCase(unittest.TestCase):
         self.assertIn(b'', response.data)
 
     def test_registration_different_passwords(self):
-        self.app.get('/signup', follow_redirects=True)
-        self.register('hello', '123@gmail.com', 'IHateFlask', 'IHateFlask')
         response = self.register('hello', '123@gmail.com', 'IHateFlask', 'ILoveFlask')
-        self.assertEqual(response.status_code, 200)
         self.assertIn(b'Field must be equal to password.', response.data)
 
     def test_registration_duplicate_email(self):
-        self.app.get('/signup', follow_redirects=True)
-        self.register('yes', '123@gmail.com', 'IHateFlask', 'IHateFlask')
-        self.app.get('/signup', follow_redirects=True)
+        response = self.register('yes', '123@gmail.com', 'IHateFlask', 'IHateFlask')
+        self.assertEqual(response.status_code, 200)
         response = self.register('no', '123@gmail.com', 'IHateFlask', 'IHateFlask')
         self.assertIn(b'Username taken, please pick a different one', response.data)
     
@@ -66,7 +63,7 @@ class UserModelCase(unittest.TestCase):
         self.app.get('/signup', follow_redirects=True)
         self.register('hello', '456@gmail.com', 'IHateFlask', 'IHateFlask')
         self.app.get('/signup', follow_redirects=True)
-        response = self.register('hey', '123@gmail.com', 'IHateFlask', 'IHateFlask')
+        response = self.register('hello', '123@gmail.com', 'IHateFlask', 'IHateFlask')
         self.assertIn(b'Email already in use, please try a different one or reset password', response.data)
     
     def login(self, username, password):
