@@ -6,6 +6,7 @@
 
 {% block content %}
 <div class="game">
+    <!--Game start button and Timer-->
     <div class="pre">
         <div class="game">
             <button onclick="newGame()" id="newGame">New Game</button>
@@ -75,17 +76,23 @@
             </tr>
         </table>
     </div>
+   
     <div id="input">
         <div id="digits"></div>
 
         <div id="result"></div>
 
         <div id="buttons">
+             <!--3 functional buttons-->
             <button onclick="solve()" clas="input-button" id="solve"><i class="fa-solid fa-rotate-left"></i>Solve</button>
             <button onclick="erase()" clas="input-button" id="erase"><i class="fa-solid fa-eraser"></i>Erase</button> 
             <button onclick="check()" clas="input-button" id="check"><i class="fa-solid fa-check"></i>Check</button> 
             
-            <form method="post">
+
+            <!--submit function, the data will be POSTed into the database once it passed the check function-->
+            <form method="GET">
+                <input type="hidden" name="timeSpent" value="">
+                <input type="hidden" name="finishedGrid" value="">
                 <input type="button" id="submit-button" value="Submit" onclick="submit()">
             </form>
         </div>
