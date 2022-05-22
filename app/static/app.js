@@ -224,21 +224,45 @@ for(var i = 0; i < 9; i++) {
 function check() {
 	if (checkForEmptyCells() === true){ 
 		var finishedGrid = finishGrid();
+		var solutionGrid = solveGrid();
 		for(var i = 0; i < 9; i++) {
 			for(var j = 0; j < 9; j++) {
-		//		var tile = document.getElementById("t" + i + "x" + j);
-				if (puzzle.isValid(finishedGrid, i, j, 1 ) && puzzle.isValid(finishedGrid, i, j, 2 )
+			if (finshedGrid[i][j]===solutionGrid[i][j]
+			 ) {
+					pause();
+					document.getElementById('result').innerHTML = "You did amazing!!" + " The time you spent is " + timeSpent + " seconds";
+				} else {
+					document.getElementById('result').innerHTML = "Something needs to be revised :(";
+					startTimer();
+				}
+		
+		/*if(finshedGrid === solutionGrid){
+		//if(console.log(JSON.stringify(finshedGrid)===JSON.stringify(solutionGrid))){
+			console.log(JSON.stringify(finshedGrid[i][j])===JSON.stringify(solutionGrid[i][j]))
+			pause();
+					document.getElementById('result').innerHTML = "You did amazing!!" + " The time you spent is " + timeSpent + " seconds";
+		} else {
+					document.getElementById('result').innerHTML = "Something needs to be revised :(";
+				}
+	} else {
+		// user cannot submit an incomplete sudoku
+		document.getElementById('result').innerHTML = "Please finish the sudoku";
+	}
+}*/
+		/*for(var i = 0; i < 9; i++) {
+			for(var j = 0; j < 9; j++) {
+			if (puzzle.isValid(finishedGrid, i, j, 1 ) && puzzle.isValid(finishedGrid, i, j, 2 )
 				&& puzzle.isValid(finishedGrid, i, j, 3 ) && puzzle.isValid(finishedGrid, i, j, 4 )
 				&& puzzle.isValid(finishedGrid, i, j, 5 ) && puzzle.isValid(finishedGrid, i, j, 6 )
 				&& puzzle.isValid(finishedGrid, i, j, 7 ) && puzzle.isValid(finishedGrid, i, j, 8 )
 				&& puzzle.isValid(finishedGrid, i, j, 9 )
-				// if we do this, the only the solution in tge last subsqure will be checked 
 				) {
 					pause();
 					document.getElementById('result').innerHTML = "You did amazing!!" + " The time you spent is " + timeSpent + " seconds";
 				} else {
 					document.getElementById('result').innerHTML = "Something needs to be revised :(";
-				}
+					startTimer();
+				}*/
 			}
 		}
 	} else {
