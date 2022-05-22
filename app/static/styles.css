@@ -189,8 +189,8 @@ td.selected {
     flex-wrap: wrap;
 }
 
-#solve, #erase, #complete {
-    width: 130px; /* does not work, needs revision */
+#solve, #erase, #check, #submit {
+    width: 90px; /* does not work, needs revision */
     height: 40px;
     background-color: #8155BA;
     border: none;
@@ -203,7 +203,7 @@ td.selected {
     align-items: center;
 }
 
-#undo:hover, #erase:hover, #complete:hover {
+#solve:hover, #erase:hover, #check:hover, #submit:hover {
     background-color: #D3B5E5;
 }
 

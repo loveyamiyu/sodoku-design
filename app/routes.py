@@ -5,7 +5,7 @@ from unicodedata import name
 from flask import render_template, request, flash, redirect, url_for
 from flask_login import current_user, login_user, logout_user, login_required
 from app import app
-from .models import User
+from .models import Puzzle, User, Stats
 from . import db
 from app.forms import RegistrationForm, LoginForm
 from werkzeug.urls import url_parse
@@ -28,7 +28,12 @@ def rules():
 @app.route("/result", methods=['POST','GET'])
 def result():
     if request.method == 'POST':
-        result = request.form
+        time = request.form.get('timeSpent')
+        puzzle = request.form.get('finishedGrid')
+        new_puzzle = Stats(time=time, puzzle=puzzle)
+        db.session.add(new_puzzle)
+        db.session.commit()
+
     
     return render_template("result.html",result = result)
 
