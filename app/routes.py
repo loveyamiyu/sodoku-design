@@ -9,10 +9,11 @@ from .models import User
 from . import db
 from app.forms import RegistrationForm, LoginForm
 from werkzeug.urls import url_parse
+import json
  
 
 @app.route('/')
-@app.route('/home')
+@app.route('/home', methods=['POST'])
 @login_required
 def home():
     if not current_user.is_authenticated:
@@ -23,10 +24,12 @@ def home():
 def rules():
     return render_template("rules.html")
 
-@app.route("/stats")
+@app.route("/stats", methods=['GET','POST'])
 def stats():
     # 添加一个读取所有user_id和时间的variable，
     # 再把这个varaible添加到 stats.html里面去
+    
+    
     return render_template("stats.html")
     # order_by should be used
 
