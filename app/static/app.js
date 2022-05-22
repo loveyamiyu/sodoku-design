@@ -222,6 +222,7 @@ for(var i = 0; i < 9; i++) {
 }
 
 function check() {
+	const xhttp = new XMLHttpRequest();
 	if (checkForEmptyCells() === true){ 
 		var finishedGrid = finishGrid();
 		for(var i = 0; i < 9; i++) {
@@ -235,7 +236,14 @@ function check() {
 				// if we do this, the only the solution in tge last subsqure will be checked 
 				) {
 					pause();
-					document.getElementById('result').innerHTML = "You did amazing!!" + " The time you spent is " + timeSpent + " seconds";
+					xhttp.onreadystatechange = function() {
+						if (this.readyState == 4 && this.status == 200) {
+							document.getElementById('result').innerHTML = "You did amazing!!" + " The time you spent is " + timeSpent + " seconds";
+							console.log(timeSpent);
+						}
+					};
+					xhttp.open('POST', 'http://127.0.0.1:5000', true); // 404/405 error, need to change the url 
+					xhttp.send()
 				} else {
 					document.getElementById('result').innerHTML = "Something needs to be revised :(";
 				}
