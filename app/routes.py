@@ -20,6 +20,10 @@ def home():
         return redirect(url_for('login')) # if the user is not authenticated: return to login page.
     return render_template("home.html", user=current_user)
 
+@app.route('/home/submit_success', methods=['POST'])
+def submit():
+    pass
+
 @app.route("/rules")
 def rules():
     return render_template("rules.html")
