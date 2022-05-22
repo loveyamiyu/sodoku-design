@@ -30,5 +30,7 @@ class UserModelCase(unittest.TestCase):
         self.assertFalse(user1.check_password('case'))
         self.assertTrue(user1.check_password('test'))
 
+if __name__ == "__main__":
+    unittest.main()
     
     
