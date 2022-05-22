@@ -209,6 +209,7 @@ td.selected {
 
 
 /* rules page */
+
 h3{
     font-weight: bold;
 }
@@ -232,6 +233,7 @@ h3{
 }
 
 /* Stats Page */
+
 .ShowStats {
     width: 100%;
     height: 100vh;
@@ -262,6 +264,7 @@ h3{
 .share-button {
     margin-bottom: 30px;
 }
+
 .share-button a {
     background: #8155BA;
     color: #fff;
@@ -293,6 +296,7 @@ h3{
 
 
 /* Login Page & Signup Page */
+
 .login, .signup {
     padding: 30px;
     height: 100vh;
@@ -355,6 +359,5 @@ input {
     background: #D3B5E5;
     border: 3px solid #D3B5E5;
 }
-
 
 

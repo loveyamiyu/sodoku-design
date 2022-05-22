@@ -236,15 +236,8 @@ for(var i = 0; i < 9; i++) {
 function check() {
 	if (checkForEmptyCells() === true){ 
 		var finishedGrid = finishGrid();
-		for(var i = 0; i < 9; i++) {
-			for(var j = 0; j < 9; i++) {
-				
-				if (puzzle.isValid(finishedGrid, i, j, 1 ) && puzzle.isValid(finishedGrid, i, j, 2 )
-                && puzzle.isValid(finishedGrid, i, j, 3 ) && puzzle.isValid(finishedGrid, i, j, 4 )
-                && puzzle.isValid(finishedGrid, i, j, 5 ) && puzzle.isValid(finishedGrid, i, j, 6 )
-                && puzzle.isValid(finishedGrid, i, j, 7 ) && puzzle.isValid(finishedGrid, i, j, 8 )
-                && puzzle.isValid(finishedGrid, i, j, 9 )
-                ) {
+		var solutionGrid = solveGrid();
+		if (checkE() === true) {
 					pause();
 					document.getElementById('result').innerHTML = "You did amazing!!" + " The time you spent is " + timeSpent + " seconds";
 					return timeSpent, finishedGrid;
@@ -252,8 +245,7 @@ function check() {
 					document.getElementById('result').innerHTML = "Something needs to be revised :(";
 					startTimer();
 				}
-			}
-		}
+
 	} else {
 		// user cannot submit an incomplete sudoku
 		document.getElementById('result').innerHTML = "Please finish the sudoku";
@@ -300,6 +292,19 @@ function finishGrid() {
 	return finishedGrid;
 }
 
+function solveGrid() {
+	// record the solution grid for the current puzzle
+	var solutionGrid = new Array(9);
+	for(var i = 0; i < 9; i++) {
+		solutionGrid[i] = new Array(9);
+		for(var j = 0; j < 9; j++) {
+			solutionGrid[i][j]  = str(puzzle.getSolution(i, j));	
+		}
+	}
+	return solutionGrid;
+}
+
+
 function solve() {
 	for(var i = 0; i < 9; i++) {
 		for(var j = 0; j < 9; j++) {
@@ -308,6 +313,16 @@ function solve() {
 		}
 	}
 } 
+function checkE(){
+	for(var i = 0; i < 9; i++) {
+		for(var j = 0; j < 9; i++) {
+			var tile = document.getElementById("t" + i + "x" + j);
+			if(tile.innerHTML == puzzle.getSolution(i, j)) return true;
+		}
+	}
+	return false;
+}
+
 
 function checkForEmptyCells() {
 	// check for the completeness of the current puzzle
