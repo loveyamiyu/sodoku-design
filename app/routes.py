@@ -13,14 +13,13 @@ import json
  
 
 @app.route('/')
-@app.route('/home', methods=['POST'])
+@app.route('/home', methods=['GET','POST'])
 @login_required
 def home():
     if not current_user.is_authenticated:
         return redirect(url_for('login')) # if the user is not authenticated: return to login page.
-    if request.method == 'POST':
-            result = request.form
-    return render_template("home.html")
+    
+    return render_template("home.html", user=current_user)
 
 @app.route("/rules")
 def rules():
@@ -58,7 +57,7 @@ def login():
     return render_template('login.html', title='Log in', form=form)
 
 
-@app.route('/logout')
+@app.route('/logout', methods=['GET', 'POST'])
 @login_required
 def logout():
     logout_user()

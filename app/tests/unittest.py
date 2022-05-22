@@ -1,5 +1,6 @@
 import pytest
 import unittest,os
+from selenium import webdriver
 from app import app, db
 from app.models import User, Stats, Puzzle
 
