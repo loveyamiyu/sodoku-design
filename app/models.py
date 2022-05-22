@@ -39,9 +39,8 @@ class User(UserMixin, db.Model): #subclass user
     def is_anonymous(self):
         return False
 
-    """
     def get_id(self):
-        return str(self.email) """
+        return self.id
 
 
 #needs revision 
