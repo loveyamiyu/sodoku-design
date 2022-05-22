@@ -85,10 +85,10 @@
             <button onclick="erase()" clas="input-button" id="erase"><i class="fa-solid fa-eraser"></i>Erase</button> 
             <button onclick="check()" clas="input-button" id="check"><i class="fa-solid fa-check"></i>Check</button> 
             
-            <form action="" method="post">
-                <input type="hidden" name="timeSpent" value="{{ timeSpent }}">
-                <input type="hidden" name="finishedGrid" value="{{ finishedGrid }}">
-                <button type="button" id="submit" onclick="submit()"><i class='fa-solid fa-paper-plane'></i>Submit</button>
+            <form method="GET">
+                <input type="hidden" name="timeSpent" value="">
+                <input type="hidden" name="finishedGrid" value="">
+                <input type="button" id="submit-button" value="Submit" onclick="submit()">
             </form>
         </div>
 

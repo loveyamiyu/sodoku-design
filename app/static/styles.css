@@ -189,7 +189,7 @@ td.selected {
     flex-wrap: wrap;
 }
 
-#solve, #erase, #check, #submit {
+#solve, #erase, #check, #submit-button {
     width: 90px; /* does not work, needs revision */
     height: 40px;
     background-color: #8155BA;
@@ -318,6 +318,9 @@ input {
     font-size: 15px;
     resize: vertical;
     margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 ::placeholder{
