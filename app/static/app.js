@@ -224,10 +224,48 @@ function check() {
 	const xhttp = new XMLHttpRequest();
 	if (checkForEmptyCells() === true){ 
 		var finishedGrid = finishGrid();
+<<<<<<< HEAD
 		for(var i = 0; i < 9; i++) {
 			for(var j = 0; j < 9; j++) {
 		//		var tile = document.getElementById("t" + i + "x" + j);
 				if (puzzle.isValid(finishedGrid, i, j, 1 ) && puzzle.isValid(finishedGrid, i, j, 2 )
+=======
+		var solutionGrid = solveGrid();
+		for(var i = 0; i < 9; i++){
+			if (puzzle.isValid(finishedGrid, i, 1, 1 ) && puzzle.isValid(finishedGrid, i, 2, 2 )
+				&& puzzle.isValid(finishedGrid, i, 3, 3 ) && puzzle.isValid(finishedGrid, i, 4, 4 )
+				&& puzzle.isValid(finishedGrid, i, 5, 5 ) && puzzle.isValid(finishedGrid, i, 6, 6 )
+				&& puzzle.isValid(finishedGrid, i, 7, 7 ) && puzzle.isValid(finishedGrid, i, 8, 8 )
+				&& puzzle.isValid(finishedGrid, i, 9, 9 )
+				) 
+			  {pause();
+				document.getElementById('result').innerHTML = "You did amazing!!" + " The time you spent is " + timeSpent + " seconds";
+				} else {
+					document.getElementById('result').innerHTML = "Something needs to be revised :(";
+				startTimer();
+				}
+		}
+
+		
+
+		
+		/*if(finshedGrid === solutionGrid){
+		//if(console.log(JSON.stringify(finishedGrid)===JSON.stringify(solutionGrid))){
+			console.log(JSON.stringify(finishedGrid[i][j])===JSON.stringify(solutionGrid[i][j]))
+			pause();
+					document.getElementById('result').innerHTML = "You did amazing!!" + " The time you spent is " + timeSpent + " seconds";
+		} else {
+					document.getElementById('result').innerHTML = "Something needs to be revised :(";
+				}
+	} else {
+		// user cannot submit an incomplete sudoku
+		document.getElementById('result').innerHTML = "Please finish the sudoku";
+	}
+}*/
+		/*for(var i = 0; i < 9; i++) {
+			for(var j = 0; j < 9; j++) {
+			if (puzzle.isValid(finishedGrid, i, j, 1 ) && puzzle.isValid(finishedGrid, i, j, 2 )
+>>>>>>> 30b3e56a92aafafefaaa095a638df99585e2c0a5
 				&& puzzle.isValid(finishedGrid, i, j, 3 ) && puzzle.isValid(finishedGrid, i, j, 4 )
 				&& puzzle.isValid(finishedGrid, i, j, 5 ) && puzzle.isValid(finishedGrid, i, j, 6 )
 				&& puzzle.isValid(finishedGrid, i, j, 7 ) && puzzle.isValid(finishedGrid, i, j, 8 )
@@ -245,9 +283,16 @@ function check() {
 					xhttp.send()
 				} else {
 					document.getElementById('result').innerHTML = "Something needs to be revised :(";
+<<<<<<< HEAD
 				}
 			}
 		}
+=======
+					startTimer();
+				}*/
+			
+		
+>>>>>>> 30b3e56a92aafafefaaa095a638df99585e2c0a5
 	} else {
 		// user cannot submit an incomplete sudoku
 		document.getElementById('result').innerHTML = "Please finish the sudoku";
