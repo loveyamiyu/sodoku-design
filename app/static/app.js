@@ -226,20 +226,27 @@ function check() {
 	if (checkForEmptyCells() === true){ 
 		var finishedGrid = finishGrid();
 		var solutionGrid = solveGrid();
-		for(var i = 0; i < 9; i++) {
-			for(var j = 0; j < 9; j++) {
-			if (finishedGrid[i][j]===solutionGrid[i][j]
-			 ) {
-					pause();
-					document.getElementById('result').innerHTML = "You did amazing!!" + " The time you spent is " + timeSpent + " seconds";
+		for(var i = 0; i < 9; i++){
+			if (puzzle.isValid(finishedGrid, i, 1, 1 ) && puzzle.isValid(finishedGrid, i, 2, 2 )
+				&& puzzle.isValid(finishedGrid, i, 3, 3 ) && puzzle.isValid(finishedGrid, i, 4, 4 )
+				&& puzzle.isValid(finishedGrid, i, 5, 5 ) && puzzle.isValid(finishedGrid, i, 6, 6 )
+				&& puzzle.isValid(finishedGrid, i, 7, 7 ) && puzzle.isValid(finishedGrid, i, 8, 8 )
+				&& puzzle.isValid(finishedGrid, i, 9, 9 )
+				) 
+			  {pause();
+				document.getElementById('result').innerHTML = "You did amazing!!" + " The time you spent is " + timeSpent + " seconds";
 				} else {
 					document.getElementById('result').innerHTML = "Something needs to be revised :(";
-					startTimer();
+				startTimer();
 				}
+		}
+
+		
+
 		
 		/*if(finshedGrid === solutionGrid){
-		//if(console.log(JSON.stringify(finshedGrid)===JSON.stringify(solutionGrid))){
-			console.log(JSON.stringify(finshedGrid[i][j])===JSON.stringify(solutionGrid[i][j]))
+		//if(console.log(JSON.stringify(finishedGrid)===JSON.stringify(solutionGrid))){
+			console.log(JSON.stringify(finishedGrid[i][j])===JSON.stringify(solutionGrid[i][j]))
 			pause();
 					document.getElementById('result').innerHTML = "You did amazing!!" + " The time you spent is " + timeSpent + " seconds";
 		} else {
@@ -271,8 +278,8 @@ function check() {
 					document.getElementById('result').innerHTML = "Something needs to be revised :(";
 					startTimer();
 				}*/
-			}
-		}
+			
+		
 	} else {
 		// user cannot submit an incomplete sudoku
 		document.getElementById('result').innerHTML = "Please finish the sudoku";
