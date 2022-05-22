@@ -1,3 +1,4 @@
+
 import pytest
 import unittest,os
 from app import app, db
@@ -25,15 +26,16 @@ class UserModelCase(unittest.TestCase):
         db.session.remove()
         db.drop_all()
 
-    def test_password_hashing(self):
-        user1 = User.query.get('1')
-        user1.set_password('test')
+    def test_password_hashing(self, password):
+        user1 = User.query.get('hello')
+        password = 'test'
+        user1.set_password(password)
         self.assertFalse(user1.check_password('case'))
-        self.assertTrue(user1.check_password('test'))
+        self.assertTrue(user1.check_password(password))
     
-    def register(self,username,email,password,confirm):
+    def register(self,username,email,password_hash,confirm):
         return self.app.post('signup/', 
-            data=dict(username=username,email=email, password=password, confirm=confirm),
+            data=dict(username=username,email=email, password_hash=password_hash, confirm=confirm),
             follow_redirects=True)
 
     def test_user_registration_form_displays(self):
@@ -48,9 +50,7 @@ class UserModelCase(unittest.TestCase):
 
     def test_registration_different_passwords(self):
         self.app.get('/signup', follow_redirects=True)
-        self.register('hello', '123@gmail.com', 'IHateFlask', 'IHateFlask')
         response = self.register('hello', '123@gmail.com', 'IHateFlask', 'ILoveFlask')
-        self.assertEqual(response.status_code, 200)
         self.assertIn(b'Field must be equal to password.', response.data)
 
     def test_registration_duplicate_email(self):
@@ -64,7 +64,7 @@ class UserModelCase(unittest.TestCase):
         self.app.get('/signup', follow_redirects=True)
         self.register('hello', '456@gmail.com', 'IHateFlask', 'IHateFlask')
         self.app.get('/signup', follow_redirects=True)
-        response = self.register('hey', '123@gmail.com', 'IHateFlask', 'IHateFlask')
+        response = self.register('hello', '123@gmail.com', 'IHateFlask', 'IHateFlask')
         self.assertIn(b'Email already in use, please try a different one or reset password', response.data)
     
     def login(self, username, password):

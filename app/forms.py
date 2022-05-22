@@ -12,9 +12,22 @@ class LoginForm(FlaskForm):
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Login')
 
+    def validate(self):
+        initial_validation = super(LoginForm, self).validate()
+        if not initial_validation:
+            return False
+        user = User.query.filter_by(username=self.username.data).first()
+        if not user:
+            raise ValidationError('Invalid username')
+        if not user.check_password(self.password.data):
+            raise ValidationError('Invalid password')
+        return True
+
+        """
+
     def validate_username(self, username):
 
-        user = User.query.filter_by(username = username.data).first() 
+        user = User.query.filter_by(username = self.username.data).first() 
 
         if not user:
 
@@ -22,11 +35,11 @@ class LoginForm(FlaskForm):
     
     def validate_password(self, password):
 
-        password = User.query.filter_by(password = password.data).first() 
+        password = User.query.filter_by(password = self.password.data).first() 
 
         if not password:
 
-            raise ValidationError('Invalid password')
+            raise ValidationError('Invalid password') """
 
 class RegistrationForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
@@ -35,24 +48,24 @@ class RegistrationForm(FlaskForm):
     password2 = PasswordField(
         'Repeat Password', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Sign up')
-    """
+    
     def validate(self):
         initial_validation = super(RegistrationForm, self).validate()
         if not initial_validation:
             return False
         user = User.query.filter_by(username=self.username.data).first()
         if user:
-            self.username.errors.append("Username already registered")
+            self.username.errors.append("Username taken, please pick a different one")
             return False
         user = User.query.filter_by(email=self.email.data).first()
         if user:
-            self.email.errors.append("Email already registered")
+            self.email.errors.append("Email already in use, please try a different one or reset password")
             return False
         return True   
     """
     def validate_username(self, username):
 
-        user = User.query.filter_by(username = username.data).first() 
+        user = User.query.filter_by(username = self.username.data).first() 
 
         if user is not None:
 
@@ -60,8 +73,9 @@ class RegistrationForm(FlaskForm):
 
     def validate_email(self, email):
 
-        user = User.query.filter_by(email = email.data).first() 
+        email = User.query.filter_by(email = self.email.data).first() 
 
-        if user is not None:
+        if email is not None:
 
             raise ValidationError("Email already in use, please try a different one or reset password")
+        """
