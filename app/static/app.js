@@ -228,7 +228,7 @@ function check() {
 		var solutionGrid = solveGrid();
 		for(var i = 0; i < 9; i++) {
 			for(var j = 0; j < 9; j++) {
-			if (finshedGrid[i][j]===solutionGrid[i][j]
+			if (finishedGrid[i][j]===solutionGrid[i][j]
 			 ) {
 					pause();
 					document.getElementById('result').innerHTML = "You did amazing!!" + " The time you spent is " + timeSpent + " seconds";
