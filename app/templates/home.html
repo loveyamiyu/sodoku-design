@@ -89,10 +89,10 @@
             <button onclick="check()" clas="input-button" id="check"><i class="fa-solid fa-check"></i>Check</button> 
             
             <!--submit function, the data will be POSTed into the database once it passed the check function-->
-            <form action="" method="post">
-                <input type="hidden" name="timeSpent" value="{{ timeSpent }}">
-                <input type="hidden" name="finishedGrid" value="{{ finishedGrid }}">
-                <button type="button" id="submit" onclick="submit()"><i class='fa-solid fa-paper-plane'></i>Submit</button>
+            <form method="GET">
+                <input type="hidden" name="timeSpent" value="">
+                <input type="hidden" name="finishedGrid" value="">
+                <input type="button" id="submit-button" value="Submit" onclick="submit()">
             </form>
         </div>
 

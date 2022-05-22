@@ -261,6 +261,33 @@ function check() {
 	}
 }
 
+function submit() { //revision needed
+	if (puzzle.check()) {
+		$(document).ready(function() {
+			$('form').on('submit', function(event) {
+			  $.ajax({
+				 data : {
+					timeSpent : $('#timeSpent').val(),
+					finishedGrid: $('#finshedGrid').val(),
+						},
+					type : 'POST',
+					url : '/result'
+				   })
+			
+			   .done(function(data) {
+				 $('#output').text(data.output).show();
+			 });
+			 event.preventDefault();
+			 });
+	   });
+	} else {
+		document.getElementById('result').innerHTML = "Something needs to be revised :(";
+	}
+	
+	
+
+}
+
 function finishGrid() {
 	// record the finished grid(the current puzzle)
 	var finishedGrid = new Array(9);
