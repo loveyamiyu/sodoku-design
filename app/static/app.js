@@ -129,7 +129,8 @@ function generateSudoku() {
 			if(arr[i] == val) count++;
 		}
 		return count;
-	};
+	}
+	
 }
 
 function shuffle(grid) {
@@ -236,8 +237,10 @@ for(var i = 0; i < 9; i++) {
 function check() {
 	if (checkForEmptyCells() === true){ 
 		var finishedGrid = finishGrid();
-		var solutionGrid = solveGrid();
-		if (checkE() === true) {
+		for(var i = 0; i < 9; i++) {
+            for(var j = 0; j < 9; i++) {
+            var tile = document.getElementById("t" + i + "x" + j);
+			if (puzzle.isValid(finishedGrid, i, j, tile.innerHTML)) {
 					pause();
 					document.getElementById('result').innerHTML = "You did amazing!!" + " The time you spent is " + timeSpent + " seconds";
 					return timeSpent, finishedGrid;
@@ -245,6 +248,8 @@ function check() {
 					document.getElementById('result').innerHTML = "Something needs to be revised :(";
 					startTimer();
 				}
+			}
+		}
 
 	} else {
 		// user cannot submit an incomplete sudoku
