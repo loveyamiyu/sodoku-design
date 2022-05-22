@@ -9,11 +9,12 @@ class UserModelCase(unittest.TestCase):
     def setUp(self):
         basedir = os.path.abspath(os.path.dirname(__file__))
         app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///'+os.path.join(basedir,'test.db')
-        self.app = app.test_client()
+        self.app = app.test_client() # create a vitual test enviroment
         db.create_all()
-        user1 = User(username='hello', email='123@gmail.com', password='test')
-        user2 = User(username='hey', email='456@gmail.com', password='test')
-        user3 = User(username='hi', email='789@gmail.com', password='test')
+        # create 3 users as test cases
+        user1 = User(username='hello', email='123@gmail.com')
+        user2 = User(username='hey', email='456@gmail.com')
+        user3 = User(username='hi', email='789@gmail.com')
         db.session.add(user1)
         db.session.add(user2)
         db.session.add(user3)
@@ -22,14 +23,15 @@ class UserModelCase(unittest.TestCase):
         self.assertEquals(app.debug, False)
 
     def tearDown(self):
-        db.session.remove()
+        # remove all the db data so the test can be reusable
+        db.session.remove() 
         db.drop_all()
 
     def test_password_hashing(self):
-        user1 = User.query.get('1')
-        user1.set_password('test')
-        self.assertFalse(user1.check_password('case'))
-        self.assertTrue(user1.check_password('test'))
+        user1 = User.query.filter_by(username='hello')
+        user1.set_password('testhello')
+        self.assertFalse(user1.check_password('casehello'))
+        self.assertTrue(user1.check_password('testhello'))
     
     def register(self,username,email,password,confirm):
         return self.app.post('signup/', 

@@ -9,6 +9,7 @@
     <div class="container" id="signup-form">
         <form method="post">
             {{ form.hidden_tag() }}
+            <!--Username creation-->
             <p>
                 {{ form.username.label }}<br>
                 {{ form.username(size=64) }}<br>
@@ -16,6 +17,7 @@
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
             </p>
+            <!--Valid email address-->
             <p>
                 {{ form.email.label }}<br>
                 {{ form.email(size=64) }}<br>
@@ -23,6 +25,7 @@
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
             </p>
+            <!--password input-->
             <p>
                 {{ form.password.label }}<br>
                 {{ form.password(size=64) }}<br>
@@ -30,6 +33,7 @@
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
             </p>
+            <!--password Confirmation-->
             <p>
                 {{ form.password2.label }}<br>
                 {{ form.password2(size=64) }}<br>
