@@ -18,7 +18,9 @@ import json
 def home():
     if not current_user.is_authenticated:
         return redirect(url_for('login')) # if the user is not authenticated: return to login page.
-    return render_template("home.html", user=current_user)
+    if request.method == 'POST':
+            result = request.form
+    return render_template("home.html")
 
 @app.route("/rules")
 def rules():
@@ -30,12 +32,12 @@ def result():
         result = request.form
     
     return render_template("result.html",result = result)
-    
+
 @app.route("/stats", methods=['GET','POST'])
+@login_required
 def stats():
     # 添加一个读取所有user_id和时间的variable，
     # 再把这个varaible添加到 stats.html里面去
-    
     
     return render_template("stats.html")
     # order_by should be used

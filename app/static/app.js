@@ -243,7 +243,7 @@ function check() {
 							console.log(timeSpent);
 						}
 					};
-					xhttp.open('POST', '/result', true); // 404/405 error, need to change the url 
+					xhttp.open('POST', '/result', true); 
 					xhttp.send()
 				} else {
 					document.getElementById('result').innerHTML = "Something needs to be revised :(";
