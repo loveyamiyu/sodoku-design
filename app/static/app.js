@@ -9,6 +9,8 @@ window.onload = function(){
 	startTimer();
 }
 
+// Part A: Initial and Refresh the game //
+
 function setGame() {
     puzzle = new generateSudoku();
 	for(var i = 0; i < 9; i++) {
@@ -43,6 +45,13 @@ function setDigits() {
     }
 }
 
+
+function newGame() {
+	// generate a new grid with random sudoku
+	location.reload();
+}
+
+// Part B: Generate Sudoku//
 
 function generateSudoku() {
     
@@ -124,6 +133,7 @@ function generateSudoku() {
 }
 
 function shuffle(grid) {
+	// Way to update new puzzle
 
 	var i, j, temp,  col1, col2, row1, row2, sub;
 
@@ -188,7 +198,7 @@ function hideTiles(aGrid, hiddenGrid) {
 }
 
 
-
+// Part C: Play the game (number board setting and erase functions) //
 
 function selectNumber() {
     if (numSelected != null) {
@@ -208,8 +218,8 @@ function selectTile() {
     }
 }
 
-// remove any number from the selected tile
 function erase(){
+	// remove any number from the selected tile
 	numSelected = null;
 }
 
@@ -221,35 +231,38 @@ for(var i = 0; i < 9; i++) {
 	}
 }
 
+// Part D: Solution checking //
+
 function check() {
 	if (checkForEmptyCells() === true){ 
 		var finishedGrid = finishGrid();
 		for(var i = 0; i < 9; i++) {
-			for(var j = 0; j < 9; j++) {
-		//		var tile = document.getElementById("t" + i + "x" + j);
+			for(var j = 0; j < 9; i++) {
+				
 				if (puzzle.isValid(finishedGrid, i, j, 1 ) && puzzle.isValid(finishedGrid, i, j, 2 )
-				&& puzzle.isValid(finishedGrid, i, j, 3 ) && puzzle.isValid(finishedGrid, i, j, 4 )
-				&& puzzle.isValid(finishedGrid, i, j, 5 ) && puzzle.isValid(finishedGrid, i, j, 6 )
-				&& puzzle.isValid(finishedGrid, i, j, 7 ) && puzzle.isValid(finishedGrid, i, j, 8 )
-				&& puzzle.isValid(finishedGrid, i, j, 9 )
-				) {
+                && puzzle.isValid(finishedGrid, i, j, 3 ) && puzzle.isValid(finishedGrid, i, j, 4 )
+                && puzzle.isValid(finishedGrid, i, j, 5 ) && puzzle.isValid(finishedGrid, i, j, 6 )
+                && puzzle.isValid(finishedGrid, i, j, 7 ) && puzzle.isValid(finishedGrid, i, j, 8 )
+                && puzzle.isValid(finishedGrid, i, j, 9 )
+                ) {
 					pause();
 					document.getElementById('result').innerHTML = "You did amazing!!" + " The time you spent is " + timeSpent + " seconds";
 					return timeSpent, finishedGrid;
 				} else {
 					document.getElementById('result').innerHTML = "Something needs to be revised :(";
+					startTimer();
 				}
 			}
 		}
 	} else {
 		// user cannot submit an incomplete sudoku
 		document.getElementById('result').innerHTML = "Please finish the sudoku";
+		startTimer();
 	}
 }
 
-
-
 function finishGrid() {
+	// record the finished grid(the current puzzle)
 	var finishedGrid = new Array(9);
 	for(var i = 0; i < 9; i++) {
 		finishedGrid[i] = new Array(9);
@@ -260,17 +273,6 @@ function finishGrid() {
 	return finishedGrid;
 }
 
-function solveGrid() {
-	var solutionGrid = new Array(9);
-	for(var i = 0; i < 9; i++) {
-		solutionGrid[i] = new Array(9)
-		for(var j = 0; j < 9; j++) {
-			 solutionGrid[i][j] = puzzle.getSolution(i, j);	
-		}
-	}
-	return solutionGrid;
-} 
-
 function solve() {
 	for(var i = 0; i < 9; i++) {
 		for(var j = 0; j < 9; j++) {
@@ -280,8 +282,8 @@ function solve() {
 	}
 } 
 
-
 function checkForEmptyCells() {
+	// check for the completeness of the current puzzle
 	for(var i = 0; i < 9; i++) {
 		for(var j = 0; j < 9; j++) {
 			var tile = document.getElementById("t" + i + "x" + j);
@@ -291,20 +293,13 @@ function checkForEmptyCells() {
 	return true;
 }
 
-// generate a new grid with random sudoku
-function newGame() {
-	location.reload();
-}
 
-
-// Timer
+// Part E: Timer //
 var timeSpent = 0;
 let myTimer = null;
 
-
-// A function that would continuously growing per second
-
 function timer() {
+	// A function that would continuously growing per second
     timeSpent += 1;
 	var hour = 0;
 	var min = parseInt(timeSpent/60); // minutes
@@ -333,8 +328,8 @@ function timer() {
     
 }
 
-// the start button
 function startTimer(){
+	// the start button
 	// The puzzle will be shown when timer starts
 	document.getElementById('grid').style.visibility = "visible";
 
@@ -350,19 +345,16 @@ function startTimer(){
 	
 }
 
-// the pause button
 function pause(){
+	// the pause button
     clearInterval(myTimer);
     myTimer = null;
 	document.getElementById('start').style.display = "block";
 	document.getElementById('pause').style.display = "none";
-	// The puzzle will be hidden when timer pauses
-	//document.getElementById('grid').style.visibility = "hidden";
 }
 
-
-// reset time 
 function reset(){ 
+	// reset time 
 	document.getElementById("showNum").innerHTML = '00' +':'+ '00';
     timeSpent = 0;
 }
