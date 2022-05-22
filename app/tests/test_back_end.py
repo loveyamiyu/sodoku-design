@@ -33,9 +33,9 @@ class UserModelCase(unittest.TestCase):
         self.assertFalse(user1.check_password('case'))
         self.assertTrue(user1.check_password(password))
     
-    def register(self,username,email,password_hash,confirm):
+    def register(self,username,email,password,confirm):
         return self.app.post('signup/', 
-            data=dict(username=username,email=email, password_hash=password_hash, confirm=confirm),
+            data=dict(username=username,email=email, password=password, confirm=confirm),
             follow_redirects=True)
 
     def test_user_registration_form_displays(self):
@@ -49,14 +49,12 @@ class UserModelCase(unittest.TestCase):
         self.assertIn(b'', response.data)
 
     def test_registration_different_passwords(self):
-        self.app.get('/signup', follow_redirects=True)
         response = self.register('hello', '123@gmail.com', 'IHateFlask', 'ILoveFlask')
         self.assertIn(b'Field must be equal to password.', response.data)
 
     def test_registration_duplicate_email(self):
-        self.app.get('/signup', follow_redirects=True)
-        self.register('yes', '123@gmail.com', 'IHateFlask', 'IHateFlask')
-        self.app.get('/signup', follow_redirects=True)
+        response = self.register('yes', '123@gmail.com', 'IHateFlask', 'IHateFlask')
+        self.assertEqual(response.status_code, 200)
         response = self.register('no', '123@gmail.com', 'IHateFlask', 'IHateFlask')
         self.assertIn(b'Username taken, please pick a different one', response.data)
     

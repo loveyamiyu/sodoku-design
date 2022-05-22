@@ -18,9 +18,11 @@ class LoginForm(FlaskForm):
             return False
         user = User.query.filter_by(username=self.username.data).first()
         if not user:
-            raise ValidationError('Invalid username')
+            self.username.errors.append('Invalid username')
+            return False
         if not user.check_password(self.password.data):
-            raise ValidationError('Invalid password')
+            self.password.errors.append('Invalid password')
+            return False
         return True
 
         """
@@ -48,7 +50,7 @@ class RegistrationForm(FlaskForm):
     password2 = PasswordField(
         'Repeat Password', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Sign up')
-    
+    """
     def validate(self):
         initial_validation = super(RegistrationForm, self).validate()
         if not initial_validation:
@@ -62,7 +64,7 @@ class RegistrationForm(FlaskForm):
             self.email.errors.append("Email already in use, please try a different one or reset password")
             return False
         return True   
-    """
+
     def validate_username(self, username):
 
         user = User.query.filter_by(username = self.username.data).first() 

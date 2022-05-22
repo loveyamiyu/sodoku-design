@@ -1,6 +1,7 @@
 
 from cmath import log
 from crypt import methods
+from sqlite3 import IntegrityError
 from unicodedata import name
 from flask import render_template, request, flash, redirect, url_for
 from flask_login import current_user, login_user, logout_user, login_required
@@ -73,12 +74,18 @@ def signup():
     if current_user.is_authenticated:
         return redirect(url_for('home'))
     form = RegistrationForm()
-    if form.validate_on_submit():
-        user = User(username=form.username.data, email=form.email.data, password=form.password.data)
-        user.set_password(form.password.data)
-        db.session.add(user) # Add latest registered user into the database model
-        db.session.commit()
-        return redirect(url_for('login'))
+    if request.method == 'POST':
+        if form.validate_on_submit():
+            try: 
+                user = User(username=form.username.data, email=form.email.data, password=form.password.data)
+                user.set_password(form.password.data)
+                db.session.add(user) # Add latest registered user into the database model
+                db.session.commit()
+                return redirect(url_for('login'))
+            except IntegrityError:
+                db.session.rollback()
+                flash('ERROR! Email ({}) already exists.'.format(form.email.data), 'error')
+
     return render_template('signup.html', title='Sign up', form=form)
 
 
