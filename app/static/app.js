@@ -222,7 +222,6 @@ for(var i = 0; i < 9; i++) {
 }
 
 function check() {
-	const xhttp = new XMLHttpRequest();
 	if (checkForEmptyCells() === true){ 
 		var finishedGrid = finishGrid();
 		for(var i = 0; i < 9; i++) {
@@ -233,18 +232,10 @@ function check() {
 				&& puzzle.isValid(finishedGrid, i, j, 5 ) && puzzle.isValid(finishedGrid, i, j, 6 )
 				&& puzzle.isValid(finishedGrid, i, j, 7 ) && puzzle.isValid(finishedGrid, i, j, 8 )
 				&& puzzle.isValid(finishedGrid, i, j, 9 )
-				// if we do this, the only the solution in tge last subsqure will be checked 
 				) {
 					pause();
 					document.getElementById('result').innerHTML = "You did amazing!!" + " The time you spent is " + timeSpent + " seconds";
-					xhttp.onreadystatechange = function() {
-						if (this.readyState == 4 && this.status == 200) {
-							document.getElementById('result').innerHTML = "You did amazing!!" + " The time you spent is " + timeSpent + " seconds";
-							console.log(timeSpent);
-						}
-					};
-					xhttp.open('POST', '/result', true); 
-					xhttp.send()
+					return timeSpent, finishedGrid;
 				} else {
 					document.getElementById('result').innerHTML = "Something needs to be revised :(";
 				}
