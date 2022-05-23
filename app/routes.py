@@ -34,18 +34,14 @@ def result():
         new_puzzle = Stats(time=time, puzzle=puzzle)
         db.session.add(new_puzzle)
         db.session.commit()
-        return f"<h1>{time}<h1>"
+        return "<p> Hi </p>"
     else:
         return render_template("result.html",result = result)
 
 @app.route("/stats", methods=['GET','POST'])
 @login_required
 def stats():
-    # 添加一个读取所有user_id和时间的variable，
-    # 再把这个varaible添加到 stats.html里面去
-    
     return render_template("stats.html")
-    # order_by should be used
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():

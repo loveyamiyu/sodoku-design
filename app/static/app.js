@@ -257,8 +257,9 @@ function check() {
 		startTimer();
 	}
 }
-var finishedGrid =finishGrid();
+
 function submit() { //revision needed
+	var finishedGrid =finishGrid();
 		$.ajax({
 			url: "{{url_for('result')}}", 
 			type: "POST",  
