@@ -43,39 +43,19 @@ class User(UserMixin, db.Model): #subclass user
         return self.id
 
 
-#needs revision 
 class Stats(db.Model): # subclass stats used to store the results of users
     id = db.Column(db.Integer, primary_key=True)
     time = db.Column(db.Integer, nullable=False) 
-    puzzle = db.Column(db.JSON, nullable=False)
+    username = db.Column(db.String(64), db.ForeignKey('user.username'),nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id')) # Reference to user id in user table
 
     def __repr__(self):
         return "[Username:{},Time spend:{}]".format(self.user_id,self.time)
-    
-    # Read users from database
-    def get_user():
-        return  User.query.filter_by().all()
-
-# Puzzle class 
-
-class Puzzle(db.Model): # may not use the model as we can save puzzle into the stats model
-    id = db.Column(db.Integer, primary_key=True) #puzzle id
-    puzzle = db.Column((db.Integer), db.ForeignKey('puzzle'))
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'),nullable=False) 
-
 
 
 def init_db():
     db.drop_all()
     db.create_all()
-
-    # Create a test user
-    new_user = User()
-    new_user.display_name = 'Nathan'
-    db.session.add(new_user)
-    db.session.commit()
-
 
 
 if __name__ == '__main__':
