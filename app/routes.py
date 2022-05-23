@@ -37,7 +37,8 @@ def rules():
 @login_required
 def stats():
     stats = db.session.query(Stats).all()
-    return render_template("stats.html", stats=stats)
+    name = Stats.id
+    return render_template("stats.html", stats=stats,user=current_user)
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():

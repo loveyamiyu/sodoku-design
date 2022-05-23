@@ -39,8 +39,8 @@ class User(UserMixin, db.Model): #subclass user
     def is_anonymous(self):
         return False
 
-    def get_id(self):
-        return self.id
+    def get_name(self):
+        return self.username
 
 
 class Stats(db.Model): # subclass stats used to store the results of users
