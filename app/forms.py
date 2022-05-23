@@ -25,23 +25,6 @@ class LoginForm(FlaskForm):
             return False
         return True
 
-        """
-
-    def validate_username(self, username):
-
-        user = User.query.filter_by(username = self.username.data).first() 
-
-        if not user:
-
-            raise ValidationError('Invalid username')
-    
-    def validate_password(self, password):
-
-        password = User.query.filter_by(password = self.password.data).first() 
-
-        if not password:
-
-            raise ValidationError('Invalid password') """
 
 class RegistrationForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
@@ -65,20 +48,3 @@ class RegistrationForm(FlaskForm):
             return False
         return True   
 
-"""
-    def validate_username(self, username):
-
-        user = User.query.filter_by(username = self.username.data).first() 
-
-        if user is not None:
-
-            raise ValidationError("Username taken, please pick a different one")
-
-    def validate_email(self, email):
-
-        email = User.query.filter_by(email = self.email.data).first() 
-
-        if email is not None:
-
-            raise ValidationError("Email already in use, please try a different one or reset password")
-        """
