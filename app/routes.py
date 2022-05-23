@@ -5,6 +5,7 @@ from sqlite3 import IntegrityError
 from unicodedata import name
 from flask import render_template, request, flash, redirect, url_for,session
 from flask_login import current_user, login_user, logout_user, login_required
+from sqlalchemy import ForeignKey, literal_column
 from app import app
 from .models import User, Stats
 from . import db
@@ -37,7 +38,8 @@ def rules():
 @login_required
 def stats():
     stats = db.session.query(Stats).all()
-    return render_template("stats.html", stats=stats)
+    name = Stats.id
+    return render_template("stats.html", stats=stats,user=current_user)
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():

@@ -14,20 +14,22 @@
         <a href="https://www.twitter.com/"><i class="social-media fa-brands fa-twitter-square fa-2x"></i></a>
     </div>
     <div class="stats-header">
-        <h1>YOUR STATS</h1>
+        <h1>SEE HOW DID EVERYONE GO!</h1>
+        <br>
+        <br>
     </div>
     <div class="stats-content">
         <table class="table">
             <thead>
               <tr>
                 <th scope="col"><h4>Sudoku No.</h4></th>
-                <th scope="col"><h4>Solve Time</h4></th>
+                <th scope="col"><h4>Solving Time (seconds)</h4></th>
               </tr>
             </thead>
             <tbody>
                 {% for i in stats %}
                 <tr>
-                    <td>{{i.id}}</td>
+                    <td>{{i.username}}</td>
                     <td>{{i.time}}</td>
                 </tr>
                 {% endfor %}

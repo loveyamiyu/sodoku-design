@@ -46,10 +46,16 @@ class User(UserMixin, db.Model): #subclass user
 class Stats(db.Model): # subclass stats used to store the results of users
     id = db.Column(db.Integer, primary_key=True)
     time = db.Column(db.Integer, nullable=False) 
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id')) # Reference to user id in user table
+    user_name = db.Column(db.String, db.ForeignKey('user.username'))
+    userid = db.Column(db.Integer, db.ForeignKey('user.id')) # Reference to user id in user table
+
+    def __init__(self, time, user_name, userid):
+        self.time = time
+        self.user_name = user_name
+        self.userid(userid)
 
     def __repr__(self):
-        return "[Username:{},Time spend:{}]".format(self.user_id,self.time)
+        return "[Userid:{},Time spend:{},Username:{}]".format(self.userid,self.time,self.user_name)
 
 
 def init_db():

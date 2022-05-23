@@ -236,6 +236,7 @@ h3{
 
 .ShowStats {
     width: 100%;
+    min-height: 100vh;
     background-color: white;
     padding-top: 50px;
     margin-bottom: 4rem;
