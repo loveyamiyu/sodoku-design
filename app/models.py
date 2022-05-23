@@ -43,14 +43,10 @@ class User(UserMixin, db.Model): #subclass user
         return self.id
 
 
-class Stats(db.Model): 
-    # subclass stats used to store the results of users
+class Stats(db.Model): # subclass stats used to store the results of users
     id = db.Column(db.Integer, primary_key=True)
     time = db.Column(db.Integer, nullable=False) 
-<<<<<<< Updated upstream
     user_id = db.Column(db.Integer, db.ForeignKey('user.id')) # Reference to user id in user table
-=======
->>>>>>> Stashed changes
 
     def __repr__(self):
         return "[Username:{},Time spend:{}]".format(self.user_id,self.time)

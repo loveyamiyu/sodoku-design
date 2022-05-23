@@ -265,6 +265,7 @@ function check() {
 }
 
 function submit() { //revision needed
+	if (check() != false) {
 		$.ajax({
 			url: "/home", 
 			type: "POST",  
@@ -272,6 +273,10 @@ function submit() { //revision needed
 				 "timeSpent": timeSpent},  
 		});
 		console.log(timeSpent);
+	} else {
+		document.getElementById('result').innerHTML = "Something needs to be revised :(";
+		startTimer();
+	}
 }
 
 function finishGrid() {
