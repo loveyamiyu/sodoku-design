@@ -13,9 +13,9 @@ class UserModelCase(unittest.TestCase):
         self.app = app.test_client() # create a vitual test enviroment
         db.create_all()
         # create 3 users as test cases
-        user1 = User(username='hello', email='123@gmail.com')
-        user2 = User(username='hey', email='456@gmail.com')
-        user3 = User(username='hi', email='789@gmail.com')
+        user1 = User(username='hello', email='123@gmail.com', password='testing1')
+        user2 = User(username='hey', email='456@gmail.com', password='testing2')
+        user3 = User(username='hi', email='789@gmail.com', password='testing3')
         db.session.add(user1)
         db.session.add(user2)
         db.session.add(user3)
@@ -30,9 +30,9 @@ class UserModelCase(unittest.TestCase):
 
     def test_password_hashing(self):
         user1 = User.query.filter_by(username='hello')
-        user1.set_password('testhello')
+        user1.set_password('testing1')
         self.assertFalse(user1.check_password('casehello'))
-        self.assertTrue(user1.check_password('testhello'))
+        self.assertTrue(user1.check_password('testing1'))
     
     def register(self,username,email,password,confirm):
         return self.app.post('signup/', 
