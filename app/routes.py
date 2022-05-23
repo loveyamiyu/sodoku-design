@@ -24,7 +24,7 @@ def home():
         new_puzzle = Stats(time=time)
         db.session.add(new_puzzle)
         db.session.commit()
-        return "<p> Hi </p>"
+        
     else:
     
         return render_template("home.html", user=current_user)
@@ -36,7 +36,6 @@ def rules():
 @app.route("/stats", methods=['GET','POST'])
 @login_required
 def stats():
-    stats = db.session.query(Stats).all()
     return render_template("stats.html", stats=stats)
 
 @app.route("/login", methods=['GET', 'POST'])
