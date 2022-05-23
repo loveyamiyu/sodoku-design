@@ -46,7 +46,6 @@ class User(UserMixin, db.Model): #subclass user
 class Stats(db.Model): # subclass stats used to store the results of users
     id = db.Column(db.Integer, primary_key=True)
     time = db.Column(db.Integer, nullable=False) 
-    username = db.Column(db.String(64), db.ForeignKey('user.username'),nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id')) # Reference to user id in user table
 
     def __repr__(self):

@@ -21,8 +21,7 @@ def home():
         return redirect(url_for('login')) # if the user is not authenticated: return to login page.
     if request.method == 'POST':
         time = request.form.get('timeSpent')
-        puzzle = request.form.get('finishedGrid')
-        new_puzzle = Stats(time=time, puzzle=puzzle)
+        new_puzzle = Stats(time=time)
         db.session.add(new_puzzle)
         db.session.commit()
         return "<p> Hi </p>"
@@ -33,17 +32,6 @@ def home():
 @app.route("/rules")
 def rules():
     return render_template("rules.html")
-
-@app.route("/result", methods=['POST','GET'])
-def result():
-    if request.method == 'POST':
-        time = request.form.get('timeSpent')
-        new_puzzle = Stats(time=time)
-        db.session.add(new_puzzle)
-        db.session.commit()
-        
-    else:
-        return render_template("result.html",result = result)
 
 @app.route("/stats", methods=['GET','POST'])
 @login_required

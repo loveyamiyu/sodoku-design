@@ -50,7 +50,7 @@ class RegistrationForm(FlaskForm):
     password2 = PasswordField(
         'Repeat Password', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Sign up')
-    """
+
     def validate(self):
         initial_validation = super(RegistrationForm, self).validate()
         if not initial_validation:
@@ -65,6 +65,7 @@ class RegistrationForm(FlaskForm):
             return False
         return True   
 
+"""
     def validate_username(self, username):
 
         user = User.query.filter_by(username = self.username.data).first() 
