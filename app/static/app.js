@@ -239,23 +239,23 @@ function check() {
 		var finishedGrid = finishGrid();
 		for(var i = 0; i < 9; i++) {
             for(var j = 0; j < 9; i++) {
-            var tile = document.getElementById("t" + i + "x" + j);
-			if (puzzle.isValid(finishedGrid, i, j, tile.innerHTML)) {
-					pause();
-					document.getElementById('result').innerHTML = "You did amazing!!" + " The time you spent is " + timeSpent + " seconds";
-					$.ajax({
-						url: "/home", 
-						type: "POST",  
-						data: {
-							 "timeSpent": timeSpent,
-							 "finishedGrid": finishedGrid},  
-					});
-					console.log(timeSpent, finishedGrid)
-				} else {
-					document.getElementById('result').innerHTML = "Something needs to be revised :(";
-					startTimer();
-					return false;
-				}
+				var tile = document.getElementById("t" + i + "x" + j);
+				if (puzzle.isValid(finishedGrid, i, j, tile.innerHTML)) {
+						pause();
+						document.getElementById('result').innerHTML = "You did amazing!!" + " The time you spent is " + timeSpent + " seconds";
+						$.ajax({
+							url: "/home", 
+							type: "POST",  
+							data: {
+								"timeSpent": timeSpent,
+								"finishedGrid": finishedGrid},  
+						});
+						console.log(timeSpent, finishedGrid)
+					} else {
+						document.getElementById('result').innerHTML = "Something needs to be revised :(";
+						startTimer();
+						return false;
+					}
 			}
 		}
 
@@ -301,15 +301,6 @@ function solve() {
 		}
 	}
 } 
-function checkE(){
-	for(var i = 0; i < 9; i++) {
-		for(var j = 0; j < 9; i++) {
-			var tile = document.getElementById("t" + i + "x" + j);
-			if(tile.innerHTML == puzzle.getSolution(i, j)) return true;
-		}
-	}
-	return false;
-}
 
 
 function checkForEmptyCells() {
