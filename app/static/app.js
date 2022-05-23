@@ -248,13 +248,13 @@ function check() {
 							type: "POST",  
 							data: {
 								"timeSpent": timeSpent,
-								"finishedGrid": finishedGrid},  
+								"finishedGrid": null},  
 						});
-						console.log(timeSpent, finishedGrid)
+						console.log(timeSpent, finishedGrid);
 					} else {
 						document.getElementById('result').innerHTML = "Something needs to be revised :(";
 						startTimer();
-						return false;
+						checkS = false;
 					}
 			}
 		}
@@ -267,7 +267,7 @@ function check() {
 	}
 }
 
-	
+
 function finishGrid() {
 	// record the finished grid(the current puzzle)
 	var finishedGrid = new Array(9);
