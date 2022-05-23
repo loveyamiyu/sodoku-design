@@ -1,4 +1,157 @@
-*   commit 39e0013fe62acffe85cac2d1c99449f99f6c4c60 (HEAD -> main, origin/main, origin/HEAD)
+* commit dca0ac17420c5ef7f2f604e99d9b4dba3798c3e5 (HEAD -> main, origin/main, origin/HEAD)
+| Author: fangtingyu <yuft00@gmail.com>
+| Date:   Mon May 23 14:47:56 2022 +0800
+| 
+|     stats
+| 
+* commit 4c3ec8875f4c0319f02ba019793eaccc66fad527
+| Author: fangtingyu <yuft00@gmail.com>
+| Date:   Mon May 23 14:34:15 2022 +0800
+| 
+|     Revert "models update"
+|     
+|     This reverts commit 1180e21d7ea2996de89eb90a51fe021936407971.
+| 
+* commit 1180e21d7ea2996de89eb90a51fe021936407971
+| Author: fangtingyu <yuft00@gmail.com>
+| Date:   Mon May 23 14:14:15 2022 +0800
+| 
+|     models update
+| 
+* commit b22f38ec01dce29377edb80c9192750910388e75
+| Author: fangtingyu <yuft00@gmail.com>
+| Date:   Mon May 23 13:42:01 2022 +0800
+| 
+|     stats update database
+| 
+* commit 1bc0417eb4bb335c9028a29e0ed277fb3a3ad889
+| Author: fangtingyu <yuft00@gmail.com>
+| Date:   Mon May 23 13:33:40 2022 +0800
+| 
+|     Revert "stats"
+|     
+|     This reverts commit 29a32638ab3b4ed562bd54862ae6a360e00a962a.
+| 
+* commit 29a32638ab3b4ed562bd54862ae6a360e00a962a
+| Author: fangtingyu <yuft00@gmail.com>
+| Date:   Mon May 23 13:32:59 2022 +0800
+| 
+|     stats
+| 
+* commit 4977a089ba29358794d8ae759c8645838bde6fd2
+| Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
+| Date:   Mon May 23 13:28:58 2022 +0800
+| 
+|     stats page changes
+|   
+*   commit ec49f6ab1945d58401acbb328d1d5a10fc7e6c57
+|\  Merge: c180881 bc5273f
+| | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
+| | Date:   Mon May 23 12:52:49 2022 +0800
+| | 
+| |     Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+| | 
+| * commit bc5273f7cd46a4a99cba7c79e270c557bbed1697
+| | Author: fangtingyu <yuft00@gmail.com>
+| | Date:   Mon May 23 12:22:10 2022 +0800
+| | 
+| |     submit post (puzzle deleting)
+| | 
+* | commit c180881a1e966f5517041bcb271a97bad6442bdc
+|/  Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
+|   Date:   Mon May 23 12:51:40 2022 +0800
+|   
+|       deleted username in Stats
+| 
+* commit ca4f1a518a6f50d43d13041f2e86907bab7b6807
+| Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
+| Date:   Mon May 23 12:14:51 2022 +0800
+| 
+|     changes
+|   
+*   commit f3748ad00e1ecabd9c5a207158c7a221350a04d3
+|\  Merge: 384e2b5 498680f
+| | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
+| | Date:   Mon May 23 12:09:44 2022 +0800
+| | 
+| |     Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+| | 
+| * commit 498680f5d8fdd6311573851a62765689ebbff878
+| | Author: fangtingyu <yuft00@gmail.com>
+| | Date:   Mon May 23 12:06:41 2022 +0800
+| | 
+| |     model and database adjust
+| | 
+* | commit 384e2b526e57711bedfde30e685a0cb40b5c528f
+|/  Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
+|   Date:   Mon May 23 12:09:04 2022 +0800
+|   
+|       css updates
+|   
+*   commit 5e174f2e25d7809fe1d945bd175dcbe1751cf807
+|\  Merge: b4f0b9a 42f18fd
+| | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
+| | Date:   Mon May 23 11:54:21 2022 +0800
+| | 
+| |     Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+| | 
+| * commit 42f18fd65d45a51ba75a7b2915e67d87a7c5dcdb
+| | Author: fangtingyu <yuft00@gmail.com>
+| | Date:   Mon May 23 10:49:33 2022 +0800
+| | 
+| |     result page remove
+| | 
+| * commit 57f0125dded0c9de1e4662929395b554d24551fc
+| | Author: fangtingyu <yuft00@gmail.com>
+| | Date:   Mon May 23 10:22:16 2022 +0800
+| | 
+| |     css sheet update
+| |   
+| *   commit 4764a1425f7943e2550265b60b3052253fcd8fd6
+| |\  Merge: 272bb27 35560b6
+| | | Author: fangtingyu <yuft00@gmail.com>
+| | | Date:   Mon May 23 10:15:03 2022 +0800
+| | | 
+| | |     Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+| | | 
+| * | commit 272bb27dae185a362db3b00b3175cb6dcb81fbe3
+| | | Author: fangtingyu <yuft00@gmail.com>
+| | | Date:   Mon May 23 10:14:49 2022 +0800
+| | | 
+| | |     Update README.md
+| | | 
+* | | commit b4f0b9a4ab9f0d4a5c7e4860ebbd91df622e9440
+| |/  Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
+|/|   Date:   Mon May 23 11:53:03 2022 +0800
+| |   
+| |       stats update
+| | 
+* | commit 35560b6d496763f068a075b69df841070df1ca21
+| | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
+| | Date:   Mon May 23 10:14:09 2022 +0800
+| | 
+| |     merged submit function with check function
+| | 
+* | commit 32c65aab3452ee5c35be2a702eb7c97b254b4fff
+|\| Merge: 32ecfd4 cd5ffcb
+| | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
+| | Date:   Mon May 23 10:05:11 2022 +0800
+| | 
+| |     Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+| | 
+| * commit cd5ffcb559e5ef2dca818c00a3c2346a08fec9e6
+| | Author: fangtingyu <yuft00@gmail.com>
+| | Date:   Mon May 23 09:58:08 2022 +0800
+| | 
+| |     git-log create
+| | 
+* | commit 32ecfd480e69199c68b7655ad7786f809f25af2e
+|/  Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
+|   Date:   Mon May 23 10:04:52 2022 +0800
+|   
+|       submit function changes
+|   
+*   commit 39e0013fe62acffe85cac2d1c99449f99f6c4c60
 |\  Merge: 7b344cb 7ca6797
 | | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
 | | Date:   Mon May 23 09:47:20 2022 +0800
