@@ -255,10 +255,12 @@ table tbody {
 
 .share-button {
     margin-bottom: 30px;
+    text-align: right;
+    margin-right: 30px;
 }
 
 .share-button a {
-    background: #8155BA;
+    background: #000;
     color: #fff;
     font-size: 1.5rem;
     padding: 10px;
@@ -267,15 +269,10 @@ table tbody {
     outline: none;
 }
 
-.newChallenge a {
-    background: #8155BA;
-    color: #fff;
-    font-size: 1.5rem;
-    padding: 10px;
-    border-radius: 12px;
-    text-decoration: none;
-    outline: none;
+.share-button a:hover {
+    background-color: #8155BA;
 }
+
 
 .social-media {
     margin-bottom: 20px;
@@ -292,6 +289,9 @@ table tbody {
     color: #8155BA;
 }
 
+#copyme {
+    display: none;
+}
 
 /* Login Page & Signup Page */
 

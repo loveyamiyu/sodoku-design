@@ -1,6 +1,5 @@
-from datetime import datetime
-from typing_extensions import Self
 from app import db
+from flask_sqlalchemy import SQLAlchemy
 from app import login
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -46,16 +45,11 @@ class User(UserMixin, db.Model): #subclass user
 class Stats(db.Model): # subclass stats used to store the results of users
     id = db.Column(db.Integer, primary_key=True)
     time = db.Column(db.Integer, nullable=False) 
-    user_name = db.Column(db.String, db.ForeignKey('user.username'))
-    userid = db.Column(db.Integer, db.ForeignKey('user.id')) # Reference to user id in user table
-
-    def __init__(self, time, user_name, userid):
-        self.time = time
-        self.user_name = user_name
-        self.userid(userid)
+    user_name = db.Column(db.String(64), db.ForeignKey('user.username'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id')) # Reference to user id in user table
 
     def __repr__(self):
-        return "[Userid:{},Time spend:{},Username:{}]".format(self.userid,self.time,self.user_name)
+        return "[Username:{},Time spend:{}]".format(self.user_id,self.time)
 
 
 def init_db():

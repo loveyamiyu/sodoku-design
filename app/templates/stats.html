@@ -14,7 +14,8 @@
         <a href="https://www.twitter.com/"><i class="social-media fa-brands fa-twitter-square fa-2x"></i></a>
     </div>
     <div class="stats-header">
-        <h1>SEE HOW DID EVERYONE GO!</h1>
+        <h1>Hi {{current_user.username}}!</h1>
+        <h4> Check out how you're doing!</h4>
         <br>
         <br>
     </div>
@@ -29,14 +30,16 @@
             <tbody>
                 {% for i in stats %}
                 <tr>
-                    <td>{{i.username}}</td>
-                    <td>{{i.time}}</td>
+                    {% if i.user_name == current_user.username %}
+                        <td>{{i.id}}</td>
+                        <td>{{i.time}}</td>
+                    {% endif %}
                 </tr>
                 {% endfor %}
             </tbody>
           </table>
 
-          <div id="copyme">I just finished Sudoku No. {{stats.id}} and used {{stats.time}} seconds</div>
+          <div id="copyme">I just finished Sudoku No. {{id}} and used {{time}} seconds</div>
     </div>
     
 </div>

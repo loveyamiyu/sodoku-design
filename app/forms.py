@@ -1,9 +1,6 @@
-#from msilib.schema import CheckBox
-from asyncio.proactor_events import _ProactorBaseWritePipeTransport
 from flask_wtf import FlaskForm
-from sqlalchemy import false
 from wtforms import StringField, BooleanField, PasswordField, SubmitField
-from wtforms.validators import DataRequired, Email, EqualTo, Length,ValidationError
+from wtforms.validators import DataRequired, Email, EqualTo, Length
 from app.models import User
 
 class LoginForm(FlaskForm):

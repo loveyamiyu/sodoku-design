@@ -1,17 +1,10 @@
-
-from cmath import log
-from crypt import methods
-from sqlite3 import IntegrityError
-from unicodedata import name
-from flask import render_template, request, flash, redirect, url_for,session
+from flask import render_template, request, flash, redirect, url_for
 from flask_login import current_user, login_user, logout_user, login_required
-from sqlalchemy import ForeignKey, literal_column
 from app import app
 from .models import User, Stats
 from . import db
 from app.forms import RegistrationForm, LoginForm
 from werkzeug.urls import url_parse
-import json
  
 
 @app.route('/')
@@ -22,7 +15,9 @@ def home():
         return redirect(url_for('login')) # if the user is not authenticated: return to login page.
     if request.method == 'POST':
         time = request.form.get('timeSpent')
-        new_puzzle = Stats(time=time)
+        username = current_user.username
+        id = current_user.id
+        new_puzzle = Stats(time=time, user_id=id, user_name=username)
         db.session.add(new_puzzle)
         db.session.commit()
         return "<p> Hi </p>"

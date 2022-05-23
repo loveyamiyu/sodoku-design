@@ -1,5 +1,4 @@
 var numSelected = null;
-var tileSelected = null;
 var puzzle;
 
 
@@ -224,8 +223,6 @@ function erase(){
 	numSelected = null;
 }
 
-var tile = null;
-
 for(var i = 0; i < 9; i++) {
 	for(var j = 0; j < 9; j++) {
 		var tile = document.getElementById("t" + i + "x" + j);
@@ -264,7 +261,7 @@ function check() {
 	}
 }
 
-function submit() { //revision needed
+function submit() { 
 	if (check() != false) {
 		$.ajax({
 			url: "/home", 
@@ -323,16 +320,6 @@ function checkForEmptyCells() {
 		}
 	}
 	return true;
-}
-
-function showStats(){
-	$.ajax({
-		url: "/stats", 
-		type: "GET",  
-		data: {
-			 "timeSpent": timeSpent,
-			 "finishedGrid": finishedGrid},  
-	});
 }
 
 // Part E: Timer //
