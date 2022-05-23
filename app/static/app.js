@@ -243,7 +243,14 @@ function check() {
 			if (puzzle.isValid(finishedGrid, i, j, tile.innerHTML)) {
 					pause();
 					document.getElementById('result').innerHTML = "You did amazing!!" + " The time you spent is " + timeSpent + " seconds";
-					return timeSpent, finishedGrid;
+					$.ajax({
+						url: "/home", 
+						type: "POST",  
+						data: {
+							 "timeSpent": timeSpent,
+							 "finishedGrid": finishedGrid},  
+					});
+					console.log(timeSpent, finishedGrid)
 				} else {
 					document.getElementById('result').innerHTML = "Something needs to be revised :(";
 					startTimer();
@@ -260,21 +267,7 @@ function check() {
 	}
 }
 
-function submit() { //revision needed
-	if (check() != false) {
-		var finishedGrid = finishedGrid;
-		$.ajax({
-			url: "/home", 
-			type: "POST",  
-			data: {
-				 "timeSpent": timeSpent,
-				 "finishedGrid": finishedGrid},  
-		});
-	}
-}
-
 	
-
 function finishGrid() {
 	// record the finished grid(the current puzzle)
 	var finishedGrid = new Array(9);
