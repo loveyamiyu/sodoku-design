@@ -39,13 +39,14 @@ class User(UserMixin, db.Model): #subclass user
     def is_anonymous(self):
         return False
 
-    def get_id(self):
-        return self.id
+    def get_name(self):
+        return self.username
 
 
 class Stats(db.Model): # subclass stats used to store the results of users
     id = db.Column(db.Integer, primary_key=True)
     time = db.Column(db.Integer, nullable=False) 
+    username = db.Column(db.String(64))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id')) # Reference to user id in user table
 
     def __repr__(self):
