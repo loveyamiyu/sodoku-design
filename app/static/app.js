@@ -261,10 +261,10 @@ function check() {
 }
 
 function submit() { //revision needed
-	if (puzzle.check() != false) {
-		var finishedGrid =finishGrid();
+	if (check() != false) {
+		var finishedGrid = finishedGrid;
 		$.ajax({
-			url: "{{url_for('result')}}", 
+			url: "/home", 
 			type: "POST",  
 			data: {
 				 "timeSpent": timeSpent,
