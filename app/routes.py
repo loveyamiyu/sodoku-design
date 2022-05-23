@@ -3,7 +3,7 @@ from cmath import log
 from crypt import methods
 from sqlite3 import IntegrityError
 from unicodedata import name
-from flask import render_template, request, flash, redirect, url_for
+from flask import render_template, request, flash, redirect, url_for,session
 from flask_login import current_user, login_user, logout_user, login_required
 from app import app
 from .models import Puzzle, User, Stats
@@ -34,9 +34,9 @@ def result():
         new_puzzle = Stats(time=time, puzzle=puzzle)
         db.session.add(new_puzzle)
         db.session.commit()
-
-    
-    return render_template("result.html",result = result)
+        return f"<h1>{time}<h1>"
+    else:
+        return render_template("result.html",result = result)
 
 @app.route("/stats", methods=['GET','POST'])
 @login_required
@@ -61,6 +61,10 @@ def login():
             return redirect(url_for('home'))
         return redirect(next_page)
     return render_template('login.html', title='Log in', form=form)
+
+@app.route("/<usr>")
+def user(usr):
+    return f"<h1>{usr}</h1>"
 
 
 @app.route('/logout', methods=['GET', 'POST'])

@@ -257,12 +257,14 @@ function check() {
 		startTimer();
 	}
 }
-
+var finishedGrid =finishGrid();
 function submit() { //revision needed
 		$.ajax({
 			url: "{{url_for('result')}}", 
 			type: "POST",  
-			data: { "timeSpent": timeSpent,"finishedGrid": finishGrid},  
+			data: {
+				 "timeSpent": timeSpent,
+				 "finishedGrid": finishedGrid},  
 			success: function (result) {
 				if (result.message == "success!") {
 					alert(result.message+"Your finishedGrid"+result.finishedGrid+". You spent "+result.timeSpent+"seconds")
@@ -274,9 +276,6 @@ function submit() { //revision needed
 		});
 }
 	
-	
-
-
 
 function finishGrid() {
 	// record the finished grid(the current puzzle)
