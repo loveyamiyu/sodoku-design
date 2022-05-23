@@ -80,15 +80,11 @@ def signup():
     form = RegistrationForm()
     if request.method == 'POST':
         if form.validate_on_submit():
-            try: 
-                user = User(username=form.username.data, email=form.email.data, password=form.password.data)
-                user.set_password(form.password.data)
-                db.session.add(user) # Add latest registered user into the database model
-                db.session.commit()
-                return redirect(url_for('login'))
-            except IntegrityError:
-                db.session.rollback()
-                flash('ERROR! Email ({}) already exists.'.format(form.email.data), 'error')
+            user = User(username=form.username.data, email=form.email.data, password=form.password.data)
+            user.set_password(form.password.data)
+            db.session.add(user) # Add latest registered user into the database model
+            db.session.commit()
+            return redirect(url_for('login'))
 
     return render_template('signup.html', title='Sign up', form=form)
 
