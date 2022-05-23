@@ -189,8 +189,8 @@ td.selected {
     flex-wrap: wrap;
 }
 
-#solve, #erase, #check, #submit-button {
-    width: 90px; /* does not work, needs revision */
+#solve, #erase, #check {
+    width: 28.5%; 
     height: 40px;
     background-color: #8155BA;
     border: none;
