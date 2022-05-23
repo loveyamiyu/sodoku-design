@@ -1,5 +1,8 @@
-# Description
+# Project Contributors
+Student Name & Number: Fangting Yu 22391059
+Student Name & Number: Yingying Liao 23166974
 
+# Description
 This sudoku game is created by Yingying and Fangting for a CITS5505 project assessment purpose. Involve the usage of HTML, JavaScript, CSS, AJAX and Flask.
 
 # Virtual environment creation

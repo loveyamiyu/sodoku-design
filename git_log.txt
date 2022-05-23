@@ -1,907 +1,211 @@
-* commit dca0ac17420c5ef7f2f604e99d9b4dba3798c3e5 (HEAD -> main, origin/main, origin/HEAD)
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Mon May 23 14:47:56 2022 +0800
-| 
-|     stats
-| 
-* commit 4c3ec8875f4c0319f02ba019793eaccc66fad527
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Mon May 23 14:34:15 2022 +0800
-| 
-|     Revert "models update"
-|     
-|     This reverts commit 1180e21d7ea2996de89eb90a51fe021936407971.
-| 
-* commit 1180e21d7ea2996de89eb90a51fe021936407971
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Mon May 23 14:14:15 2022 +0800
-| 
-|     models update
-| 
-* commit b22f38ec01dce29377edb80c9192750910388e75
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Mon May 23 13:42:01 2022 +0800
-| 
-|     stats update database
-| 
-* commit 1bc0417eb4bb335c9028a29e0ed277fb3a3ad889
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Mon May 23 13:33:40 2022 +0800
-| 
-|     Revert "stats"
-|     
-|     This reverts commit 29a32638ab3b4ed562bd54862ae6a360e00a962a.
-| 
-* commit 29a32638ab3b4ed562bd54862ae6a360e00a962a
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Mon May 23 13:32:59 2022 +0800
-| 
-|     stats
-| 
-* commit 4977a089ba29358794d8ae759c8645838bde6fd2
-| Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| Date:   Mon May 23 13:28:58 2022 +0800
-| 
-|     stats page changes
-|   
-*   commit ec49f6ab1945d58401acbb328d1d5a10fc7e6c57
-|\  Merge: c180881 bc5273f
-| | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| | Date:   Mon May 23 12:52:49 2022 +0800
-| | 
-| |     Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| | 
-| * commit bc5273f7cd46a4a99cba7c79e270c557bbed1697
-| | Author: fangtingyu <yuft00@gmail.com>
-| | Date:   Mon May 23 12:22:10 2022 +0800
-| | 
-| |     submit post (puzzle deleting)
-| | 
-* | commit c180881a1e966f5517041bcb271a97bad6442bdc
-|/  Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-|   Date:   Mon May 23 12:51:40 2022 +0800
-|   
-|       deleted username in Stats
-| 
-* commit ca4f1a518a6f50d43d13041f2e86907bab7b6807
-| Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| Date:   Mon May 23 12:14:51 2022 +0800
-| 
-|     changes
-|   
-*   commit f3748ad00e1ecabd9c5a207158c7a221350a04d3
-|\  Merge: 384e2b5 498680f
-| | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| | Date:   Mon May 23 12:09:44 2022 +0800
-| | 
-| |     Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| | 
-| * commit 498680f5d8fdd6311573851a62765689ebbff878
-| | Author: fangtingyu <yuft00@gmail.com>
-| | Date:   Mon May 23 12:06:41 2022 +0800
-| | 
-| |     model and database adjust
-| | 
-* | commit 384e2b526e57711bedfde30e685a0cb40b5c528f
-|/  Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-|   Date:   Mon May 23 12:09:04 2022 +0800
-|   
-|       css updates
-|   
-*   commit 5e174f2e25d7809fe1d945bd175dcbe1751cf807
-|\  Merge: b4f0b9a 42f18fd
-| | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| | Date:   Mon May 23 11:54:21 2022 +0800
-| | 
-| |     Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| | 
-| * commit 42f18fd65d45a51ba75a7b2915e67d87a7c5dcdb
-| | Author: fangtingyu <yuft00@gmail.com>
-| | Date:   Mon May 23 10:49:33 2022 +0800
-| | 
-| |     result page remove
-| | 
-| * commit 57f0125dded0c9de1e4662929395b554d24551fc
-| | Author: fangtingyu <yuft00@gmail.com>
-| | Date:   Mon May 23 10:22:16 2022 +0800
-| | 
-| |     css sheet update
-| |   
-| *   commit 4764a1425f7943e2550265b60b3052253fcd8fd6
-| |\  Merge: 272bb27 35560b6
-| | | Author: fangtingyu <yuft00@gmail.com>
-| | | Date:   Mon May 23 10:15:03 2022 +0800
-| | | 
-| | |     Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| | | 
-| * | commit 272bb27dae185a362db3b00b3175cb6dcb81fbe3
-| | | Author: fangtingyu <yuft00@gmail.com>
-| | | Date:   Mon May 23 10:14:49 2022 +0800
-| | | 
-| | |     Update README.md
-| | | 
-* | | commit b4f0b9a4ab9f0d4a5c7e4860ebbd91df622e9440
-| |/  Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-|/|   Date:   Mon May 23 11:53:03 2022 +0800
-| |   
-| |       stats update
-| | 
-* | commit 35560b6d496763f068a075b69df841070df1ca21
-| | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| | Date:   Mon May 23 10:14:09 2022 +0800
-| | 
-| |     merged submit function with check function
-| | 
-* | commit 32c65aab3452ee5c35be2a702eb7c97b254b4fff
-|\| Merge: 32ecfd4 cd5ffcb
-| | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| | Date:   Mon May 23 10:05:11 2022 +0800
-| | 
-| |     Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| | 
-| * commit cd5ffcb559e5ef2dca818c00a3c2346a08fec9e6
-| | Author: fangtingyu <yuft00@gmail.com>
-| | Date:   Mon May 23 09:58:08 2022 +0800
-| | 
-| |     git-log create
-| | 
-* | commit 32ecfd480e69199c68b7655ad7786f809f25af2e
-|/  Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-|   Date:   Mon May 23 10:04:52 2022 +0800
-|   
-|       submit function changes
-|   
-*   commit 39e0013fe62acffe85cac2d1c99449f99f6c4c60
-|\  Merge: 7b344cb 7ca6797
-| | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| | Date:   Mon May 23 09:47:20 2022 +0800
-| | 
-| |     Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| | 
-| * commit 7ca67977a13ce549c743f51e4de69dccb262314f
-| | Author: fangtingyu <yuft00@gmail.com>
-| | Date:   Mon May 23 09:20:35 2022 +0800
-| | 
-| |     submit update
-| |   
-| *   commit ebf0a08761b6595cd38c997d5806f9a24c74263f
-| |\  Merge: 98bf08d abeeb82
-| | | Author: fangtingyu <yuft00@gmail.com>
-| | | Date:   Mon May 23 09:01:43 2022 +0800
-| | | 
-| | |     Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| | | 
-| * | commit 98bf08d3f4f05a53e29e2277d8d6982697d1f35f
-| | | Author: fangtingyu <yuft00@gmail.com>
-| | | Date:   Mon May 23 09:01:38 2022 +0800
-| | | 
-| | |     submit post
-| | | 
-* | | commit 7b344cb790a7e847ef42427ebb221390ae11d0b2
-| |/  Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-|/|   Date:   Mon May 23 09:42:35 2022 +0800
-| |   
-| |       submit function
-| | 
-* | commit abeeb820005f2ca73f1211454f3210c592deb731
-| | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| | Date:   Mon May 23 08:21:23 2022 +0800
-| | 
-| |     changes on tests
-| | 
-* | commit 97708f85dcc26509e6e2d45233a6556aa083b3d0
-|/  Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-|   Date:   Mon May 23 08:09:28 2022 +0800
-|   
-|       sign up route changed back
-| 
-* commit 2aff7705a580599b9825e32ebace644e2db99e60
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Mon May 23 07:47:05 2022 +0800
-| 
-|     system test
-| 
-* commit 7634f53be2acd87ad7d7dc3ad3731cfa83dbfeb9
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Mon May 23 07:33:08 2022 +0800
-| 
-|     config,py
-| 
-* commit 308ed30bef8c7cf24d8e5787311c267570a0f487
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Mon May 23 07:11:52 2022 +0800
-| 
-|     check function again :(
-|   
-*   commit 8b0b3ced3f302e4a3caac200abe2118ec705c817
-|\  Merge: 0385f89 66e8240
-| | Author: fangtingyu <yuft00@gmail.com>
-| | Date:   Mon May 23 01:33:54 2022 +0800
-| | 
-| |     Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| | 
-| * commit 66e82403f4fe7ae518b5144c362f3910263fdc7b
-| | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| | Date:   Mon May 23 01:22:01 2022 +0800
-| | 
-| |     signup changes
-| |   
-| *   commit fa93ab7c629c7f40d7a7529e2c909ec6a26a0b9d
-| |\  Merge: 1996435 35c762c
-| | | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| | | Date:   Mon May 23 00:45:26 2022 +0800
-| | | 
-| | |     Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| | | 
-| * | commit 1996435dce20eaf7b0c91960d0137b7c683833d6
-| | | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| | | Date:   Mon May 23 00:43:55 2022 +0800
-| | | 
-| | |     unit tests changes
-| | | 
-* | | commit 0385f891aefd92eafdbed4caad437e8ccb1a0b8d
-| |/  Author: fangtingyu <yuft00@gmail.com>
-|/|   Date:   Mon May 23 01:28:52 2022 +0800
-| |   
-| |       tests update
-| | 
-* | commit 35c762c873aff6dada1768ff1568519f3dfa2b99
-|\| Merge: 4bfa925 e370351
-| | Author: fangtingyu <yuft00@gmail.com>
-| | Date:   Mon May 23 00:43:00 2022 +0800
-| | 
-| |     test
-| |   
-| *   commit e3703516f5d429cfb81f4b1a75436631bba6cbbe
-| |\  Merge: ab85b50 f580767
-| | | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| | | Date:   Sun May 22 22:58:39 2022 +0800
-| | | 
-| | |     back end unit tests
-| | | 
-| * | commit ab85b5036909e506c269414fcf84aeaf50d57f10
-| | | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| | | Date:   Sun May 22 22:54:12 2022 +0800
-| | | 
-| | |     back end unit tests
-| | | 
-* | | commit 4bfa92500399e7dc5b131bd2d7c8592a0715bd92
-| |/  Author: fangtingyu <yuft00@gmail.com>
-|/|   Date:   Mon May 23 00:42:22 2022 +0800
-| |   
-| |       htmls review
-| | 
-* | commit f580767ae5781962c139f032f84278882ece789c
-|\| Merge: 4db64d1 c8722c5
-| | Author: fangtingyu <yuft00@gmail.com>
-| | Date:   Sun May 22 20:40:10 2022 +0800
-| | 
-| |     Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| | 
-| * commit c8722c556b8c3fae19cb43a6a120ce1ad0e2232a
-| | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| | Date:   Sun May 22 20:13:11 2022 +0800
-| | 
-| |     home page css updates
-| | 
-* | commit 4db64d1f8a84d7f00a7a98a63f69c81cc890454c
-|/  Author: fangtingyu <yuft00@gmail.com>
-|   Date:   Sun May 22 20:39:08 2022 +0800
-|   
-|       home html and js review
-| 
-* commit 189edc8412d4d9f1252d91cf0672ec846115a533
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Sun May 22 19:54:14 2022 +0800
-| 
-|     Update stats.html
-|   
-*   commit 9bcc538e93edeb3d30be964a37e3b620e45d16bb
-|\  Merge: f7721cd 027f131
-| | Author: fangtingyu <yuft00@gmail.com>
-| | Date:   Sun May 22 18:57:35 2022 +0800
-| | 
-| |     Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| |   
-| *   commit 027f131751de3cfeedccac668915a5d7d776d8b2
-| |\  Merge: f548a1d a432bc7
-| | | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| | | Date:   Sun May 22 18:54:07 2022 +0800
-| | | 
-| | |     Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| | | 
-| * | commit f548a1dc6c2421f78d731be702d69796783646b1
-| | | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| | | Date:   Sun May 22 18:53:45 2022 +0800
-| | | 
-| | |     split check and submit
-| | | 
-* | | commit f7721cd3b39816826b3e75f0083846a5a86a5c3f
-| |/  Author: fangtingyu <yuft00@gmail.com>
-|/|   Date:   Sun May 22 18:57:20 2022 +0800
-| |   
-| |       Revert "update"
-| |       
-| |       This reverts commit a432bc759eca04cc01d3d6ff3587682c43a9f655.
-| | 
-* | commit a432bc759eca04cc01d3d6ff3587682c43a9f655
-| | Author: fangtingyu <yuft00@gmail.com>
-| | Date:   Sun May 22 18:40:06 2022 +0800
-| | 
-| |     update
-| | 
-* | commit ed22643296f36c3a058b106828f612160a67a42d
-|/  Author: fangtingyu <yuft00@gmail.com>
-|   Date:   Sun May 22 18:39:11 2022 +0800
-|   
-|       models.py update
-|   
-*   commit ef3a16046260289dc4e0e1ea6357b2b8a9d68ddd
-|\  Merge: 9b58c50 5387818
-| | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| | Date:   Sun May 22 17:01:10 2022 +0800
-| | 
-| |     Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| | 
-| * commit 53878181d43a903c9c4fa50fab4949c6120c4b63
-| | Author: fangtingyu <yuft00@gmail.com>
-| | Date:   Sun May 22 17:00:11 2022 +0800
-| | 
-| |     Delete .Rhistory
-| | 
-* | commit 9b58c509292b82c8cdc3866781720f34e36ccee1
-|/  Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-|   Date:   Sun May 22 17:00:48 2022 +0800
-|   
-|       added method for home page
-|   
-*   commit 6eb6a7a9246e59c16aed4c5efe0ae7389a89efdd
-|\  Merge: dec2f70 c379359
-| | Author: fangtingyu <yuft00@gmail.com>
-| | Date:   Sun May 22 16:36:44 2022 +0800
-| | 
-| |     Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| | 
-| * commit c3793597ea78c763184e2026002daa9636f09ce9
-| | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| | Date:   Sun May 22 16:12:51 2022 +0800
-| | 
-| |     trivial changes on flask form
-| | 
-* | commit dec2f70aedc907d506b76ed5bb904c7d047fc7f9
-|/  Author: fangtingyu <yuft00@gmail.com>
-|   Date:   Sun May 22 16:36:31 2022 +0800
-|   
-|       login-in test
-| 
-* commit 74ec086600c6478f09367d3ad2f8f62ff7ecdfcb
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Sun May 22 16:09:00 2022 +0800
-| 
-|     Create layout.html
-| 
-* commit 6cf46ae6764b1616dfc734f85ec77fca8e48ffbb
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Sun May 22 16:08:29 2022 +0800
-| 
-|     unit tests
-| 
-* commit d71f261ac38b65572e1aee8246b3d7a87465c469
-| Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| Date:   Sun May 22 15:42:48 2022 +0800
-| 
-|     added some unit tests
-| 
-* commit 8ba7f893241900295a7a4bec3f68d295bd3bd680
-| Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| Date:   Sun May 22 13:10:56 2022 +0800
-| 
-|     app.js cleanup
-|   
-*   commit fedf2be0085fdadeb353838e18954b05acf61fe5
-|\  Merge: 97a901e 30b3e56
-| | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| | Date:   Sun May 22 13:03:05 2022 +0800
-| | 
-| |     Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| | 
-* | commit 97a901e9614b2c95f55829e1ec348fe0760ebf27
-| | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| | Date:   Sun May 22 13:01:06 2022 +0800
-| | 
-| |     added new route
-| |   
-| | * commit a990c30634fc6664acba66f723ffecc81a15384c (origin/stat-post-get, stat-post-get)
-| |/  Author: fangtingyu <yuft00@gmail.com>
-| |   Date:   Sun May 22 13:58:20 2022 +0800
-| |   
-| |       submit route
-| | 
-| * commit 30b3e56a92aafafefaaa095a638df99585e2c0a5
-|/  Author: fangtingyu <yuft00@gmail.com>
-|   Date:   Sun May 22 12:24:50 2022 +0800
-|   
-|       tests updates
-| 
-* commit 2cea67bb93e02051172b1fad5db803934dba6d9b
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Sun May 22 11:55:56 2022 +0800
-| 
-|     update
-|   
-*   commit 1a7f7c3e442b7c162f46523ce2b7bcd3be494a04
-|\  Merge: 0129f0e a1598ba
-| | Author: fangtingyu <yuft00@gmail.com>
-| | Date:   Sun May 22 11:47:19 2022 +0800
-| | 
-| |     Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| | 
-| * commit a1598ba0e06ac4cd7bccffde2d5a1895b49f9a68
-| | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| | Date:   Sun May 22 11:38:33 2022 +0800
-| | 
-| |     check function updates
-| | 
-* | commit 0129f0e9068bbd9e785de948884cc7e168fa038b
-|/  Author: fangtingyu <yuft00@gmail.com>
-|   Date:   Sun May 22 11:47:06 2022 +0800
-|   
-|       check function update
-| 
-* commit d1cab54236e1240dbac85d75fa0c10f0b9260dda
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Sun May 22 00:22:11 2022 +0800
-| 
-|     Add puzzle class
-| 
-* commit 6dc2427c155b8e68d9696ad821b9e7addfcba65e
-| Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| Date:   Sat May 21 18:20:43 2022 +0800
-| 
-|     adjusted css
-|   
-*   commit 0a5ac938c380bfe97c0bee3b4096b4ba57c7b5d6
-|\  Merge: d4b819b 576a54d
-| | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| | Date:   Sat May 21 17:54:38 2022 +0800
-| | 
-| |     added logout
-| |   
-| *   commit 576a54d562cbdd3dc02ad7b4d91ab9f866025c21
-| |\  Merge: a7194e4 efcf024
-| | | Author: fangtingyu <yuft00@gmail.com>
-| | | Date:   Sat May 21 17:23:30 2022 +0800
-| | | 
-| | |     Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| | | 
-| * | commit a7194e4a1a990e1d5f8aac2559c7f68d1f194998
-| | | Author: fangtingyu <yuft00@gmail.com>
-| | | Date:   Sat May 21 17:23:20 2022 +0800
-| | | 
-| | |     stats
-| | | 
-* | | commit d4b819bb17370a7875e0901ecb4f03cdc8755035
-| |/  Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-|/|   Date:   Sat May 21 17:52:47 2022 +0800
-| |   
-| |       added logout for authenticated user
-| | 
-* | commit efcf024e10dfc44daba834ff168cf3c230d9af62
-|\| Merge: 15792c3 ffd89d3
-| | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| | Date:   Sat May 21 16:54:01 2022 +0800
-| | 
-| |     Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| | 
-| * commit ffd89d3dc026b828f53c3b0d35d8a6380d4cdb67
-| | Author: fangtingyu <yuft00@gmail.com>
-| | Date:   Sat May 21 16:24:49 2022 +0800
-| | 
-| |     update routes.py
-| | 
-* | commit 15792c31a5ddb340fbe54f6b236c86d315823528
-|/  Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-|   Date:   Sat May 21 16:53:35 2022 +0800
-|   
-|       loginForm validation function
-|   
-*   commit 157696d574c8afff95dc0652ad2f52035bb6a059
-|\  Merge: e1cbedd 36ee05c
-| | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| | Date:   Sat May 21 16:19:26 2022 +0800
-| | 
-| |     adjusted login.load_user
-| | 
-| * commit 36ee05cefb0e6666d24583d04cb8659cda449522
-| | Author: fangtingyu <yuft00@gmail.com>
-| | Date:   Sat May 21 15:56:10 2022 +0800
-| | 
-| |     current code revision and update
-| | 
-| * commit f60876c3a146cc93e2df31944f0922a5fa3fee53
-| | Author: fangtingyu <yuft00@gmail.com>
-| | Date:   Sat May 21 15:09:35 2022 +0800
-| | 
-| |     update models.py
-| |   
-| *   commit 57db7a834715c0c35d6773cef0d7a9e5c68f0cfd
-| |\  Merge: a849fc3 9f21797
-| | | Author: fangtingyu <yuft00@gmail.com>
-| | | Date:   Sat May 21 14:58:24 2022 +0800
-| | | 
-| | |     Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| | | 
-| * | commit a849fc374a6275b25fbb499a247cf47c40dcef69
-| | | Author: fangtingyu <yuft00@gmail.com>
-| | | Date:   Sat May 21 14:57:33 2022 +0800
-| | | 
-| | |     some extensions
-| | | 
-* | | commit e1cbedd93994c2fb2366d146ef776cfd177c2695
-| |/  Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-|/|   Date:   Sat May 21 16:17:25 2022 +0800
-| |   
-| |       adjusted login.user_loader
-| | 
-* | commit 9f217970e27db6b6fa9e0a0643943a829591e165
-| | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| | Date:   Sat May 21 14:49:15 2022 +0800
-| | 
-| |     database model changes
-| | 
-* | commit f8ea32809936ee75c8a841891a2c233782bd3887
-|\| Merge: 093bc27 ccc149e
-| | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| | Date:   Sat May 21 10:17:07 2022 +0800
-| | 
-| |     Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| | 
-| * commit ccc149e4b545eaf48d5119208fd2da4b30e73a68
-| | Author: fangtingyu <yuft00@gmail.com>
-| | Date:   Sat May 21 03:33:36 2022 +0800
-| | 
-| |     Update route.py
-| | 
-* | commit 093bc2726f4d603eee79cb0d3cb747e783d70c73
-|/  Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-|   Date:   Sat May 21 10:16:33 2022 +0800
-|   
-|       adjusted submit button on home page
-| 
-* commit e287eecfca4ee694c8d81a49270bc12ab6037b34
-| Author: Valerie Liao <valerieliao@192-168-1-101.tpgi.com.au>
-| Date:   Sat May 21 00:06:07 2022 +0800
-| 
-|     login redirection fixed
-|   
-*   commit 5571e3902c2a8f6082a76744237f1b60bac47f3d
-|\  Merge: 5d6a827 22bf56e
-| | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| | Date:   Fri May 20 21:18:26 2022 +0800
-| | 
-| |     Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| |   
-| *   commit 22bf56ea3a77070683ce8c48a879f2aadaf32402
-| |\  Merge: be2c7ed 5ef470d
-| | | Author: fangtingyu <yuft00@gmail.com>
-| | | Date:   Fri May 20 18:49:11 2022 +0800
-| | | 
-| | |     Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| | | 
-| * | commit be2c7ed267833e6c3f474a30c47589cb1e25b81f
-| | | Author: fangtingyu <yuft00@gmail.com>
-| | | Date:   Fri May 20 18:48:54 2022 +0800
-| | | 
-| | |     test.py creation
-| | | 
-* | | commit 5d6a827100112558b3847b999f6a83429d836fb8
-| |/  Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-|/|   Date:   Fri May 20 21:17:42 2022 +0800
-| |   
-| |       stats page html css
-| | 
-* | commit 5ef470d8568abb975c48f2f945816163d7d620cc
-| | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| | Date:   Fri May 20 18:41:48 2022 +0800
-| | 
-| |     deleted a button
-| | 
-* | commit 95a78ce45b7f43a5220e5ab510ef01031fb8cdcc
-|/  Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-|   Date:   Fri May 20 18:35:53 2022 +0800
-|   
-|       some changes
-| 
-* commit 74918d339ef4edbaa6b38d8af38b2c5ba3debe61
-| Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| Date:   Thu May 19 15:52:21 2022 +0800
-| 
-|     login redirection updates
-| 
-* commit 6cc59e9649bd8ddbdaf79275fd8467e015146225
-| Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| Date:   Thu May 19 14:08:08 2022 +0800
-| 
-|     database and login&signup form updated
-| 
-* commit 4143387938ea3820099b17e8ccca310c9c5e4a5f
-| Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| Date:   Thu May 19 11:48:49 2022 +0800
-| 
-|     changed filters for registration form
-| 
-* commit 397e80d75077b706727a0500e0387d8a0a33da90
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Wed May 18 18:33:41 2022 +0800
-| 
-|     check updated
-|     
-|     But still not working, only the solutions in the last subsquare will be check
-| 
-* commit 62ac9c950707e987c44a80e116355ab84ddba24d
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Wed May 18 18:06:35 2022 +0800
-| 
-|     Add new solution Grid
-| 
-* commit 06f8836f18030b1fc377d1ed0f34a3392166268f
-| Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| Date:   Wed May 18 14:52:32 2022 +0800
-| 
-|     fixed check function
-| 
-* commit 45dfd615bd1257d3b3a78c876a34753c2280dacb
-| Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| Date:   Wed May 18 12:20:48 2022 +0800
-| 
-|     fixed tile background color on reload
-| 
-* commit ae0b70dada56f001ab5d0aa2c1d75c21fc26b0c7
-| Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| Date:   Mon May 16 21:45:37 2022 +0800
-| 
-|     shuffle function changed
-| 
-* commit 34d8c0c1ea7913b80b0a66b99f235852ed1c397a
-| Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| Date:   Mon May 16 17:21:55 2022 +0800
-| 
-|     some variable changes
-| 
-* commit ee62101fff7717dfc53e53cb20863d05836e8a8a
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Sun May 15 08:25:16 2022 +0800
-| 
-|     bold signup in login page
-| 
-* commit 1a17a0fcb54b0b50ddd19707b938611af8b793a1
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Sat May 14 19:28:20 2022 +0800
-| 
-|     puzzle's visibility according to timer condition
-| 
-* commit a1d2d6ddf93aec98a25795725189d469f42edf9f
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Sat May 14 19:08:54 2022 +0800
-| 
-|     solve&check
-|     
-|     Solve button were created for testing, can be deleted later.
-|     
-|     Check function still needs to be improved
-| 
-* commit 6dc33ee182e2a0c045114a2e8ca0c52fee47c6b7
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Sat May 14 18:29:53 2022 +0800
-| 
-|     number select function improve and erase function
-| 
-* commit fef5153239f985ce1d3a63584905faf7aad283d9
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Sat May 14 16:41:15 2022 +0800
-| 
-|     NewGame timerStart addition
-| 
-* commit 201553c97d7fc4871abc618dbafcde4bfd20fd99
-| Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| Date:   Sat May 14 12:38:19 2022 +0800
-| 
-|     timer and buttons css
-| 
-* commit 3251f8bb71d2b73848be013436ca0f4ef800dbf8
-| Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| Date:   Fri May 13 15:59:34 2022 +0800
-| 
-|     timer adjustment
-| 
-* commit e63aeed79cdd46aa6b97335fa120c764ef780b4f
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Fri May 13 02:23:00 2022 +0800
-| 
-|     shuffle part
-|   
-*   commit bccb6a8327653dbb3d4e48f1ebb12df8cd167514
-|\  Merge: 615646c f21c46a
-| | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| | Date:   Thu May 12 19:31:47 2022 +0800
-| | 
-| |     grid changes and functions updates
-| | 
-| * commit f21c46abca58111d506f56b824d892cedbf86a17
-| | Author: fangtingyu <yuft00@gmail.com>
-| | Date:   Thu May 12 16:12:33 2022 +0800
-| | 
-| |     new js update
-| | 
-| * commit 0dc653c1f9304f7f5f330a2f0221c709822f01eb
-| | Author: fangtingyu <yuft00@gmail.com>
-| | Date:   Thu May 12 15:04:09 2022 +0800
-| | 
-| |     templates changes
-| | 
-* | commit 615646cc5a6a66e5bb2029a470bdd42392a7a829
-|/  Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-|   Date:   Thu May 12 19:28:12 2022 +0800
-|   
-|       grid changes and function updates
-| 
-* commit 22664382a4f94d9c75574b7e8e563319d4f3eb24
-| Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| Date:   Wed May 11 16:56:36 2022 +0800
-| 
-|     easy.txt
-| 
-* commit 5dc361cf64af0d3548a3bf0b45ad061bf0a964f2
-| Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| Date:   Wed May 11 16:51:36 2022 +0800
-| 
-|     database changes and sudoku file added
-| 
-* commit dbdd63d2d48c37e90e6b8e31698dbebeaeae7780
-| Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| Date:   Tue May 10 18:27:03 2022 +0800
-| 
-|     added database and user authentication
-| 
-* commit b2765b408fba24b920416507355a644f46c2cbf4
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Mon May 9 15:13:09 2022 +0800
-| 
-|     Log-in part
-| 
-* commit 01664cc785949e1b51bca767af1e510f34f6bd73
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Mon May 9 14:59:28 2022 +0800
-| 
-|     registration page extension
-| 
-* commit 7c1af6878b616767fa43758cee9d3cb19be8e545
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Mon May 9 14:49:14 2022 +0800
-| 
-|     Registration Page Creation
-| 
-* commit 7abe1535eb9456a4ca6114bf6b891bde7dbd7140
-| Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| Date:   Mon May 9 14:39:30 2022 +0800
-| 
-|     accidental deletion recover
-| 
-* commit f19308275d1ce9be4c6b5327503716274b06157b
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Sun May 8 21:03:24 2022 +0800
-| 
-|     Revert "Revert "Merge conflict resolve""
-|     
-|     This reverts commit 4165bb0a0e0db8f2ac462958a37ee655e3f00fd1.
-| 
-* commit 4165bb0a0e0db8f2ac462958a37ee655e3f00fd1
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Sun May 8 21:00:49 2022 +0800
-| 
-|     Revert "Merge conflict resolve"
-|     
-|     This reverts commit c36399d0d44435ae9d06b2249d68703a847e45c6, reversing
-|     changes made to 3bc56c51b009be19a4d9f4404db310692771bedf.
-|   
-*   commit c36399d0d44435ae9d06b2249d68703a847e45c6
-|\  Merge: 3bc56c5 4305de6
-| | Author: fangtingyu <yuft00@gmail.com>
-| | Date:   Sun May 8 20:59:43 2022 +0800
-| | 
-| |     Merge conflict resolve
-| | 
-| * commit 4305de6d8d62af5adec1a00c79b1139fdae5bb52
-| | Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| | Date:   Sat May 7 14:45:58 2022 +0800
-| | 
-| |     added logo and select difficulty dropdown
-| | 
-* | commit 3bc56c51b009be19a4d9f4404db310692771bedf
-|\| Merge: 48491c7 aaf6bb2
-| | Author: fangtingyu <yuft00@gmail.com>
-| | Date:   Wed May 4 19:51:28 2022 +0800
-| | 
-| |     Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| |   
-| *   commit aaf6bb27c850008e48c96adbe1e5019a6dd31447
-| |\  Merge: bebac5c 73c859e
-| | | Author: fangtingyu <83152253+fangtingyu@users.noreply.github.com>
-| | | Date:   Wed May 4 18:59:54 2022 +0800
-| | | 
-| | |     Merge pull request #1 from loveyamiyu/Rules-page
-| | |     
-| | |     Rules page
-| | | 
-| | * commit 73c859e2240881006dfa8d3fce1f228cb8e02f6f
-| | | Author: fangtingyu <yuft00@gmail.com>
-| | | Date:   Wed May 4 18:58:17 2022 +0800
-| | | 
-| | |     Some changes to rule page
-| | | 
-| | * commit f0b3229248f6177ff51b0281c1e58b68e9d07719
-| |/  Author: fangtingyu <yuft00@gmail.com>
-| |   Date:   Wed May 4 18:51:08 2022 +0800
-| |   
-| |       change the website internal link
-| | 
-* | commit 48491c795e511f5ee088a51318f1c6e3ed6b1b99
-|/  Author: fangtingyu <yuft00@gmail.com>
-|   Date:   Wed May 4 19:48:17 2022 +0800
-|   
-|       4 functional button testing
-|       
-|       Tried a few way but failed.
-|       I also changed the way to refer the css sheets and other sheets, because the previous way of reference does not work on my desktop, we can change it back if you want.
-| 
-* commit bebac5ccc0121f3bf4777a66362e5a822172ea11
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Wed May 4 18:43:48 2022 +0800
-| 
-|     Some structure changes
-| 
-* commit 07cef17fb5b247261eac950c39906a3fe765329d
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Tue May 3 18:53:14 2022 +0800
-| 
-|     Timer Javascript add
-|     
-|     I am having trouble to import the javascript, so I created a <script> </script> block under the timer code just to show the code is working. This section can be deleted once we can correctly import the js.
-| 
-* commit b53ec13ed1dfebd1bd24dfbc56ba48573a879013
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Tue May 3 17:54:24 2022 +0800
-| 
-|     4 functional button in home page + timer
-| 
-* commit d8681fa8301191d8dbeb15ecc9f2436da1c7fee0
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Tue May 3 17:53:50 2022 +0800
-| 
-|     Javascript change - trying to write a function and class for timer
-| 
-* commit a56cd567a9a35340020f314beae3cf6aaed326cd
-| Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| Date:   Tue May 3 11:47:06 2022 +0800
-| 
-|     navigation & footer & rules page
-| 
-* commit c92825cefe9df21d7f6c0c53c9b44734dc857d8f
-| Author: fangtingyu <yuft00@gmail.com>
-| Date:   Mon May 2 12:07:05 2022 +0800
-| 
-|     Navigation bar change
-|     
-|     Navigation bar change
-| 
-* commit 06f8a6aafd6171e1b685be73196b55556692a5a8
-| Author: Valerie Liao <valerieliao@Valeries-MacBook-Air.local>
-| Date:   Sat Apr 30 12:37:22 2022 +0800
-| 
-|     board initialisation at home page
-| 
-* commit 043587c1567a3cc0cc52a8c7d117487affeda009
-  Author: Valerie Liao <valerieliao@192-168-1-100.tpgi.com.au>
-  Date:   Fri Apr 22 17:40:33 2022 +0800
-  
-      First commit
+* 3d94d7f : fixed stats
+*   14a4aa3 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+|\  
+| * 3e364ea : share function
+| * 38f6403 : validate functions in forms remove
+| * 2cf7cbe : git_log update
+| * dca0ac1 : stats
+| * 4c3ec88 : Revert "models update"
+| * 1180e21 : models update
+| * b22f38e : stats update database
+| * 1bc0417 : Revert "stats"
+| * 29a3263 : stats
+* | 0cb17af : stats css
+|/  
+* 4977a08 : stats page changes
+*   ec49f6a : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+|\  
+| * bc5273f : submit post (puzzle deleting)
+* | c180881 : deleted username in Stats
+|/  
+* ca4f1a5 : changes
+*   f3748ad : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+|\  
+| * 498680f : model and database adjust
+* | 384e2b5 : css updates
+|/  
+*   5e174f2 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+|\  
+| * 42f18fd : result page remove
+| * 57f0125 : css sheet update
+| *   4764a14 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+| |\  
+| * | 272bb27 : Update README.md
+* | | b4f0b9a : stats update
+| |/  
+|/|   
+* | 35560b6 : merged submit function with check function
+* | 32c65aa : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+|\| 
+| * cd5ffcb : git-log create
+* | 32ecfd4 : submit function changes
+|/  
+*   39e0013 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+|\  
+| * 7ca6797 : submit update
+| *   ebf0a08 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+| |\  
+| * | 98bf08d : submit post
+* | | 7b344cb : submit function
+| |/  
+|/|   
+* | abeeb82 : changes on tests
+* | 97708f8 : sign up route changed back
+|/  
+* 2aff770 : system test
+* 7634f53 : config,py
+* 308ed30 : check function again :(
+*   8b0b3ce : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+|\  
+| * 66e8240 : signup changes
+| *   fa93ab7 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+| |\  
+| * | 1996435 : unit tests changes
+* | | 0385f89 : tests update
+| |/  
+|/|   
+* | 35c762c : test
+|\| 
+| *   e370351 : back end unit tests
+| |\  
+| * | ab85b50 : back end unit tests
+* | | 4bfa925 : htmls review
+| |/  
+|/|   
+* | f580767 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+|\| 
+| * c8722c5 : home page css updates
+* | 4db64d1 : home html and js review
+|/  
+* 189edc8 : Update stats.html
+*   9bcc538 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+|\  
+| *   027f131 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+| |\  
+| * | f548a1d : split check and submit
+* | | f7721cd : Revert "update"
+| |/  
+|/|   
+* | a432bc7 : update
+* | ed22643 : models.py update
+|/  
+*   ef3a160 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+|\  
+| * 5387818 : Delete .Rhistory
+* | 9b58c50 : added method for home page
+|/  
+*   6eb6a7a : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+|\  
+| * c379359 : trivial changes on flask form
+* | dec2f70 : login-in test
+|/  
+* 74ec086 : Create layout.html
+* 6cf46ae : unit tests
+* d71f261 : added some unit tests
+* 8ba7f89 : app.js cleanup
+*   fedf2be : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+|\  
+| * 30b3e56 : tests updates
+* | 97a901e : added new route
+|/  
+* 2cea67b : update
+*   1a7f7c3 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+|\  
+| * a1598ba : check function updates
+* | 0129f0e : check function update
+|/  
+* d1cab54 : Add puzzle class
+* 6dc2427 : adjusted css
+*   0a5ac93 : added logout
+|\  
+| *   576a54d : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+| |\  
+| * | a7194e4 : stats
+* | | d4b819b : added logout for authenticated user
+| |/  
+|/|   
+* | efcf024 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+|\| 
+| * ffd89d3 : update routes.py
+* | 15792c3 : loginForm validation function
+|/  
+*   157696d : adjusted login.load_user
+|\  
+| * 36ee05c : current code revision and update
+| * f60876c : update models.py
+| *   57db7a8 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+| |\  
+| * | a849fc3 : some extensions
+* | | e1cbedd : adjusted login.user_loader
+| |/  
+|/|   
+* | 9f21797 : database model changes
+* | f8ea328 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+|\| 
+| * ccc149e : Update route.py
+* | 093bc27 : adjusted submit button on home page
+|/  
+* e287eec : login redirection fixed
+*   5571e39 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+|\  
+| *   22bf56e : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+| |\  
+| * | be2c7ed : test.py creation
+* | | 5d6a827 : stats page html css
+| |/  
+|/|   
+* | 5ef470d : deleted a button
+* | 95a78ce : some changes
+|/  
+* 74918d3 : login redirection updates
+* 6cc59e9 : database and login&signup form updated
+* 4143387 : changed filters for registration form
+* 397e80d : check updated
+* 62ac9c9 : Add new solution Grid
+* 06f8836 : fixed check function
+* 45dfd61 : fixed tile background color on reload
+* ae0b70d : shuffle function changed
+* 34d8c0c : some variable changes
+* ee62101 : bold signup in login page
+* 1a17a0f : puzzle's visibility according to timer condition
+* a1d2d6d : solve&check
+* 6dc33ee : number select function improve and erase function
+* fef5153 : NewGame timerStart addition
+* 201553c : timer and buttons css
+* 3251f8b : timer adjustment
+* e63aeed : shuffle part
+*   bccb6a8 : grid changes and functions updates
+|\  
+| * f21c46a : new js update
+| * 0dc653c : templates changes
+* | 615646c : grid changes and function updates
+|/  
+* 2266438 : easy.txt
+* 5dc361c : database changes and sudoku file added
+* dbdd63d : added database and user authentication
+* b2765b4 : Log-in part
+* 01664cc : registration page extension
+* 7c1af68 : Registration Page Creation
+* 7abe153 : accidental deletion recover
+* f193082 : Revert "Revert "Merge conflict resolve""
+* 4165bb0 : Revert "Merge conflict resolve"
+*   c36399d : Merge conflict resolve
+|\  
+| * 4305de6 : added logo and select difficulty dropdown
+* | 3bc56c5 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+|\| 
+| *   aaf6bb2 : Merge pull request #1 from loveyamiyu/Rules-page
+| |\  
+| | * 73c859e : Some changes to rule page
+| | * f0b3229 : change the website internal link
+| |/  
+* / 48491c7 : 4 functional button testing
+|/  
+* bebac5c : Some structure changes
+* 07cef17 : Timer Javascript add
+* b53ec13 : 4 functional button in home page + timer
+* d8681fa : Javascript change - trying to write a function and class for timer
+* a56cd56 : navigation & footer & rules page
+* c92825c : Navigation bar change
+* 06f8a6a : board initialisation at home page
+* 043587c : First commit
