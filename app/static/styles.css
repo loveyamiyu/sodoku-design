@@ -236,30 +236,21 @@ h3{
 
 .ShowStats {
     width: 100%;
-    height: 100vh;
     background-color: white;
     padding-top: 50px;
+    margin-bottom: 4rem;
 } 
 
-.stats-content {
-    display: flex;
-    flex-direction: column;
-    flex-wrap:nowrap;
-    margin: 20px 0;
-    grid-gap: 20px;
-    align-content: normal;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+
+
+table head {
+    font-size: 2rem;
 }
 
-.stats {
-    flex: 1;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+table tbody {
+    font-size: 10px;
 }
+
 
 .share-button {
     margin-bottom: 30px;
@@ -287,11 +278,17 @@ h3{
 
 .social-media {
     margin-bottom: 20px;
+    text-align: right;
+    margin-right: 20px;
 }
 .social-media a {
     text-decoration: none;
-    margin: 20px 0;
-    font-size: 30px;
+    margin: 10px 0;
+    font-size: 15px;
+}
+
+.social-media a:hover {
+    color: #8155BA;
 }
 
 

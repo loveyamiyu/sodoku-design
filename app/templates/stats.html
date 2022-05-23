@@ -5,22 +5,6 @@
 
 {% block content %}
 <div class="ShowStats">
-    <div class="stats-header">
-        <h1>YOUR STATS</h1>
-    </div>
-    <div class="stats-content">
-        {% for i in stats %}
-        <div class="stats"> 
-            <p>USERNAME: {{i.username}}</p>
-        </div>
-        <div class="stats">
-            <p>YOU HAVE COMPELTED {{i.id}} SUDOKUS <p>
-        </div>
-        <div class="stats">
-            <p>FASTEST SOLVE: {{i.time}} s <p>
-        </div>
-        {% endfor %}
-    </div>
     <div class="share-button">
         <a href="#">Share</a>
     </div>
@@ -29,9 +13,28 @@
         <a href="https://www.instagram.com/"><i class="social-media fa-brands fa-instagram fa-2x"></i></a>
         <a href="https://www.twitter.com/"><i class="social-media fa-brands fa-twitter-square fa-2x"></i></a>
     </div>
-    <div class="newChallenge">
-        <a href="{{ url_for('home')}}">Start a new challenge</a>
+    <div class="stats-header">
+        <h1>YOUR STATS</h1>
     </div>
+    <div class="stats-content">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col"><h4>Sudoku No.</h4></th>
+                <th scope="col"><h4>Solve Time</h4></th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for i in stats %}
+                <tr>
+                    <td>{{i.id}}</td>
+                    <td>{{i.time}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+    </div>
+    
 </div>
 
 
