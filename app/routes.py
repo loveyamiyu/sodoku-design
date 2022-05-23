@@ -19,8 +19,16 @@ import json
 def home():
     if not current_user.is_authenticated:
         return redirect(url_for('login')) # if the user is not authenticated: return to login page.
+    if request.method == 'POST':
+        time = request.form.get('timeSpent')
+        puzzle = request.form.get('finishedGrid')
+        new_puzzle = Stats(time=time, puzzle=puzzle)
+        db.session.add(new_puzzle)
+        db.session.commit()
+        return "<p> Hi </p>"
+    else:
     
-    return render_template("home.html", user=current_user)
+        return render_template("home.html", user=current_user)
 
 @app.route("/rules")
 def rules():
