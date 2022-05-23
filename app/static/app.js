@@ -240,17 +240,14 @@ function check() {
 		for(var i = 0; i < 9; i++) {
             for(var j = 0; j < 9; i++) {
             var tile = document.getElementById("t" + i + "x" + j);
-			if (puzzle.isValid(finishedGrid, i, j, tile.innerHTML)) {
+			if (puzzle.isValid(finishedGrid, i, j, 1 ) && puzzle.isValid(finishedGrid, i, j, 2 )
+				&& puzzle.isValid(finishedGrid, i, j, 3 ) && puzzle.isValid(finishedGrid, i, j, 4 )
+				&& puzzle.isValid(finishedGrid, i, j, 5 ) && puzzle.isValid(finishedGrid, i, j, 6 )
+				&& puzzle.isValid(finishedGrid, i, j, 7 ) && puzzle.isValid(finishedGrid, i, j, 8 )
+				&& puzzle.isValid(finishedGrid, i, j, 9 )){
 					pause();
 					document.getElementById('result').innerHTML = "You did amazing!!" + " The time you spent is " + timeSpent + " seconds";
-					$.ajax({
-						url: "/home", 
-						type: "POST",  
-						data: {
-							 "timeSpent": timeSpent,
-							 "finishedGrid": finishedGrid},  
-					});
-					console.log(timeSpent, finishedGrid)
+					return timeSpent;
 				} else {
 					document.getElementById('result').innerHTML = "Something needs to be revised :(";
 					startTimer();
@@ -267,7 +264,21 @@ function check() {
 	}
 }
 
-	
+function submit() { //revision needed
+	if (check() != false) {
+		$.ajax({
+			url: "/home", 
+			type: "POST",  
+			data: {
+				 "timeSpent": timeSpent},  
+		});
+		console.log(timeSpent);
+	} else {
+		document.getElementById('result').innerHTML = "Something needs to be revised :(";
+		startTimer();
+	}
+}
+
 function finishGrid() {
 	// record the finished grid(the current puzzle)
 	var finishedGrid = new Array(9);
@@ -323,6 +334,15 @@ function checkForEmptyCells() {
 	return true;
 }
 
+function showStats(){
+	$.ajax({
+		url: "/stats", 
+		type: "GET",  
+		data: {
+			 "timeSpent": timeSpent,
+			 "finishedGrid": finishedGrid},  
+	});
+}
 
 // Part E: Timer //
 var timeSpent = 0;

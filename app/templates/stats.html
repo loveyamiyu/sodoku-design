@@ -9,15 +9,17 @@
         <h1>YOUR STATS</h1>
     </div>
     <div class="stats-content">
+        {% for i in stats %}
         <div class="stats"> 
-            <p>RANK: NO.1</p>
+            <p>USERNAME: {{i.username}}</p>
         </div>
         <div class="stats">
-            <p>YOU HAVE COMPELTED {{self.time}} SUDOKUS <p>
+            <p>YOU HAVE COMPELTED {{i.id}} SUDOKUS <p>
         </div>
         <div class="stats">
-            <p>FASTEST SOLVE: {{self.time}} s <p>
+            <p>FASTEST SOLVE: {{i.time}} s <p>
         </div>
+        {% endfor %}
     </div>
     <div class="share-button">
         <a href="#">Share</a>

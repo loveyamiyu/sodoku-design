@@ -38,18 +38,18 @@ def rules():
 def result():
     if request.method == 'POST':
         time = request.form.get('timeSpent')
-        puzzle = request.form.get('finishedGrid')
-        new_puzzle = Stats(time=time, puzzle=puzzle)
+        new_puzzle = Stats(time=time)
         db.session.add(new_puzzle)
         db.session.commit()
-        return "<p> Hi </p>"
+        
     else:
         return render_template("result.html",result = result)
 
 @app.route("/stats", methods=['GET','POST'])
 @login_required
 def stats():
-    return render_template("stats.html")
+    stats = db.session.query(Stats).all()
+    return render_template("stats.html", stats=stats)
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
