@@ -6,7 +6,7 @@ from unicodedata import name
 from flask import render_template, request, flash, redirect, url_for,session
 from flask_login import current_user, login_user, logout_user, login_required
 from app import app
-from .models import Puzzle, User, Stats
+from .models import User, Stats
 from . import db
 from app.forms import RegistrationForm, LoginForm
 from werkzeug.urls import url_parse
