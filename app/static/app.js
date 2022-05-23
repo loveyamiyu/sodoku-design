@@ -262,19 +262,18 @@ function check() {
 
 function submit() { //revision needed
 	if (puzzle.check() != false) {
-		var finishedGrid = finishedGrid;
+		var finishedGrid =finishGrid();
 		$.ajax({
-			url: "/result", 
-			type: "post",  
-			data: { "timeSpent": timeSpent,"finishedGrid": finishedGrid},  
+			url: "{{url_for('result')}}", 
+			type: "POST",  
+			data: {
+				 "timeSpent": timeSpent,
+				 "finishedGrid": finishedGrid},  
 		});
 	}
-		
 }
-	
-	
 
-
+	
 
 function finishGrid() {
 	// record the finished grid(the current puzzle)

@@ -3,7 +3,7 @@ from cmath import log
 from crypt import methods
 from sqlite3 import IntegrityError
 from unicodedata import name
-from flask import render_template, request, flash, redirect, url_for
+from flask import render_template, request, flash, redirect, url_for,session
 from flask_login import current_user, login_user, logout_user, login_required
 from app import app
 from .models import Puzzle, User, Stats
@@ -34,18 +34,14 @@ def result():
         new_puzzle = Stats(time=time, puzzle=puzzle)
         db.session.add(new_puzzle)
         db.session.commit()
-
-    
-    return render_template("result.html",result = result)
+        return "<p> Hi </p>"
+    else:
+        return render_template("result.html",result = result)
 
 @app.route("/stats", methods=['GET','POST'])
 @login_required
 def stats():
-    # 添加一个读取所有user_id和时间的variable，
-    # 再把这个varaible添加到 stats.html里面去
-    
     return render_template("stats.html")
-    # order_by should be used
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
@@ -61,6 +57,10 @@ def login():
             return redirect(url_for('home'))
         return redirect(next_page)
     return render_template('login.html', title='Log in', form=form)
+
+@app.route("/<usr>")
+def user(usr):
+    return f"<h1>{usr}</h1>"
 
 
 @app.route('/logout', methods=['GET', 'POST'])
