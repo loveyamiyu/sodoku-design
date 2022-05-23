@@ -6,7 +6,7 @@
 {% block content %}
 <div class="ShowStats">
     <div class="share-button">
-        <a href="#">Share</a>
+        <a href="#" onClick = "clip_div('copyme')">Share</a>
     </div>
     <div class="social-media">
         <a href="https://www.facebook.com/"><i class="social-media fa-brands fa-facebook fa-2x"></i></a>
@@ -35,6 +35,8 @@
                 {% endfor %}
             </tbody>
           </table>
+
+          <div id="copyme">I just finished Sudoku No. {{stats.id}} and used {{stats.time}} seconds</div>
     </div>
     
 </div>

@@ -400,3 +400,21 @@ function reset(){
     timeSpent = 0;
 }
 
+// Part F: Share //
+
+function clip_text(a_string){
+    var input = document.createElement('input')
+    input.id="__copyText__";
+    input.value = document.getElementById(divId).innerText;
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand("copy");
+    var txt = input.value
+    input.remove()
+    console.log("OK COPIED: '"+txt+"'")
+}
+function clip_div(divId){
+   return clip_text(document.getElementById(divId).innerText)
+}
+
+// We tried to create a mechanism that we can copy the result and past it to the clipboard, then share the result on other social media.
