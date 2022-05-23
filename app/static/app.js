@@ -247,6 +247,7 @@ function check() {
 				} else {
 					document.getElementById('result').innerHTML = "Something needs to be revised :(";
 					startTimer();
+					return false;
 				}
 			}
 		}
@@ -255,23 +256,20 @@ function check() {
 		// user cannot submit an incomplete sudoku
 		document.getElementById('result').innerHTML = "Please finish the sudoku";
 		startTimer();
+		return false;
 	}
 }
 
 function submit() { //revision needed
+	if (puzzle.check() != false) {
+		var finishedGrid = finishedGrid;
 		$.ajax({
-			url: "{{url_for('result')}}", 
-			type: "POST",  
-			data: { "timeSpent": timeSpent,"finishedGrid": finishGrid},  
-			success: function (result) {
-				if (result.message == "success!") {
-					alert(result.message+"Your finishedGrid"+result.finishedGrid+". You spent "+result.timeSpent+"seconds")
-				}
-				else {
-					alert(result.message)
-				}
-			}
+			url: "/result", 
+			type: "post",  
+			data: { "timeSpent": timeSpent,"finishedGrid": finishedGrid},  
 		});
+	}
+		
 }
 	
 	

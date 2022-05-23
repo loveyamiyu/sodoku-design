@@ -90,10 +90,8 @@
             
 
             <!--submit function, the data will be POSTed into the database once it passed the check function-->
-            <form method="GET">
-                <input type="hidden" name="timeSpent" value="">
-                <input type="hidden" name="finishedGrid" value="">
-                <input type="button" id="submit-button" value="Submit" onclick="submit()">
+            <form method="post">
+                <button onclick="submit()" clas="input-button" id="submit-button"><i class="fa-solid fa-check"></i>Submit</button> 
             </form>
         </div>
 
