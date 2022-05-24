@@ -1,7 +1,6 @@
 var numSelected = null;
 var puzzle;
 
-
 window.onload = function(){
     setGame();
     setDigits();
@@ -89,48 +88,28 @@ function generateSudoku() {
 
 	this.getSolution = function(row, col) {
 		return grid[row][col];
-	};
+	};	
 
 	// This is a solution checking
-	this.isValid = function(finishedGrid, row, col, val) {
-		var rowCount = this.countInstances(finishedGrid[row], val);
-		var colCount = this.countInstances(this.columnToArray(finishedGrid, col), val);
-		var subCount = this.countInstances(this.subsquareToArray(finishedGrid, row, col), val);
-		if(rowCount == 1 && colCount == 1 && subCount == 1) {
-			return true;
+	this.isValidSudoku = function(finishedGrid) {
+		var map = [];
+		var tmp = 0;
+		for (var i = 0; i < 9; i++) {
+		  for (var j = 0; j < 9; j++) {
+			tmp = finishedGrid[i][j];
+			if (tmp === '') continue;
+			if (map['i' + i + tmp] || map['j' + j + tmp] || map['b' + Math.floor(i / 3) + Math.floor(j / 3) + tmp]) return false;
+			map['i' + i + tmp] = 1;
+			map['j' + j + tmp] = 1;
+			map['b' + Math.floor(i / 3) + Math.floor(j / 3) + tmp] = 1;
+		  }
 		}
-		return false;
+		return true;
 	};
-
-	this.columnToArray = function(finishedGrid, col) {
-		var colArray = [];
-		for(var i = 0; i < 9; i++) {
-			colArray.push(finishedGrid[i][col]);
-		}
-		return colArray;
-	};
-
-	this.subsquareToArray = function(finishedGrid, row, col) {
-		var subArray = [];
-		var subrow = row - (row % 3);
-		var subcol = col - (col % 3);
-		for(var i = 0; i < 3; i++) {
-			for(var j = 0; j < 3; j++) {
-				subArray.push(finishedGrid[i+subrow][j+subcol]);
-			}
-		}
-		return subArray;
-	};
-
-	this.countInstances = function(arr, val) {
-		var count = 0;
-		for(var i = 0; i < arr.length; i++) {
-			if(arr[i] == val) count++;
-		}
-		return count;
-	}
-	
 }
+
+
+
 
 function shuffle(grid) {
 	// Way to update new puzzle
@@ -223,36 +202,21 @@ function erase(){
 	numSelected = null;
 }
 
-for(var i = 0; i < 9; i++) {
-	for(var j = 0; j < 9; j++) {
-		var tile = document.getElementById("t" + i + "x" + j);
-	}
-}
 
 // Part D: Solution checking //
 
 function check() {
 	if (checkForEmptyCells() === true){ 
 		var finishedGrid = finishGrid();
-		for(var i = 0; i < 9; i++) {
-            for(var j = 0; j < 9; i++) {
-            var tile = document.getElementById("t" + i + "x" + j);
-			if (puzzle.isValid(finishedGrid, i, j, 1 ) && puzzle.isValid(finishedGrid, i, j, 2 )
-				&& puzzle.isValid(finishedGrid, i, j, 3 ) && puzzle.isValid(finishedGrid, i, j, 4 )
-				&& puzzle.isValid(finishedGrid, i, j, 5 ) && puzzle.isValid(finishedGrid, i, j, 6 )
-				&& puzzle.isValid(finishedGrid, i, j, 7 ) && puzzle.isValid(finishedGrid, i, j, 8 )
-				&& puzzle.isValid(finishedGrid, i, j, 9 )){
+			if (puzzle.isValidSudoku(finishedGrid)){
 					pause();
 					document.getElementById('result').innerHTML = "You did amazing!!" + " The time you spent is " + timeSpent + " seconds";
 					return timeSpent;
-				} else {
+			} else {
 					document.getElementById('result').innerHTML = "Something needs to be revised :(";
 					startTimer();
 					return false;
-				}
 			}
-		}
-
 	} else {
 		// user cannot submit an incomplete sudoku
 		document.getElementById('result').innerHTML = "Please finish the sudoku";
@@ -270,6 +234,9 @@ function submit() {
 				 "timeSpent": timeSpent},  
 		});
 		console.log(timeSpent);
+	} else if (checkForEmptyCells() === false) {
+		document.getElementById('result').innerHTML = "Please finish the sudoku";
+		startTimer();
 	} else {
 		document.getElementById('result').innerHTML = "Something needs to be revised :(";
 		startTimer();
@@ -286,18 +253,6 @@ function finishGrid() {
 		}
 	}
 	return finishedGrid;
-}
-
-function solveGrid() {
-	// record the solution grid for the current puzzle
-	var solutionGrid = new Array(9);
-	for(var i = 0; i < 9; i++) {
-		solutionGrid[i] = new Array(9);
-		for(var j = 0; j < 9; j++) {
-			solutionGrid[i][j]  = str(puzzle.getSolution(i, j));	
-		}
-	}
-	return solutionGrid;
 }
 
 
