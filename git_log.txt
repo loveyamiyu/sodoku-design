@@ -1,211 +1,149 @@
-* 3d94d7f : fixed stats
-*   14a4aa3 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-|\  
-| * 3e364ea : share function
-| * 38f6403 : validate functions in forms remove
-| * 2cf7cbe : git_log update
-| * dca0ac1 : stats
-| * 4c3ec88 : Revert "models update"
-| * 1180e21 : models update
-| * b22f38e : stats update database
-| * 1bc0417 : Revert "stats"
-| * 29a3263 : stats
-* | 0cb17af : stats css
-|/  
-* 4977a08 : stats page changes
-*   ec49f6a : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-|\  
-| * bc5273f : submit post (puzzle deleting)
-* | c180881 : deleted username in Stats
-|/  
-* ca4f1a5 : changes
-*   f3748ad : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-|\  
-| * 498680f : model and database adjust
-* | 384e2b5 : css updates
-|/  
-*   5e174f2 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-|\  
-| * 42f18fd : result page remove
-| * 57f0125 : css sheet update
-| *   4764a14 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| |\  
-| * | 272bb27 : Update README.md
-* | | b4f0b9a : stats update
-| |/  
-|/|   
-* | 35560b6 : merged submit function with check function
-* | 32c65aa : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-|\| 
-| * cd5ffcb : git-log create
-* | 32ecfd4 : submit function changes
-|/  
-*   39e0013 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-|\  
-| * 7ca6797 : submit update
-| *   ebf0a08 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| |\  
-| * | 98bf08d : submit post
-* | | 7b344cb : submit function
-| |/  
-|/|   
-* | abeeb82 : changes on tests
-* | 97708f8 : sign up route changed back
-|/  
-* 2aff770 : system test
-* 7634f53 : config,py
-* 308ed30 : check function again :(
-*   8b0b3ce : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-|\  
-| * 66e8240 : signup changes
-| *   fa93ab7 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| |\  
-| * | 1996435 : unit tests changes
-* | | 0385f89 : tests update
-| |/  
-|/|   
-* | 35c762c : test
-|\| 
-| *   e370351 : back end unit tests
-| |\  
-| * | ab85b50 : back end unit tests
-* | | 4bfa925 : htmls review
-| |/  
-|/|   
-* | f580767 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-|\| 
-| * c8722c5 : home page css updates
-* | 4db64d1 : home html and js review
-|/  
-* 189edc8 : Update stats.html
-*   9bcc538 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-|\  
-| *   027f131 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| |\  
-| * | f548a1d : split check and submit
-* | | f7721cd : Revert "update"
-| |/  
-|/|   
-* | a432bc7 : update
-* | ed22643 : models.py update
-|/  
-*   ef3a160 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-|\  
-| * 5387818 : Delete .Rhistory
-* | 9b58c50 : added method for home page
-|/  
-*   6eb6a7a : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-|\  
-| * c379359 : trivial changes on flask form
-* | dec2f70 : login-in test
-|/  
-* 74ec086 : Create layout.html
-* 6cf46ae : unit tests
-* d71f261 : added some unit tests
-* 8ba7f89 : app.js cleanup
-*   fedf2be : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-|\  
-| * 30b3e56 : tests updates
-* | 97a901e : added new route
-|/  
-* 2cea67b : update
-*   1a7f7c3 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-|\  
-| * a1598ba : check function updates
-* | 0129f0e : check function update
-|/  
-* d1cab54 : Add puzzle class
-* 6dc2427 : adjusted css
-*   0a5ac93 : added logout
-|\  
-| *   576a54d : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| |\  
-| * | a7194e4 : stats
-* | | d4b819b : added logout for authenticated user
-| |/  
-|/|   
-* | efcf024 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-|\| 
-| * ffd89d3 : update routes.py
-* | 15792c3 : loginForm validation function
-|/  
-*   157696d : adjusted login.load_user
-|\  
-| * 36ee05c : current code revision and update
-| * f60876c : update models.py
-| *   57db7a8 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| |\  
-| * | a849fc3 : some extensions
-* | | e1cbedd : adjusted login.user_loader
-| |/  
-|/|   
-* | 9f21797 : database model changes
-* | f8ea328 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-|\| 
-| * ccc149e : Update route.py
-* | 093bc27 : adjusted submit button on home page
-|/  
-* e287eec : login redirection fixed
-*   5571e39 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-|\  
-| *   22bf56e : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-| |\  
-| * | be2c7ed : test.py creation
-* | | 5d6a827 : stats page html css
-| |/  
-|/|   
-* | 5ef470d : deleted a button
-* | 95a78ce : some changes
-|/  
-* 74918d3 : login redirection updates
-* 6cc59e9 : database and login&signup form updated
-* 4143387 : changed filters for registration form
-* 397e80d : check updated
-* 62ac9c9 : Add new solution Grid
-* 06f8836 : fixed check function
-* 45dfd61 : fixed tile background color on reload
-* ae0b70d : shuffle function changed
-* 34d8c0c : some variable changes
-* ee62101 : bold signup in login page
-* 1a17a0f : puzzle's visibility according to timer condition
-* a1d2d6d : solve&check
-* 6dc33ee : number select function improve and erase function
-* fef5153 : NewGame timerStart addition
-* 201553c : timer and buttons css
-* 3251f8b : timer adjustment
-* e63aeed : shuffle part
-*   bccb6a8 : grid changes and functions updates
-|\  
-| * f21c46a : new js update
-| * 0dc653c : templates changes
-* | 615646c : grid changes and function updates
-|/  
-* 2266438 : easy.txt
-* 5dc361c : database changes and sudoku file added
-* dbdd63d : added database and user authentication
-* b2765b4 : Log-in part
-* 01664cc : registration page extension
-* 7c1af68 : Registration Page Creation
-* 7abe153 : accidental deletion recover
-* f193082 : Revert "Revert "Merge conflict resolve""
-* 4165bb0 : Revert "Merge conflict resolve"
-*   c36399d : Merge conflict resolve
-|\  
-| * 4305de6 : added logo and select difficulty dropdown
-* | 3bc56c5 : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
-|\| 
-| *   aaf6bb2 : Merge pull request #1 from loveyamiyu/Rules-page
-| |\  
-| | * 73c859e : Some changes to rule page
-| | * f0b3229 : change the website internal link
-| |/  
-* / 48491c7 : 4 functional button testing
-|/  
-* bebac5c : Some structure changes
-* 07cef17 : Timer Javascript add
-* b53ec13 : 4 functional button in home page + timer
-* d8681fa : Javascript change - trying to write a function and class for timer
-* a56cd56 : navigation & footer & rules page
-* c92825c : Navigation bar change
-* 06f8a6a : board initialisation at home page
-* 043587c : First commit
+d452380 - Valerie Liao, 3 minutes ago : sudoku validation
+3dd2b28 - Valerie Liao, 12 hours ago : updated git log
+3d94d7f - Valerie Liao, 13 hours ago : fixed stats
+14a4aa3 - Valerie Liao, 16 hours ago : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+0cb17af - Valerie Liao, 16 hours ago : stats css
+3e364ea - fangtingyu, 16 hours ago : share function
+38f6403 - fangtingyu, 17 hours ago : validate functions in forms remove
+2cf7cbe - fangtingyu, 18 hours ago : git_log update
+dca0ac1 - fangtingyu, 19 hours ago : stats
+4c3ec88 - fangtingyu, 19 hours ago : Revert "models update"
+1180e21 - fangtingyu, 19 hours ago : models update
+b22f38e - fangtingyu, 20 hours ago : stats update database
+1bc0417 - fangtingyu, 20 hours ago : Revert "stats"
+29a3263 - fangtingyu, 20 hours ago : stats
+4977a08 - Valerie Liao, 20 hours ago : stats page changes
+ec49f6a - Valerie Liao, 21 hours ago : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+c180881 - Valerie Liao, 21 hours ago : deleted username in Stats
+bc5273f - fangtingyu, 21 hours ago : submit post (puzzle deleting)
+ca4f1a5 - Valerie Liao, 21 hours ago : changes
+f3748ad - Valerie Liao, 21 hours ago : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+384e2b5 - Valerie Liao, 21 hours ago : css updates
+498680f - fangtingyu, 21 hours ago : model and database adjust
+5e174f2 - Valerie Liao, 22 hours ago : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+b4f0b9a - Valerie Liao, 22 hours ago : stats update
+42f18fd - fangtingyu, 23 hours ago : result page remove
+57f0125 - fangtingyu, 23 hours ago : css sheet update
+4764a14 - fangtingyu, 23 hours ago : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+272bb27 - fangtingyu, 23 hours ago : Update README.md
+35560b6 - Valerie Liao, 23 hours ago : merged submit function with check function
+32c65aa - Valerie Liao, 23 hours ago : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+32ecfd4 - Valerie Liao, 23 hours ago : submit function changes
+cd5ffcb - fangtingyu, 24 hours ago : git-log create
+39e0013 - Valerie Liao, 24 hours ago : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+7b344cb - Valerie Liao, 24 hours ago : submit function
+7ca6797 - fangtingyu, 24 hours ago : submit update
+ebf0a08 - fangtingyu, 24 hours ago : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+98bf08d - fangtingyu, 24 hours ago : submit post
+abeeb82 - Valerie Liao, 25 hours ago : changes on tests
+97708f8 - Valerie Liao, 25 hours ago : sign up route changed back
+2aff770 - fangtingyu, 26 hours ago : system test
+7634f53 - fangtingyu, 26 hours ago : config,py
+308ed30 - fangtingyu, 26 hours ago : check function again :(
+8b0b3ce - fangtingyu, 32 hours ago : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+0385f89 - fangtingyu, 32 hours ago : tests update
+66e8240 - Valerie Liao, 32 hours ago : signup changes
+fa93ab7 - Valerie Liao, 33 hours ago : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+1996435 - Valerie Liao, 33 hours ago : unit tests changes
+35c762c - fangtingyu, 33 hours ago : test
+4bfa925 - fangtingyu, 33 hours ago : htmls review
+e370351 - Valerie Liao, 35 hours ago : back end unit tests
+ab85b50 - Valerie Liao, 35 hours ago : back end unit tests
+f580767 - fangtingyu, 2 days ago : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+4db64d1 - fangtingyu, 2 days ago : home html and js review
+c8722c5 - Valerie Liao, 2 days ago : home page css updates
+189edc8 - fangtingyu, 2 days ago : Update stats.html
+9bcc538 - fangtingyu, 2 days ago : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+f7721cd - fangtingyu, 2 days ago : Revert "update"
+027f131 - Valerie Liao, 2 days ago : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+f548a1d - Valerie Liao, 2 days ago : split check and submit
+a432bc7 - fangtingyu, 2 days ago : update
+ed22643 - fangtingyu, 2 days ago : models.py update
+ef3a160 - Valerie Liao, 2 days ago : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+9b58c50 - Valerie Liao, 2 days ago : added method for home page
+5387818 - fangtingyu, 2 days ago : Delete .Rhistory
+6eb6a7a - fangtingyu, 2 days ago : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+dec2f70 - fangtingyu, 2 days ago : login-in test
+c379359 - Valerie Liao, 2 days ago : trivial changes on flask form
+74ec086 - fangtingyu, 2 days ago : Create layout.html
+6cf46ae - fangtingyu, 2 days ago : unit tests
+d71f261 - Valerie Liao, 2 days ago : added some unit tests
+8ba7f89 - Valerie Liao, 2 days ago : app.js cleanup
+fedf2be - Valerie Liao, 2 days ago : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+97a901e - Valerie Liao, 2 days ago : added new route
+30b3e56 - fangtingyu, 2 days ago : tests updates
+2cea67b - fangtingyu, 2 days ago : update
+1a7f7c3 - fangtingyu, 2 days ago : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+0129f0e - fangtingyu, 2 days ago : check function update
+a1598ba - Valerie Liao, 2 days ago : check function updates
+d1cab54 - fangtingyu, 2 days ago : Add puzzle class
+6dc2427 - Valerie Liao, 3 days ago : adjusted css
+0a5ac93 - Valerie Liao, 3 days ago : added logout
+d4b819b - Valerie Liao, 3 days ago : added logout for authenticated user
+576a54d - fangtingyu, 3 days ago : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+a7194e4 - fangtingyu, 3 days ago : stats
+efcf024 - Valerie Liao, 3 days ago : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+15792c3 - Valerie Liao, 3 days ago : loginForm validation function
+ffd89d3 - fangtingyu, 3 days ago : update routes.py
+157696d - Valerie Liao, 3 days ago : adjusted login.load_user
+e1cbedd - Valerie Liao, 3 days ago : adjusted login.user_loader
+36ee05c - fangtingyu, 3 days ago : current code revision and update
+f60876c - fangtingyu, 3 days ago : update models.py
+57db7a8 - fangtingyu, 3 days ago : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+a849fc3 - fangtingyu, 3 days ago : some extensions
+9f21797 - Valerie Liao, 3 days ago : database model changes
+f8ea328 - Valerie Liao, 3 days ago : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+093bc27 - Valerie Liao, 3 days ago : adjusted submit button on home page
+ccc149e - fangtingyu, 3 days ago : Update route.py
+e287eec - Valerie Liao, 3 days ago : login redirection fixed
+5571e39 - Valerie Liao, 4 days ago : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+5d6a827 - Valerie Liao, 4 days ago : stats page html css
+22bf56e - fangtingyu, 4 days ago : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+be2c7ed - fangtingyu, 4 days ago : test.py creation
+5ef470d - Valerie Liao, 4 days ago : deleted a button
+95a78ce - Valerie Liao, 4 days ago : some changes
+74918d3 - Valerie Liao, 5 days ago : login redirection updates
+6cc59e9 - Valerie Liao, 5 days ago : database and login&signup form updated
+4143387 - Valerie Liao, 5 days ago : changed filters for registration form
+397e80d - fangtingyu, 6 days ago : check updated
+62ac9c9 - fangtingyu, 6 days ago : Add new solution Grid
+06f8836 - Valerie Liao, 6 days ago : fixed check function
+45dfd61 - Valerie Liao, 6 days ago : fixed tile background color on reload
+ae0b70d - Valerie Liao, 8 days ago : shuffle function changed
+34d8c0c - Valerie Liao, 8 days ago : some variable changes
+ee62101 - fangtingyu, 9 days ago : bold signup in login page
+1a17a0f - fangtingyu, 10 days ago : puzzle's visibility according to timer condition
+a1d2d6d - fangtingyu, 10 days ago : solve&check
+6dc33ee - fangtingyu, 10 days ago : number select function improve and erase function
+fef5153 - fangtingyu, 10 days ago : NewGame timerStart addition
+201553c - Valerie Liao, 10 days ago : timer and buttons css
+3251f8b - Valerie Liao, 11 days ago : timer adjustment
+e63aeed - fangtingyu, 11 days ago : shuffle part
+bccb6a8 - Valerie Liao, 12 days ago : grid changes and functions updates
+615646c - Valerie Liao, 12 days ago : grid changes and function updates
+f21c46a - fangtingyu, 12 days ago : new js update
+0dc653c - fangtingyu, 12 days ago : templates changes
+2266438 - Valerie Liao, 13 days ago : easy.txt
+5dc361c - Valerie Liao, 13 days ago : database changes and sudoku file added
+dbdd63d - Valerie Liao, 2 weeks ago : added database and user authentication
+b2765b4 - fangtingyu, 2 weeks ago : Log-in part
+01664cc - fangtingyu, 2 weeks ago : registration page extension
+7c1af68 - fangtingyu, 2 weeks ago : Registration Page Creation
+7abe153 - Valerie Liao, 2 weeks ago : accidental deletion recover
+f193082 - fangtingyu, 2 weeks ago : Revert "Revert "Merge conflict resolve""
+4165bb0 - fangtingyu, 2 weeks ago : Revert "Merge conflict resolve"
+c36399d - fangtingyu, 2 weeks ago : Merge conflict resolve
+4305de6 - Valerie Liao, 2 weeks ago : added logo and select difficulty dropdown
+3bc56c5 - fangtingyu, 3 weeks ago : Merge branch 'main' of https://github.com/loveyamiyu/sodoku-cits5505
+48491c7 - fangtingyu, 3 weeks ago : 4 functional button testing
+aaf6bb2 - fangtingyu, 3 weeks ago : Merge pull request #1 from loveyamiyu/Rules-page
+73c859e - fangtingyu, 3 weeks ago : Some changes to rule page
+f0b3229 - fangtingyu, 3 weeks ago : change the website internal link
+bebac5c - fangtingyu, 3 weeks ago : Some structure changes
+07cef17 - fangtingyu, 3 weeks ago : Timer Javascript add
+b53ec13 - fangtingyu, 3 weeks ago : 4 functional button in home page + timer
+d8681fa - fangtingyu, 3 weeks ago : Javascript change - trying to write a function and class for timer
+a56cd56 - Valerie Liao, 3 weeks ago : navigation & footer & rules page
+c92825c - fangtingyu, 3 weeks ago : Navigation bar change
+06f8a6a - Valerie Liao, 3 weeks ago : board initialisation at home page
+043587c - Valerie Liao, 5 weeks ago : First commit
